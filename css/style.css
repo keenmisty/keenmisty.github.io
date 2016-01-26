@@ -811,10 +811,10 @@ a {
   color: transparent;
 }
 #header .header-nav .social #ResearchGate {
-  background: url("/img/researchgate.jpg") center no-repeat #ecc260;
+  background: url("/img/researchgate.jpg") center no-repeat #fff;
 }
 #header .header-nav .social .ResearchGate:before {
-  content: "\f18a";
+  content: "\f113";
   color: transparent;
 }
 #header .header-nav .social #RSS {
