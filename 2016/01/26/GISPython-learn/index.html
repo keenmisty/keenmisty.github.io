@@ -3,21 +3,39 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | 偿酩以忘之</title>
+  <title>GIS中Python的使用&lt;1&gt; | 偿酩以忘之</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+  <meta name="description" content="GIS Modeling与Python介绍ArcGIS中提供了两种写Python的方式：
+
+ModelBuilder
+IDLE
+
+ModelBuilder的使用很简单，可以先拿来做模型的结构设计。但是一些复杂的处理则需要写Python Script来实现。
+因此：
+Using Python window in ArcGIS：参考 Python Scripting for ArcGIS by Pau">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://keenmisty.github.io/2016/01/26/hello-world/index.html">
+<meta property="og:title" content="GIS中Python的使用<1>">
+<meta property="og:url" content="http://keenmisty.github.io/2016/01/26/GISPython-learn/index.html">
 <meta property="og:site_name" content="偿酩以忘之">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-01-26T15:07:00.379Z">
+<meta property="og:description" content="GIS Modeling与Python介绍ArcGIS中提供了两种写Python的方式：
+
+ModelBuilder
+IDLE
+
+ModelBuilder的使用很简单，可以先拿来做模型的结构设计。但是一些复杂的处理则需要写Python Script来实现。
+因此：
+Using Python window in ArcGIS：参考 Python Scripting for ArcGIS by Pau">
+<meta property="og:updated_time" content="2016-02-15T05:00:19.325Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="GIS中Python的使用<1>">
+<meta name="twitter:description" content="GIS Modeling与Python介绍ArcGIS中提供了两种写Python的方式：
+
+ModelBuilder
+IDLE
+
+ModelBuilder的使用很简单，可以先拿来做模型的结构设计。但是一些复杂的处理则需要写Python Script来实现。
+因此：
+Using Python window in ArcGIS：参考 Python Scripting for ArcGIS by Pau">
   
     <link rel="alternative" href="/atom.xml" title="偿酩以忘之" type="application/atom+xml">
   
@@ -243,11 +261,11 @@ Quick">
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-GISPython-learn" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/26/hello-world/" class="article-date">
-      <time datetime="2016-01-26T13:05:00.000Z" itemprop="datePublished">2016-01-26</time>
+      <a href="/2016/01/26/GISPython-learn/" class="article-date">
+      <time datetime="2016-01-26T15:16:00.000Z" itemprop="datePublished">2016-01-26</time>
 </a>
     </div>
   
@@ -260,7 +278,7 @@ Quick">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      GIS中Python的使用&lt;1&gt;
     </h1>
   
 
@@ -270,6 +288,10 @@ Quick">
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ArcGIS/">ArcGIS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learning/">Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -277,15 +299,17 @@ Quick">
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h1 id="GIS_Modeling_u4E0EPython_u4ECB_u7ECD"><a href="#GIS_Modeling_u4E0EPython_u4ECB_u7ECD" class="headerlink" title="GIS Modeling与Python介绍"></a>GIS Modeling与Python介绍</h1><p>ArcGIS中提供了两种写Python的方式：</p>
+<ul>
+<li>ModelBuilder</li>
+<li>IDLE</li>
+</ul>
+<p>ModelBuilder的使用很简单，可以先拿来做模型的结构设计。<br>但是一些复杂的处理则需要写Python Script来实现。</p>
+<p>因此：</p>
+<h1 id="Using_Python_window_in_ArcGIS_uFF1A"><a href="#Using_Python_window_in_ArcGIS_uFF1A" class="headerlink" title="Using Python window in ArcGIS："></a>Using Python window in ArcGIS：</h1><p>参考 Python Scripting for ArcGIS by Paul A. Zandbergen</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line">arcpy.Buffer_analysis(<span class="string">"us_cities"</span>, <span class="string">"us_cities_buffered"</span>, <span class="string">"15 miles"</span>, <span class="string">""</span>, <span class="string">""</span>, <span class="string">"ALL"</span>)</span><br></pre></td></tr></table></figure>
+<p>注意：所有需要调用ArcGIS的Tools的脚本，都需要<code>import arcpy</code></p>
+<h2 id="u6BD4_u5982_u6253_u5370feature_u7684_u7A7A_u95F4_u53C2_u8003_uFF1A"><a href="#u6BD4_u5982_u6253_u5370feature_u7684_u7A7A_u95F4_u53C2_u8003_uFF1A" class="headerlink" title="比如打印feature的空间参考："></a>比如打印feature的空间参考：</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Opens a feature class from a geodatabase and prints the spatial reference</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line">  </span><br><span class="line">featureClass = <span class="string">"C:/Data/USA/USA.gdb/StateBoundaries"</span></span><br><span class="line">   </span><br><span class="line"><span class="comment"># Describe the feature class and get its spatial reference   </span></span><br><span class="line">desc = arcpy.Describe(featureClass)</span><br><span class="line">spatialRef = desc.spatialReference</span><br><span class="line">    </span><br><span class="line"><span class="comment"># Print the spatial reference name</span></span><br><span class="line"><span class="keyword">print</span> spatialRef.Name</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -294,13 +318,13 @@ Quick">
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/01/26/hello-world/">Hello World</a></p>
+        <p><span>本文标题:</span><a href="/2016/01/26/GISPython-learn/">GIS中Python的使用&lt;1&gt;</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 常鸣 的个人博客">常鸣</a></p>
-        <p><span>发布时间:</span>2016年01月26日 - 21时05分</p>
-        <p><span>最后更新:</span>2016年01月26日 - 23时07分</p>
+        <p><span>发布时间:</span>2016年01月26日 - 23时16分</p>
+        <p><span>最后更新:</span>2016年02月15日 - 13时00分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/01/26/hello-world/" title="Hello World">http://keenmisty.github.io/2016/01/26/hello-world/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://keenmisty.github.io/2016/01/26/hello-world/　　作者: 常鸣" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/01/26/GISPython-learn/" title="GIS中Python的使用&lt;1&gt;">http://keenmisty.github.io/2016/01/26/GISPython-learn/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://keenmisty.github.io/2016/01/26/GISPython-learn/　　作者: 常鸣" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -314,11 +338,17 @@ Quick">
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/01/26/GISPython-learn/">
-                    GIS中Python的使用&lt;1&gt;
+                <a href="/2016/01/26/blog-building/">
+                    建站说明
                 </a>
             </div>
         
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/01/26/hello-world/">
+                    Hello World
+                </a>
+            </div>
         
     </nav>
 
@@ -327,7 +357,7 @@ Quick">
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick_Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create_a_new_post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run_server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate_static_files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy_to_remote_sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GIS_Modeling_u4E0EPython_u4ECB_u7ECD"><span class="toc-number">1.</span> <span class="toc-text">GIS Modeling与Python介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Using_Python_window_in_ArcGIS_uFF1A"><span class="toc-number">2.</span> <span class="toc-text">Using Python window in ArcGIS：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#u6BD4_u5982_u6253_u5370feature_u7684_u7A7A_u95F4_u53C2_u8003_uFF1A"><span class="toc-number">2.1.</span> <span class="toc-text">比如打印feature的空间参考：</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -391,7 +421,7 @@ Quick">
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/01/26/hello-world/" data-title="Hello World" data-url="http://keenmisty.github.io/2016/01/26/hello-world/"></div>
+    <div class="ds-thread" data-thread-key="2016/01/26/GISPython-learn/" data-title="GIS中Python的使用&lt;1&gt;" data-url="http://keenmisty.github.io/2016/01/26/GISPython-learn/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -415,7 +445,7 @@ Quick">
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/01/26/GISPython-learn/" title="上一篇: GIS中Python的使用&lt;1&gt;">
+            <a href="/2016/01/26/blog-building/" title="上一篇: 建站说明">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -423,7 +453,9 @@ Quick">
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/01/26/hello-world/" title="下一篇: Hello World">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 

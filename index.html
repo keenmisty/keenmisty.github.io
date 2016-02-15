@@ -152,7 +152,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/learning/" style="font-size: 10px;">learning</a>
+                        <a href="/tags/ArcGIS/" style="font-size: 10px;">ArcGIS</a> <a href="/tags/Fortran/" style="font-size: 10px;">Fortran</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Learning/" style="font-size: 20px;">Learning</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/NoahMP/" style="font-size: 10px;">NoahMP</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
                     </div>
                 </section>
                 
@@ -468,7 +468,8 @@
 </ul>
 </li>
 </ul>
-
+<hr>
+<h1 id="NoahMP__u5404_u5B50_u7A0B_u5E8F_u90E8_u5206_u8BE6_u89E3"><a href="#NoahMP__u5404_u5B50_u7A0B_u5E8F_u90E8_u5206_u8BE6_u89E3" class="headerlink" title="NoahMP 各子程序部分详解"></a>NoahMP 各子程序部分详解</h1><h2 id="ATM"><a href="#ATM" class="headerlink" title="ATM"></a>ATM</h2>
       
     </div>
     
@@ -478,7 +479,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learning/">learning</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fortran/">Fortran</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learning/">Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NoahMP/">NoahMP</a></li></ul>
     </div>
 
       
@@ -553,6 +554,73 @@
     
     <div class="article-info article-info-index">
       
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-GISPython-learn" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/26/GISPython-learn/" class="article-date">
+      <time datetime="2016-01-26T15:16:00.000Z" itemprop="datePublished">2016-01-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/26/GISPython-learn/">GIS中Python的使用&lt;1&gt;</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="GIS_Modeling_u4E0EPython_u4ECB_u7ECD"><a href="#GIS_Modeling_u4E0EPython_u4ECB_u7ECD" class="headerlink" title="GIS Modeling与Python介绍"></a>GIS Modeling与Python介绍</h1><p>ArcGIS中提供了两种写Python的方式：</p>
+<ul>
+<li>ModelBuilder</li>
+<li>IDLE</li>
+</ul>
+<p>ModelBuilder的使用很简单，可以先拿来做模型的结构设计。<br>但是一些复杂的处理则需要写Python Script来实现。</p>
+<p>因此：</p>
+<h1 id="Using_Python_window_in_ArcGIS_uFF1A"><a href="#Using_Python_window_in_ArcGIS_uFF1A" class="headerlink" title="Using Python window in ArcGIS："></a>Using Python window in ArcGIS：</h1><p>参考 Python Scripting for ArcGIS by Paul A. Zandbergen</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line">arcpy.Buffer_analysis(<span class="string">"us_cities"</span>, <span class="string">"us_cities_buffered"</span>, <span class="string">"15 miles"</span>, <span class="string">""</span>, <span class="string">""</span>, <span class="string">"ALL"</span>)</span><br></pre></td></tr></table></figure>
+<p>注意：所有需要调用ArcGIS的Tools的脚本，都需要<code>import arcpy</code></p>
+<h2 id="u6BD4_u5982_u6253_u5370feature_u7684_u7A7A_u95F4_u53C2_u8003_uFF1A"><a href="#u6BD4_u5982_u6253_u5370feature_u7684_u7A7A_u95F4_u53C2_u8003_uFF1A" class="headerlink" title="比如打印feature的空间参考："></a>比如打印feature的空间参考：</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Opens a feature class from a geodatabase and prints the spatial reference</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line">  </span><br><span class="line">featureClass = <span class="string">"C:/Data/USA/USA.gdb/StateBoundaries"</span></span><br><span class="line">   </span><br><span class="line"><span class="comment"># Describe the feature class and get its spatial reference   </span></span><br><span class="line">desc = arcpy.Describe(featureClass)</span><br><span class="line">spatialRef = desc.spatialReference</span><br><span class="line">    </span><br><span class="line"><span class="comment"># Print the spatial reference name</span></span><br><span class="line"><span class="keyword">print</span> spatialRef.Name</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
         <div class="article-pop-out tagcloud">
           <a class="">置顶</a>
         </div>
@@ -561,7 +629,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ArcGIS/">ArcGIS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learning/">Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
     </div>
 
       
