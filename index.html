@@ -152,7 +152,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/ArcGIS/" style="font-size: 10px;">ArcGIS</a> <a href="/tags/CMAQ/" style="font-size: 10px;">CMAQ</a> <a href="/tags/Fortran/" style="font-size: 10px;">Fortran</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Learning/" style="font-size: 20px;">Learning</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/NoahMP/" style="font-size: 10px;">NoahMP</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/WRF/" style="font-size: 10px;">WRF</a>
+                        <a href="/tags/ArcGIS/" style="font-size: 10px;">ArcGIS</a> <a href="/tags/CMAQ/" style="font-size: 10px;">CMAQ</a> <a href="/tags/Fortran/" style="font-size: 10px;">Fortran</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Learning/" style="font-size: 20px;">Learning</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/NoahMP/" style="font-size: 10px;">NoahMP</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/WRF/" style="font-size: 10px;">WRF</a> <a href="/tags/python/" style="font-size: 10px;">python</a>
                     </div>
                 </section>
                 
@@ -243,6 +243,75 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-get-airport-weather" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/18/get-airport-weather/" class="article-date">
+      <time datetime="2016-04-18T06:45:00.000Z" itemprop="datePublished">2016-04-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/18/get-airport-weather/">获取机场实时气象报告方法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>最近坐飞机的时候总是遇到下雨，延误的很凄惨。坐在候机厅里问当班空姐吧，其实她们也不知道。<br>于是乎还是发挥咱半吊子的气象专业特长，找找看有没有什么办法获取机场气象站的实时报告。</p>
+<h1 id="u624B_u673A_u7AEFapp_uFF1A"><a href="#u624B_u673A_u7AEFapp_uFF1A" class="headerlink" title="手机端app："></a>手机端app：</h1><p>手机端的天气app看起来挺多的，但是提供每十五分钟电文的少之又少，航旅纵横或是飞常准虽然有这功能吧，但要么需要业内认证，要么需要花钱搞专业版。找来找去，发现Flight Meteo这个app是可以提供各个机场的METAR和TAF的。<br><img src="/312667456527139479.jpg" alt="FlightMeteo" title="Flight Meteo"></p>
+<h1 id="u7535_u8111_u7AEF_uFF1A"><a href="#u7535_u8111_u7AEF_uFF1A" class="headerlink" title="电脑端："></a>电脑端：</h1><p>用电脑的话那就办法多多了，各种网站一堆一堆的，然而没有那么多流量的时候，我还是更喜欢用脚本或者命令来获取。</p>
+<p>这里安利两个办法，一个是<code>weather-util</code>，一个是<code>python-metar</code>。</p>
+<p><code>python-metar</code>可以从github上下到<a href="https://github.com/timetric/python-metar" target="_blank" rel="external">pyhton-metar</a>，各位如果要结合python做批量获取，就在这个基础上改改改就好啦。</p>
+<p>而如果像我一样只是在候机的时候查所在机场的气象报文，那么<code>weather-util</code>更合适。它的安装很简单，直接<code>sudo apt-get install weather-util</code>就可以安装好，而使用嘛，安装好之后一句命令即可：</p>
+<p><code>weather &lt;code&gt;</code>或者<code>weather --forecast &lt;code&gt;</code></p>
+<p>其中，<code>是机场的ICAO代码，比如说广州就是ZGGG，北京就是ZBAA。</code></p>
+<p>这里<a href="http://www.feeyo.com/airport_code.asp" target="_blank" rel="external">feeyo</a>可以查询全球机场的四字码。</p>
+<p>而查到的结果就像这样：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">admin@ubuntu:~$ weather ZGGG</span><br><span class="line">Searching via station...</span><br><span class="line">[caching result Guangzhou, China]</span><br><span class="line">Current conditions at Guangzhou, China (ZGGG) <span class="number">23</span>-<span class="number">10</span>N <span class="number">113</span>-<span class="number">20</span>E <span class="number">42</span>M</span><br><span class="line">Last updated Apr <span class="number">18</span>, <span class="number">2016</span> - <span class="number">07</span>:<span class="number">00</span> AM EDT / <span class="number">2016.04</span>.<span class="number">18</span> <span class="number">1100</span> UTC</span><br><span class="line">Temperature: <span class="number">77</span> F (<span class="number">25</span> C)</span><br><span class="line">Relative Humidity: <span class="number">65</span>%</span><br><span class="line">Wind: Calm</span><br><span class="line">Sky conditions: mostly cloudy</span><br></pre></td></tr></table></figure>
+<p>如果需要看METAR电文的话，可以<code>weather -v &lt;code&gt;</code>，<br>那么输出的结果会变为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">admin@ubuntu:~$ weather -v ZGGG</span><br><span class="line">Searching via station...</span><br><span class="line">[caching result Guangzhou, China]</span><br><span class="line">Guangzhou, China (ZGGG) <span class="number">23</span>-<span class="number">10</span>N <span class="number">113</span>-<span class="number">20</span>E <span class="number">42</span>M</span><br><span class="line">Apr <span class="number">18</span>, <span class="number">2016</span> - <span class="number">07</span>:<span class="number">00</span> AM EDT / <span class="number">2016.04</span>.<span class="number">18</span> <span class="number">1100</span> UTC</span><br><span class="line">Wind: Calm:<span class="number">0</span></span><br><span class="line">Visibility: greater than <span class="number">7</span> mile(s):<span class="number">0</span></span><br><span class="line">Sky conditions: mostly cloudy</span><br><span class="line">Temperature: <span class="number">77</span> F (<span class="number">25</span> C)</span><br><span class="line">Dew Point: <span class="number">64</span> F (<span class="number">18</span> C)</span><br><span class="line">Relative Humidity: <span class="number">65</span>%</span><br><span class="line">Pressure (altimeter): <span class="number">29.94</span> in. Hg (<span class="number">1014</span> hPa)</span><br><span class="line">ob: ZGGG <span class="number">181100</span>Z <span class="number">00000</span>MPS <span class="number">9999</span> BKN060 <span class="number">25</span>/<span class="number">18</span> Q1014 NOSIG</span><br><span class="line">cycle: <span class="number">11</span></span><br></pre></td></tr></table></figure></p>
+<p>可以看到现在广州白云机场的能见度很好，也没有下雨，那飞机很快就可以起飞咯，再也不去骚扰坐台的空姐了^_^</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learning/">Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
   
     <article id="post-cmaq-learn" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -556,67 +625,10 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2016/01/26/hello-world/" class="article-date">
-      <time datetime="2016-01-26T13:05:00.000Z" itemprop="datePublished">2016-01-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/26/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">
