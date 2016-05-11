@@ -100,7 +100,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"left","display":"always"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -185,14 +185,6 @@
           <a href="/archives" rel="section">
             
             归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-            标签
           </a>
         </li>
       
@@ -295,6 +287,9 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> $(CURRENT_DIRECTORY)</span><br><span class="line">~\xelatex.exe $(NAME_PART).tex <span class="variable">$EXIT</span></span><br><span class="line">~\bibtex.exe $(NAME_PART).tex <span class="variable">$EXIT</span></span><br><span class="line">~\xelatex.exe $(NAME_PART).tex <span class="variable">$EXIT</span></span><br><span class="line">~\xelatex.exe $(NAME_PART).tex <span class="variable">$EXIT</span></span><br><span class="line">~\SumatraPDF.exe $(NAME_PART).pdf</span><br></pre></td></tr></table></figure>
 <p>其中，<code>~</code>是这些exe的路径。</p>
 <p>可以把上述命令用 save… 起一个名字保存起来，下次还可以再重复调用。</p>
+<hr>
+<p>效果棒棒哒：</p>
+<p>$$<br>\color{red}{E=mc^2}<br>$$</p>
 
           
         
@@ -856,10 +851,10 @@
 
           
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
+              
                 <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
-              </a>
+              
             </div>
           
 
