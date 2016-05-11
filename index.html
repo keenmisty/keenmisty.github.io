@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion">
+<html class="theme-next muse use-motion">
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -99,7 +99,7 @@
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Mist',
+    scheme: 'Muse',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -213,6 +213,115 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/12/latex-notepad-config/" itemprop="url">
+                  NotePad++编辑LaTeX文档的高亮及自动编译配置
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-12T00:22:18+08:00" content="2016-05-12">
+              2016-05-12
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/12/latex-notepad-config/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/12/latex-notepad-config/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="NotePad++_u9AD8_u4EAE_u663E_u793ALaTeX_u6CE8_u91CA"><a href="#NotePad++_u9AD8_u4EAE_u663E_u793ALaTeX_u6CE8_u91CA" class="headerlink" title="NotePad++高亮显示LaTeX注释"></a>NotePad++高亮显示LaTeX注释</h1><p>NOTEPAD++是一个相当优秀的文本编辑器，支持多种编程、脚本和标记语言的语法高亮显示和代码折叠。</p>
+<p>它原生支持TeX的语法高亮，只需要在工具栏中依次选中“语言-T-Tex”即可。</p>
+<p>然而有人发现这个高亮对于注释而言只是第一个<code>%</code>符号，后面仍然跟正文一样。</p>
+<p>我看了一下，这个其实解决起来很简单，在“设置-语言格式设置”中对它的色彩样式进行修改就好了。</p>
+<p>选中语言<code>TeX</code>，样式<code>DEFAULT</code>，把它的前景色改变即可。</p>
+<h1 id="u81EA_u52A8_u7F16_u8BD1"><a href="#u81EA_u52A8_u7F16_u8BD1" class="headerlink" title="自动编译"></a>自动编译</h1><p>首先需要安装一个插件<code>NppExec</code>，安装好之后，使用F6快捷键，在弹出来的命令框中输入以下命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> $(CURRENT_DIRECTORY)</span><br><span class="line">~\xelatex.exe $(NAME_PART).tex <span class="variable">$EXIT</span></span><br><span class="line">~\bibtex.exe $(NAME_PART).tex <span class="variable">$EXIT</span></span><br><span class="line">~\xelatex.exe $(NAME_PART).tex <span class="variable">$EXIT</span></span><br><span class="line">~\xelatex.exe $(NAME_PART).tex <span class="variable">$EXIT</span></span><br><span class="line">~\SumatraPDF.exe $(NAME_PART).pdf</span><br></pre></td></tr></table></figure>
+<p>其中，<code>~</code>是这些exe的路径。</p>
+<p>可以把上述命令用 save… 起一个名字保存起来，下次还可以再重复调用。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -665,129 +774,6 @@
 </ul>
 <h2 id="Run"><a href="#Run" class="headerlink" title="Run"></a>Run</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">ATM</span><br><span class="line">PHENOLOGY</span><br><span class="line">ENERGY</span><br><span class="line">      THERMOPROP</span><br><span class="line">              CSNOW</span><br><span class="line">              TDFCND</span><br><span class="line">      RADIATION</span><br><span class="line">              ALBEDO</span><br><span class="line">                        SNOW\_AGE</span><br><span class="line">                        SNOWALB\_BATS  </span><br><span class="line">                        SNOWALB\_CLASS</span><br><span class="line">                        GROUNDALB</span><br><span class="line">                        TWOSTREAM</span><br><span class="line">              SURRAD</span><br><span class="line">      VEGE\_FLUX</span><br><span class="line">              SFCDIF1                  </span><br><span class="line">              SFCDIF2                </span><br><span class="line">              STOMATA                  </span><br><span class="line">              CANRES                  </span><br><span class="line">              ESAT</span><br><span class="line">              RAGRB</span><br><span class="line">      BARE\_FLUX</span><br><span class="line">      TSNOSOI</span><br><span class="line">              HRT</span><br><span class="line">              HSTEP   </span><br><span class="line">                        ROSR12</span><br><span class="line">      PHASECHANGE</span><br><span class="line">WATER</span><br><span class="line">      CANWATER</span><br><span class="line">      SNOWWATER</span><br><span class="line">              SNOWFALL</span><br><span class="line">              COMBINE</span><br><span class="line">              DIVIDE</span><br><span class="line">                        COMBO</span><br><span class="line">              COMPACT</span><br><span class="line">              SNOWH2O</span><br><span class="line">      SOILWATER</span><br><span class="line">              ZWTEQ</span><br><span class="line">              INFIL</span><br><span class="line">              SRT</span><br><span class="line">                        WDFCND1        </span><br><span class="line">                        WDFCND2       </span><br><span class="line">              SSTEP</span><br><span class="line">      GROUNDWATER</span><br><span class="line">CARBON</span><br><span class="line">      CO2FLUX</span><br><span class="line">ERROR</span><br></pre></td></tr></table></figure>
 <hr>
-<h1 id="NoahMP__u5404_u5B50_u7A0B_u5E8F_u90E8_u5206_u8BE6_u89E3"><a href="#NoahMP__u5404_u5B50_u7A0B_u5E8F_u90E8_u5206_u8BE6_u89E3" class="headerlink" title="NoahMP 各子程序部分详解"></a>NoahMP 各子程序部分详解</h1><h2 id="ATM"><a href="#ATM" class="headerlink" title="ATM"></a>ATM</h2>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/26/blog-building/" itemprop="url">
-                  建站说明
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-26T23:16:00+08:00" content="2016-01-26">
-              2016-01-26
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/01/26/blog-building/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/26/blog-building/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>建设这个站点，用来整理以前积攒的知识，用来学习还没有掌握的知识。</p>
-<p>顺便用来记录生活，记录成长。</p>
-</blockquote>
-<hr>
-<p><strong>开博缘由:</strong></p>
-<blockquote>
-<p>在建立改造博客网站的过程中，学习和巩固基本知识；<br>通过写博客的方式，加深理解，显性化自己的隐性知识；<br>共享知识，吸引同好，交流进步。</p>
-</blockquote>
-<p><strong>一些个人相关信息和经验:</strong></p>
-<blockquote>
-<ol>
-<li>非计算机类专业，编程经验基本为零；</li>
-<li>能流畅阅读大部分英文资料；</li>
-<li>经常折腾各种系统、软件和手机 APP；</li>
-<li>善用利用搜索解决各类问题；</li>
-<li>追求“混乱”，并不喜欢变得井井有条。</li>
-</ol>
-</blockquote>
-<p><strong>欢迎交流:</strong></p>
-<blockquote>
-<p>个人邮件及社交网站等信息见边栏底部；<br>有什么留言或问题直接在文末留下评论即可。</p>
-</blockquote>
 
           
         
@@ -861,7 +847,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -871,7 +857,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -998,7 +984,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Muse
   </a>
 </div>
 
