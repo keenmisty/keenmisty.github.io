@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="kml,ncl," />
 
 
 
@@ -84,15 +84,23 @@
 
 
 
-<meta name="description" content="A PhD student at Sun Yet-sen University.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="偿酩以忘之">
-<meta property="og:url" content="http://keenmisty.github.io/archives/2016/02/index.html">
+<meta name="description" content="简介KML(Keyhold Markup Language)是一种XML语法格式的标记语言，可以在多种应用程序中显示，包括 Google Earth、Google Map、ArcGIS(ArcMap/ArcGlobe)等，驴友们制作路书的时候也经常采用这种格式制作。
+它的优势是可以把几何、符号系统、描述、属性、影像和行为等数据封装到单个源中，非常方便数据的共享和在线展示。
+NCL对于KML的支持起">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NCL生成kml文件">
+<meta property="og:url" content="http://keenmisty.github.io/2016/06/12/ncl-kml/index.html">
 <meta property="og:site_name" content="偿酩以忘之">
-<meta property="og:description" content="A PhD student at Sun Yet-sen University.">
+<meta property="og:description" content="简介KML(Keyhold Markup Language)是一种XML语法格式的标记语言，可以在多种应用程序中显示，包括 Google Earth、Google Map、ArcGIS(ArcMap/ArcGlobe)等，驴友们制作路书的时候也经常采用这种格式制作。
+它的优势是可以把几何、符号系统、描述、属性、影像和行为等数据封装到单个源中，非常方便数据的共享和在线展示。
+NCL对于KML的支持起">
+<meta property="og:image" content="https://github.com/keenmisty/NCL/blob/master/images/extensions/point2kml.png">
+<meta property="og:updated_time" content="2016-06-12T08:59:57.263Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="偿酩以忘之">
-<meta name="twitter:description" content="A PhD student at Sun Yet-sen University.">
+<meta name="twitter:title" content="NCL生成kml文件">
+<meta name="twitter:description" content="简介KML(Keyhold Markup Language)是一种XML语法格式的标记语言，可以在多种应用程序中显示，包括 Google Earth、Google Map、ArcGIS(ArcMap/ArcGlobe)等，驴友们制作路书的时候也经常采用这种格式制作。
+它的优势是可以把几何、符号系统、描述、属性、影像和行为等数据封装到单个源中，非常方便数据的共享和在线展示。
+NCL对于KML的支持起">
 
 
 
@@ -110,7 +118,7 @@
   };
 </script>
 
-  <title> 归档 | 偿酩以忘之 </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> NCL生成kml文件 | 偿酩以忘之 </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -131,7 +139,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-right  page-archive  ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -203,103 +211,242 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 9 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/02/15/GISPython-learn/" itemprop="url">
-              
-                <span itemprop="name">GIS中Python的使用<1></span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-02-15T13:02:00+08:00"
-              content="2016-02-15" >
-          02-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/02/02/20160202-sth-md/" itemprop="url">
-              
-                <span itemprop="name">Noah-MP Learning</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-02-02T18:34:15+08:00"
-              content="2016-02-02" >
-          02-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
+  
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                NCL生成kml文件
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-12T16:30:18+08:00" content="2016-06-12">
+              2016-06-12
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/12/ncl-kml/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/12/ncl-kml/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="u7B80_u4ECB"><a href="#u7B80_u4ECB" class="headerlink" title="简介"></a>简介</h2><p>KML(Keyhold Markup Language)是一种XML语法格式的标记语言，可以在多种应用程序中显示，包括 Google Earth、Google Map、ArcGIS(ArcMap/ArcGlobe)等，驴友们制作路书的时候也经常采用这种格式制作。</p>
+<p>它的优势是可以把几何、符号系统、描述、属性、影像和行为等数据封装到单个源中，非常方便数据的共享和在线展示。</p>
+<p>NCL对于KML的支持起自2013年，由Mohammad Abouali开发，他制作了一个名为 <a href="http://www.ncl.ucar.edu/Document/Manuals/GETools/NCL_GETools.html" target="_blank" rel="external">NCL_GETools</a> 的NCL输出库，使得NCL可以将各种气象模型结果输出成KML格式，从而可以方便的在各类GIS软件中与其他地理信息数据一起进行处理，或是通过Google Earth/Map的API进行在线的展示。</p>
+<p>NCL_GETools 需要6.2.0之后版本的NCL。</p>
+<h2 id="u4F7F_u7528"><a href="#u4F7F_u7528" class="headerlink" title="使用"></a>使用</h2><p>首先，需要在你自己的ncl脚本中声明调用这一工具：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">load &#34;$NCARG_ROOT/lib/ncarg/nclscripts/contrib/NCL_GETools.ncl&#34;</span><br></pre></td></tr></table></figure>
+<p>然后即可在你个人的ncl脚本中调用以下函数或者过程，来完成相应的动作：</p>
+<ul>
+<li><p>函数</p>
+<ul>
+<li>get_coordinate_system_string</li>
+<li>GetAltModeNumber</li>
+<li>read_ict</li>
+<li>squeeze</li>
+<li>get_KML_IconHref</li>
+<li>ones</li>
+<li>zeros</li>
+<li>dim_dimsizes</li>
+<li>Gray2RGBA</li>
+<li>Gray2cIndex</li>
+<li>ToHex</li>
+<li>add_KML_ColorMapStyles</li>
+</ul>
+</li>
+<li><p>过程</p>
+<ul>
+<li>add_KML_Description</li>
+<li>add_KML_Address</li>
+<li>add_KML_Range</li>
+<li>add_KML_Name</li>
+<li>add_KML_Coordinates</li>
+<li>add_KML_Width</li>
+<li>add_KML_Open</li>
+<li>add_KML_FlyToView</li>
+<li>add_KML_Extrude</li>
+<li>add_KML_Visibility</li>
+<li>add_KML_Tessellate</li>
+<li>add_KML_Fill</li>
+<li>add_KML_Outline</li>
+<li>add_KML_Altitude</li>
+<li>add_KML_AltMode</li>
+<li>add_KML_Color</li>
+<li>add_KML_North</li>
+<li>add_KML_South</li>
+<li>add_KML_East</li>
+<li>add_KML_West</li>
+<li>add_KML_Rotation</li>
+<li>add_KML_StyleUrl</li>
+<li>add_KML_HideChildrenStyle</li>
+<li>hide_KML_Children</li>
+<li>add_KML_Href</li>
+<li>add_KML_Icon</li>
+<li>add_KML_Heading</li>
+<li>add_KML_TimeSpan</li>
+<li>add_KML_TimeStamp_When</li>
+<li>add_KML_LineStyle</li>
+<li>add_KML_IconStyle</li>
+<li>add_KML_PolyStyle</li>
+<li>add_KML_LineString</li>
+<li>add_KML_LatLonBox</li>
+<li>add_KML_LinearRing</li>
+<li>add_KML_OuterBoundaryIs</li>
+<li>add_KML_InnerBoundaryIs</li>
+<li>add_KML_GOverlay</li>
+<li>add_KML_Polygon</li>
+<li>add_KML_nSidedPolygon</li>
+<li>add_KML_Point</li>
+<li>Open_KML_MultiGeometry</li>
+<li>Close_KML_MultiGeometry</li>
+<li>Open_KML_Link</li>
+<li>Close_KML_Link</li>
+<li>Open_KML_NetworkLink</li>
+<li>Close_KML_NetworkLink</li>
+<li>Open_KML_Folder</li>
+<li>Close_KML_Folder</li>
+<li>Open_KML_Placemark</li>
+<li>Close_KML_Placemark</li>
+<li>Open_KML_Style</li>
+<li>Close_KML_Style</li>
+<li>Open_KML_Document</li>
+<li>Close_KML_Document</li>
+<li>OpenKML</li>
+<li>CloseKML</li>
+<li>RasterTimeSeries2KML</li>
+<li>SHP2KML</li>
+<li>Point2KML</li>
+<li>Velocity2KML</li>
+<li>Points2KML</li>
+<li>Collect_KMLs</li>
+<li>Path2KML</li>
+<li>Measurements2KML</li>
+<li>UnstructGrid2KML</li>
+<li>UnstructData2KML</li>
+<li>UnstructVelocity2KML</li>
+</ul>
+</li>
+</ul>
+<h2 id="u4F8B_u5B50"><a href="#u4F8B_u5B50" class="headerlink" title="例子"></a>例子</h2><ul>
+<li>Point2KML的使用</li>
+</ul>
+<p>新增一个文件名为 <code>1.ncl</code> 的脚本，内容如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">load &#34;$NCARG_ROOT/lib/ncarg/nclscripts/contrib/NCL_GETools.ncl&#34;&#10;begin      &#10;; &#35774;&#32622;&#22270;&#23618;&#23646;&#24615;&#10;    Opt=True&#10;    Opt@Name=&#34;Dihuan Building&#34;&#10;    Opt@Lat=23.103685&#10;    Opt@Lon=113.294506&#10;    Opt@Description=&#34;School of Atmospheric Science, Sun yat-sen University&#34;&#10;    Opt@Verbose=True&#10;; &#35774;&#32622;&#36755;&#20986;&#10;    kml_FileName=&#34;sysu_sas_building&#34;&#10;    Point2KML(kml_FileName, Opt)&#10;end</span><br></pre></td></tr></table></figure>
+<p>执行这个ncl，即可得到一个名为 <code>sysu_sas_building.kml</code> 的文件，把它放入GoogleEarth中，即可看到如下的样子(当然，首先要能加载出来GE中的地球，否则需要首先翻下墙)：</p>
+<p><img src="https://github.com/keenmisty/NCL/blob/master/images/extensions/point2kml.png" alt="point2kml"></p>
+<h2 id="u5176_u4ED6_u503C_u5F97_u6CE8_u610F_u7684_u4E8B_u60C5"><a href="#u5176_u4ED6_u503C_u5F97_u6CE8_u610F_u7684_u4E8B_u60C5" class="headerlink" title="其他值得注意的事情"></a>其他值得注意的事情</h2><ul>
+<li>Ryan Pavlick制作了一个更深入的ncl制作kml的库，<a href="https://github.com/rpavlick/kmlncl" target="_blank" rel="external">link</a></li>
+<li>更推荐使用ArcGIS等地理信息系统工具处理kml文件</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/kml/" rel="tag">#kml</a>
+          
+            <a href="/tags/ncl/" rel="tag">#ncl</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/01/lidar-data/" rel="next" title="收集的一些LiDAR数据库">
+                <i class="fa fa-chevron-left"></i> 收集的一些LiDAR数据库
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -307,6 +454,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/12/ncl-kml/"
+           data-title="NCL生成kml文件" data-url="http://keenmisty.github.io/2016/06/12/ncl-kml/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -326,8 +481,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/img/avatar.jpg"
@@ -447,6 +611,17 @@
       </section>
 
       
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u7B80_u4ECB"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4F7F_u7528"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4F8B_u5B50"><span class="nav-number">3.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5176_u4ED6_u503C_u5F97_u6CE8_u610F_u7684_u4E8B_u60C5"><span class="nav-number">4.</span> <span class="nav-text">其他值得注意的事情</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
 
     </div>
   </aside>
@@ -558,11 +733,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   

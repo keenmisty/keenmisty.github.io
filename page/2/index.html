@@ -227,6 +227,120 @@
             
               
                 
+                <a class="post-title-link" href="/2016/02/15/GISPython-learn/" itemprop="url">
+                  GIS中Python的使用<1>
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-15T13:02:00+08:00" content="2016-02-15">
+              2016-02-15
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/15/GISPython-learn/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/15/GISPython-learn/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="GIS_Modeling_u4E0EPython_u4ECB_u7ECD"><a href="#GIS_Modeling_u4E0EPython_u4ECB_u7ECD" class="headerlink" title="GIS Modeling与Python介绍"></a>GIS Modeling与Python介绍</h1><hr>
+<p><strong>ArcGIS中提供了两种写Python的方式：</strong></p>
+<ul>
+<li>ModelBuilder</li>
+<li>IDLE</li>
+</ul>
+<p>ModelBuilder的使用很简单，可以先拿来做模型的结构设计。<br>但是一些复杂的处理则需要写Python Script来实现。</p>
+<p>因此：</p>
+<p><strong>Using Python window in ArcGIS：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line">arcpy.Buffer_analysis(<span class="string">"us_cities"</span>, <span class="string">"us_cities_buffered"</span>, <span class="string">"15 miles"</span>, <span class="string">""</span>, <span class="string">""</span>, <span class="string">"ALL"</span>)</span><br></pre></td></tr></table></figure>
+<p>注意：所有需要调用ArcGIS的Tools的脚本，都需要<code>import arcpy</code></p>
+<p>比如打印feature的空间参考：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Opens a feature class from a geodatabase and prints the spatial reference</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line">  </span><br><span class="line">featureClass = <span class="string">"C:/Data/USA/USA.gdb/StateBoundaries"</span></span><br><span class="line">   </span><br><span class="line"><span class="comment"># Describe the feature class and get its spatial reference   </span></span><br><span class="line">desc = arcpy.Describe(featureClass)</span><br><span class="line">spatialRef = desc.spatialReference</span><br><span class="line">    </span><br><span class="line"><span class="comment"># Print the spatial reference name</span></span><br><span class="line"><span class="keyword">print</span> spatialRef.Name</span><br></pre></td></tr></table></figure>
+<p>参考: Python Scripting for ArcGIS by Paul A. Zandbergen</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/02/02/20160202-sth-md/" itemprop="url">
                   Noah-MP Learning
                 </a>
@@ -592,7 +706,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -602,7 +716,7 @@
           
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
