@@ -227,6 +227,118 @@
             
               
                 
+                <a class="post-title-link" href="/2016/10/31/doxygen/" itemprop="url">
+                  用Doxygen+Graphviz生成WRF-Chem程序结构图
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-31T14:10:00+08:00" content="2016-10-31">
+              2016-10-31
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/31/doxygen/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/31/doxygen/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="u7F18_u8D77"><a href="#u7F18_u8D77" class="headerlink" title="缘起"></a>缘起</h2><p>做毕业论文的时候要改机制代码，并且要耦合到WRF-Chem模式里面使它生效，所以就需要搞清楚WRF-Chem的结构，以便调用和输出。</p>
+<p>虽然可以通过长时间的看WRF-Chem源代码、debug尝试以及IDE帮忙，但有一份calling tree还是很好的，给师弟师妹们讲起来也方便很多。</p>
+<p>因此，考虑尝试用程序结构自动分析工具Doxygen对它进行分析，用Graphviz生成出来。</p>
+<h2 id="Doxygen_u7B80_u4ECB"><a href="#Doxygen_u7B80_u4ECB" class="headerlink" title="Doxygen简介"></a>Doxygen简介</h2><p>Doxygen是一种程序结构自动分析的工具，也是一个程序文档自动生成的工具，它的<a href="http://www.stack.nl/~dimitri/doxygen/index.html" target="_blank" rel="external">官网</a>，具体的使用方法可以在上面找到。</p>
+<p>由于Doxygen支持<code>Fortran</code>，因此，直接拿来分析WRF-Chem就很简单了，配置好输出的目录及分析的项目，设置好调用Graphviz的路径，就可以直接运行输出了。</p>
+<p>它可以生成<code>html</code>版的网页说明，也可以生成<code>LaTeX</code>文件及pdf文档。</p>
+<h2 id="WRF-Chem_Calling_Tree"><a href="#WRF-Chem_Calling_Tree" class="headerlink" title="WRF-Chem Calling Tree"></a>WRF-Chem Calling Tree</h2><p>物理机制-微物理过程调用：<br><img src="/img/physicscalls1.png" alt="physicscall1" title="microphysics"></p>
+<p>物理机制-辐射过程调用：<br><img src="/img/physicscalls2.png" alt="physicscall2" title="radiation"></p>
+<p>物理机制-积云过程调用：<br><img src="/img/physicscalls3.png" alt="physicscall3" title="cumulus"></p>
+<p>物理机制-陆面及边界层过程调用：<br><img src="/img/physicscalls4.png" alt="physicscall4" title="surface with PBL"></p>
+<p>化学机制-化学过程调用：<br><img src="/img/chemdriver.png" alt="chemcall" title="chemdriver"></p>
+<h2 id="u540E_u8BB0"><a href="#u540E_u8BB0" class="headerlink" title="后记"></a>后记</h2><p>其实真的要改机制时还是要进去一点一点的看code的，这些图也就帮助下新手理解…<br>(说白了其实没啥用，然而做无用之事不是我辈博士生打发生命的最佳方式吗2333)</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/07/latex-notepad-config/" itemprop="url">
                   希望死在自己选择的道路上
                 </a>
@@ -735,125 +847,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/18/get-airport-weather/" itemprop="url">
-                  获取机场实时气象报告方法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-18T14:45:00+08:00" content="2016-04-18">
-              2016-04-18
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/18/get-airport-weather/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/18/get-airport-weather/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>最近坐飞机的时候总是遇到下雨，延误的很凄惨。坐在候机厅里问当班空姐吧，其实她们也不知道。<br>于是乎还是发挥咱半吊子的气象专业特长，找找看有没有什么办法获取机场气象站的实时报告。</p>
-<h1 id="u624B_u673A_u7AEFapp_uFF1A"><a href="#u624B_u673A_u7AEFapp_uFF1A" class="headerlink" title="手机端app："></a>手机端app：</h1><p>手机端的天气app看起来挺多的，但是提供每十五分钟电文的少之又少。<br>航旅纵横或是飞常准虽然有这功能吧，但要么需要业内认证，要么需要花钱搞专业版。<br>找来找去，发现Flight Meteo这个app是可以提供各个机场的METAR和TAF的。<br><img src="/img/312667456527139479.jpg" alt="FlightMeteo" title="Flight Meteo"></p>
-<h1 id="u7535_u8111_u7AEF_uFF1A"><a href="#u7535_u8111_u7AEF_uFF1A" class="headerlink" title="电脑端："></a>电脑端：</h1><p>用电脑的话那就办法多多了，各种网站一堆一堆的。<br>然而没有那么多流量的时候，我还是更喜欢用脚本或者命令来获取。</p>
-<p>这里安利两个办法，一个是<code>weather-util</code>，一个是<code>python-metar</code>。</p>
-<p><code>python-metar</code>可以从<a href="https://github.com/timetric/python-metar" target="_blank" rel="external">pyhton-metar</a>下载到。<br>各位如果要结合python做批量获取，就在这个基础上改改改就好啦。</p>
-<p>而如果像我一样只是在候机的时候查所在机场的气象报文，那么<code>weather-util</code>更合适。<br>它的安装很简单，直接<code>sudo apt-get install weather-util</code>就可以安装好。<br>而使用嘛，安装好之后一句命令即可：</p>
-<p><code>weather &lt;code&gt;</code></p>
-<p>其中，<code>&lt;code&gt;</code>是机场的ICAO代码，比如说广州就是ZGGG，北京就是ZBAA。</p>
-<p>在<a href="http://www.feeyo.com/airport_code.asp" target="_blank" rel="external">这里</a>可以查询全球机场的四字码。</p>
-<p>weather-util查到的结果就像这样：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">admin@ubuntu:~$ weather ZGGG&#10;Searching via station...&#10;[caching result Guangzhou, China]&#10;Current conditions at Guangzhou, China (ZGGG) 23-10N 113-20E 42M&#10;Last updated Apr 18, 2016 - 07:00 AM EDT / 2016.04.18 1100 UTC&#10;Temperature: 77 F (25 C)&#10;Relative Humidity: 65%&#10;Wind: Calm&#10;Sky conditions: mostly cloudy</span><br></pre></td></tr></table></figure>
-<p>如果需要看METAR电文的话，可以<code>weather -v &lt;code&gt;</code>，<br>那么输出的结果会变为：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">admin@ubuntu:~$ weather -v ZGGG&#10;Searching via station...&#10;[caching result Guangzhou, China]&#10;Guangzhou, China (ZGGG) 23-10N 113-20E 42M&#10;Apr 18, 2016 - 07:00 AM EDT / 2016.04.18 1100 UTC&#10;Wind: Calm:0&#10;Visibility: greater than 7 mile(s):0&#10;Sky conditions: mostly cloudy&#10;Temperature: 77 F (25 C)&#10;Dew Point: 64 F (18 C)&#10;Relative Humidity: 65%&#10;Pressure (altimeter): 29.94 in. Hg (1014 hPa)&#10;ob: ZGGG 181100Z 00000MPS 9999 BKN060 25/18 Q1014 NOSIG&#10;cycle: 11</span><br></pre></td></tr></table></figure></p>
-<p>其中，ob这一行就是。</p>
-<p>可以看到现在广州白云机场的能见度很好，也没有下雨。<br>那飞机很快就可以起飞咯，再也不去骚扰坐台的空姐了^_^</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -894,7 +892,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -904,7 +902,7 @@
           
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>

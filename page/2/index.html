@@ -227,6 +227,120 @@
             
               
                 
+                <a class="post-title-link" href="/2016/04/18/get-airport-weather/" itemprop="url">
+                  获取机场实时气象报告方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-18T14:45:00+08:00" content="2016-04-18">
+              2016-04-18
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/18/get-airport-weather/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/18/get-airport-weather/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近坐飞机的时候总是遇到下雨，延误的很凄惨。坐在候机厅里问当班空姐吧，其实她们也不知道。<br>于是乎还是发挥咱半吊子的气象专业特长，找找看有没有什么办法获取机场气象站的实时报告。</p>
+<h1 id="u624B_u673A_u7AEFapp_uFF1A"><a href="#u624B_u673A_u7AEFapp_uFF1A" class="headerlink" title="手机端app："></a>手机端app：</h1><p>手机端的天气app看起来挺多的，但是提供每十五分钟电文的少之又少。<br>航旅纵横或是飞常准虽然有这功能吧，但要么需要业内认证，要么需要花钱搞专业版。<br>找来找去，发现Flight Meteo这个app是可以提供各个机场的METAR和TAF的。<br><img src="/img/312667456527139479.jpg" alt="FlightMeteo" title="Flight Meteo"></p>
+<h1 id="u7535_u8111_u7AEF_uFF1A"><a href="#u7535_u8111_u7AEF_uFF1A" class="headerlink" title="电脑端："></a>电脑端：</h1><p>用电脑的话那就办法多多了，各种网站一堆一堆的。<br>然而没有那么多流量的时候，我还是更喜欢用脚本或者命令来获取。</p>
+<p>这里安利两个办法，一个是<code>weather-util</code>，一个是<code>python-metar</code>。</p>
+<p><code>python-metar</code>可以从<a href="https://github.com/timetric/python-metar" target="_blank" rel="external">pyhton-metar</a>下载到。<br>各位如果要结合python做批量获取，就在这个基础上改改改就好啦。</p>
+<p>而如果像我一样只是在候机的时候查所在机场的气象报文，那么<code>weather-util</code>更合适。<br>它的安装很简单，直接<code>sudo apt-get install weather-util</code>就可以安装好。<br>而使用嘛，安装好之后一句命令即可：</p>
+<p><code>weather &lt;code&gt;</code></p>
+<p>其中，<code>&lt;code&gt;</code>是机场的ICAO代码，比如说广州就是ZGGG，北京就是ZBAA。</p>
+<p>在<a href="http://www.feeyo.com/airport_code.asp" target="_blank" rel="external">这里</a>可以查询全球机场的四字码。</p>
+<p>weather-util查到的结果就像这样：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">admin@ubuntu:~$ weather ZGGG&#10;Searching via station...&#10;[caching result Guangzhou, China]&#10;Current conditions at Guangzhou, China (ZGGG) 23-10N 113-20E 42M&#10;Last updated Apr 18, 2016 - 07:00 AM EDT / 2016.04.18 1100 UTC&#10;Temperature: 77 F (25 C)&#10;Relative Humidity: 65%&#10;Wind: Calm&#10;Sky conditions: mostly cloudy</span><br></pre></td></tr></table></figure>
+<p>如果需要看METAR电文的话，可以<code>weather -v &lt;code&gt;</code>，<br>那么输出的结果会变为：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">admin@ubuntu:~$ weather -v ZGGG&#10;Searching via station...&#10;[caching result Guangzhou, China]&#10;Guangzhou, China (ZGGG) 23-10N 113-20E 42M&#10;Apr 18, 2016 - 07:00 AM EDT / 2016.04.18 1100 UTC&#10;Wind: Calm:0&#10;Visibility: greater than 7 mile(s):0&#10;Sky conditions: mostly cloudy&#10;Temperature: 77 F (25 C)&#10;Dew Point: 64 F (18 C)&#10;Relative Humidity: 65%&#10;Pressure (altimeter): 29.94 in. Hg (1014 hPa)&#10;ob: ZGGG 181100Z 00000MPS 9999 BKN060 25/18 Q1014 NOSIG&#10;cycle: 11</span><br></pre></td></tr></table></figure></p>
+<p>其中，ob这一行就是。</p>
+<p>可以看到现在广州白云机场的能见度很好，也没有下雨。<br>那飞机很快就可以起飞咯，再也不去骚扰坐台的空姐了^_^</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/17/cmaq-learn/" itemprop="url">
                   WRF-CMAQ基本概述
                 </a>
@@ -694,120 +808,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/26/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-26T21:05:00+08:00" content="2016-01-26">
-              2016-01-26
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/01/26/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/26/hello-world/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -848,7 +853,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -858,7 +863,7 @@
           
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
