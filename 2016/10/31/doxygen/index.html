@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>用Doxygen+Graphviz生成WRF-Chem程序结构图 | 南村新造</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="缘起做毕业论文的时候要改机制代码，并且要耦合到WRF-Chem模式里面使它生效，所以就需要搞清楚WRF-Chem的结构，以便调用和输出。 虽然可以通过长时间的看WRF-Chem源代码、debug尝试以及IDE帮忙，但有一份calling tree还是很好的，给师弟师妹们讲起来也方便很多。 因此，考虑尝试用程序结构自动分析工具Doxygen对它进行分析，用Graphviz生成出来。 Doxygen简">
+<meta name="keywords" content="WRF-Chem,Doxygen,Graphviz">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用Doxygen+Graphviz生成WRF-Chem程序结构图">
+<meta property="og:url" content="http://keenmisty.github.io/2016/10/31/doxygen/index.html">
+<meta property="og:site_name" content="南村新造">
+<meta property="og:description" content="缘起做毕业论文的时候要改机制代码，并且要耦合到WRF-Chem模式里面使它生效，所以就需要搞清楚WRF-Chem的结构，以便调用和输出。 虽然可以通过长时间的看WRF-Chem源代码、debug尝试以及IDE帮忙，但有一份calling tree还是很好的，给师弟师妹们讲起来也方便很多。 因此，考虑尝试用程序结构自动分析工具Doxygen对它进行分析，用Graphviz生成出来。 Doxygen简">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://keenmisty.github.io/img/physicscalls1.png">
+<meta property="og:image" content="http://keenmisty.github.io/img/physicscalls2.png">
+<meta property="og:image" content="http://keenmisty.github.io/img/physicscalls3.png">
+<meta property="og:image" content="http://keenmisty.github.io/img/physicscalls4.png">
+<meta property="og:image" content="http://keenmisty.github.io/img/chemdriver.png">
+<meta property="og:updated_time" content="2020-01-03T02:07:51.260Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用Doxygen+Graphviz生成WRF-Chem程序结构图">
+<meta name="twitter:description" content="缘起做毕业论文的时候要改机制代码，并且要耦合到WRF-Chem模式里面使它生效，所以就需要搞清楚WRF-Chem的结构，以便调用和输出。 虽然可以通过长时间的看WRF-Chem源代码、debug尝试以及IDE帮忙，但有一份calling tree还是很好的，给师弟师妹们讲起来也方便很多。 因此，考虑尝试用程序结构自动分析工具Doxygen对它进行分析，用Graphviz生成出来。 Doxygen简">
+<meta name="twitter:image" content="http://keenmisty.github.io/img/physicscalls1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="南村新造" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">南村新造</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">苟利国家生死以，岂因祸福避趋之</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://keenmisty.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-doxygen" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/31/doxygen/" class="article-date">
+  <time datetime="2016-10-31T06:10:00.000Z" itemprop="datePublished">2016-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      用Doxygen+Graphviz生成WRF-Chem程序结构图
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><p>做毕业论文的时候要改机制代码，并且要耦合到WRF-Chem模式里面使它生效，所以就需要搞清楚WRF-Chem的结构，以便调用和输出。</p>
+<p>虽然可以通过长时间的看WRF-Chem源代码、debug尝试以及IDE帮忙，但有一份calling tree还是很好的，给师弟师妹们讲起来也方便很多。</p>
+<p>因此，考虑尝试用程序结构自动分析工具Doxygen对它进行分析，用Graphviz生成出来。</p>
+<h2 id="Doxygen简介"><a href="#Doxygen简介" class="headerlink" title="Doxygen简介"></a>Doxygen简介</h2><p>Doxygen是一种程序结构自动分析的工具，也是一个程序文档自动生成的工具，它的<a href="http://www.stack.nl/~dimitri/doxygen/index.html" target="_blank" rel="noopener">官网</a>，具体的使用方法可以在上面找到。</p>
+<p>由于Doxygen支持<code>Fortran</code>，因此，直接拿来分析WRF-Chem就很简单了，配置好输出的目录及分析的项目，设置好调用Graphviz的路径，就可以直接运行输出了。</p>
+<p>它可以生成<code>html</code>版的网页说明，也可以生成<code>LaTeX</code>文件及pdf文档。</p>
+<h2 id="WRF-Chem-Calling-Tree"><a href="#WRF-Chem-Calling-Tree" class="headerlink" title="WRF-Chem Calling Tree"></a>WRF-Chem Calling Tree</h2><p>物理机制-微物理过程调用：<br><img src="/img/physicscalls1.png" alt="physicscall1" title="microphysics"></p>
+<p>物理机制-辐射过程调用：<br><img src="/img/physicscalls2.png" alt="physicscall2" title="radiation"></p>
+<p>物理机制-积云过程调用：<br><img src="/img/physicscalls3.png" alt="physicscall3" title="cumulus"></p>
+<p>物理机制-陆面及边界层过程调用：<br><img src="/img/physicscalls4.png" alt="physicscall4" title="surface with PBL"></p>
+<p>化学机制-化学过程调用：<br><img src="/img/chemdriver.png" alt="chemcall" title="chemdriver"></p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>其实真的要改机制时还是要进去一点一点的看code的，这些图也就帮助下新手理解…<br>(说白了其实没啥用，然而做无用之事不是我辈博士生打发生命的最佳方式吗2333)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://keenmisty.github.io/2016/10/31/doxygen/" data-id="ck4xkbouy000dcwusx4m2320d" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Doxygen/">Doxygen</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Graphviz/">Graphviz</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WRF-Chem/">WRF-Chem</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/08/07/change0807/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          新的主题，新的开始
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/09/07/latex-notepad-config/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">希望死在自己选择的道路上</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS/">ArcGIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CMAQ/">CMAQ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Doxygen/">Doxygen</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EMEP/">EMEP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fortran/">Fortran</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Graphviz/">Graphviz</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTeX/">LaTeX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Learning/">Learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NoahMP/">NoahMP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WRF/">WRF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WRF-Chem/">WRF-Chem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data/">data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kml/">kml</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/landuse/">landuse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learning/">learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lidar/">lidar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ncl/">ncl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thesisi/">thesisi</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ArcGIS/" style="font-size: 10px;">ArcGIS</a> <a href="/tags/CMAQ/" style="font-size: 10px;">CMAQ</a> <a href="/tags/Doxygen/" style="font-size: 10px;">Doxygen</a> <a href="/tags/EMEP/" style="font-size: 10px;">EMEP</a> <a href="/tags/Fortran/" style="font-size: 10px;">Fortran</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Graphviz/" style="font-size: 10px;">Graphviz</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/LaTeX/" style="font-size: 10px;">LaTeX</a> <a href="/tags/Learning/" style="font-size: 16.67px;">Learning</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/NoahMP/" style="font-size: 10px;">NoahMP</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/WRF/" style="font-size: 13.33px;">WRF</a> <a href="/tags/WRF-Chem/" style="font-size: 10px;">WRF-Chem</a> <a href="/tags/data/" style="font-size: 10px;">data</a> <a href="/tags/kml/" style="font-size: 10px;">kml</a> <a href="/tags/landuse/" style="font-size: 10px;">landuse</a> <a href="/tags/learning/" style="font-size: 20px;">learning</a> <a href="/tags/lidar/" style="font-size: 10px;">lidar</a> <a href="/tags/ncl/" style="font-size: 10px;">ncl</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/thesisi/" style="font-size: 10px;">thesisi</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/24/newterm20190924/">又是一个新学期了</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/06/20180706pythondocx-md/">基于python-docx生成半自动化的word报告</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/02/glcdata0402/">GLC2015土地覆被的邪门问题</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/28/update0328/">郁闷的升级</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/07/change0807/">新的主题，新的开始</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 偿酩<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

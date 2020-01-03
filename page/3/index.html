@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>南村新造</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="没有什么是一顿烧烤不能解决的，如果有那就两顿烧烤解决。">
+<meta name="keywords" content="常鸣">
+<meta property="og:type" content="website">
+<meta property="og:title" content="南村新造">
+<meta property="og:url" content="http://keenmisty.github.io/page/3/index.html">
+<meta property="og:site_name" content="南村新造">
+<meta property="og:description" content="没有什么是一顿烧烤不能解决的，如果有那就两顿烧烤解决。">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="南村新造">
+<meta name="twitter:description" content="没有什么是一顿烧烤不能解决的，如果有那就两顿烧烤解决。">
+  
+    <link rel="alternate" href="/atom.xml" title="南村新造" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">南村新造</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">苟利国家生死以，岂因祸福避趋之</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://keenmisty.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-get-airport-weather" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/18/get-airport-weather/" class="article-date">
+  <time datetime="2016-04-18T06:45:00.000Z" itemprop="datePublished">2016-04-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/18/get-airport-weather/">获取机场实时气象报告方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近坐飞机的时候总是遇到下雨，延误的很凄惨。坐在候机厅里问当班空姐吧，其实她们也不知道。<br>于是乎还是发挥咱半吊子的气象专业特长，找找看有没有什么办法获取机场气象站的实时报告。</p>
+<h1 id="手机端app："><a href="#手机端app：" class="headerlink" title="手机端app："></a>手机端app：</h1><p>手机端的天气app看起来挺多的，但是提供每十五分钟电文的少之又少。<br>航旅纵横或是飞常准虽然有这功能吧，但要么需要业内认证，要么需要花钱搞专业版。<br>找来找去，发现Flight Meteo这个app是可以提供各个机场的METAR和TAF的。<br><img src="/img/312667456527139479.jpg" alt="FlightMeteo" title="Flight Meteo"></p>
+<h1 id="电脑端："><a href="#电脑端：" class="headerlink" title="电脑端："></a>电脑端：</h1><p>用电脑的话那就办法多多了，各种网站一堆一堆的。<br>然而没有那么多流量的时候，我还是更喜欢用脚本或者命令来获取。</p>
+<p>这里安利两个办法，一个是<code>weather-util</code>，一个是<code>python-metar</code>。</p>
+<p><code>python-metar</code>可以从<a href="https://github.com/timetric/python-metar" target="_blank" rel="noopener">pyhton-metar</a>下载到。<br>各位如果要结合python做批量获取，就在这个基础上改改改就好啦。</p>
+<p>而如果像我一样只是在候机的时候查所在机场的气象报文，那么<code>weather-util</code>更合适。<br>它的安装很简单，直接<code>sudo apt-get install weather-util</code>就可以安装好。<br>而使用嘛，安装好之后一句命令即可：</p>
+<p><code>weather &lt;code&gt;</code></p>
+<p>其中，<code>&lt;code&gt;</code>是机场的ICAO代码，比如说广州就是ZGGG，北京就是ZBAA。</p>
+<p>在<a href="http://www.feeyo.com/airport_code.asp" target="_blank" rel="noopener">这里</a>可以查询全球机场的四字码。</p>
+<p>weather-util查到的结果就像这样：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">admin@ubuntu:~$ weather ZGGG</span><br><span class="line">Searching via station...</span><br><span class="line">[caching result Guangzhou, China]</span><br><span class="line">Current conditions at Guangzhou, China (ZGGG) 23-10N 113-20E 42M</span><br><span class="line">Last updated Apr 18, 2016 - 07:00 AM EDT / 2016.04.18 1100 UTC</span><br><span class="line">Temperature: 77 F (25 C)</span><br><span class="line">Relative Humidity: 65%</span><br><span class="line">Wind: Calm</span><br><span class="line">Sky conditions: mostly cloudy</span><br></pre></td></tr></table></figure>
+<p>如果需要看METAR电文的话，可以<code>weather -v &lt;code&gt;</code>，<br>那么输出的结果会变为：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">admin@ubuntu:~$ weather -v ZGGG</span><br><span class="line">Searching via station...</span><br><span class="line">[caching result Guangzhou, China]</span><br><span class="line">Guangzhou, China (ZGGG) 23-10N 113-20E 42M</span><br><span class="line">Apr 18, 2016 - 07:00 AM EDT / 2016.04.18 1100 UTC</span><br><span class="line">Wind: Calm:0</span><br><span class="line">Visibility: greater than 7 mile(s):0</span><br><span class="line">Sky conditions: mostly cloudy</span><br><span class="line">Temperature: 77 F (25 C)</span><br><span class="line">Dew Point: 64 F (18 C)</span><br><span class="line">Relative Humidity: 65%</span><br><span class="line">Pressure (altimeter): 29.94 in. Hg (1014 hPa)</span><br><span class="line">ob: ZGGG 181100Z 00000MPS 9999 BKN060 25/18 Q1014 NOSIG</span><br><span class="line">cycle: 11</span><br></pre></td></tr></table></figure></p>
+<p>其中，ob这一行就是。</p>
+<p>可以看到现在广州白云机场的能见度很好，也没有下雨。<br>那飞机很快就可以起飞咯，再也不去骚扰坐台的空姐了^_^</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://keenmisty.github.io/2016/04/18/get-airport-weather/" data-id="ck4xkboun0007cwusniag710v" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learning/">Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-cmaq-learn" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/17/cmaq-learn/" class="article-date">
+  <time datetime="2016-03-17T15:02:00.000Z" itemprop="datePublished">2016-03-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/17/cmaq-learn/">WRF-CMAQ基本概述</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="WRF-CMAQ空气质量模式系统"><a href="#WRF-CMAQ空气质量模式系统" class="headerlink" title="WRF-CMAQ空气质量模式系统"></a>WRF-CMAQ空气质量模式系统</h1><h2 id="空气污染预报概念"><a href="#空气污染预报概念" class="headerlink" title="空气污染预报概念"></a>空气污染预报概念</h2><p>空气污染预报是基于污染排放源（包含排放源清单及实时监测数据）、气象数据，通过耦合了物理、化学机制的空气质量模型进行预测的过程。</p>
+<h2 id="CMAQ历史"><a href="#CMAQ历史" class="headerlink" title="CMAQ历史"></a>CMAQ历史</h2><p>CMAQ是美国1997年发布的第三代空气质量模型，它是美国环保局开发的用来模拟空气质量运算的开源项目。</p>
+<p>90年代开始，随着计算机性能的增强，特别是高性能计算与通信计划的实施，更复杂的考虑多种大气过程、多尺度的空气质量模式的开发工作在美国展开。模式中需要考虑多种排放源，如工业、电厂、交通、生物排放等过程，研究的污染物和污染问题包括首要污染物、臭氧、颗粒物、能见度、酸沉降等。９０年代末开发的代表目前国际领先水平的综合多尺度空气质量模式Models-3/CMAQ（Community Multi-scale Air Quality），本着“一个大气”（One Atomosphere）的设计理念，融入了许多当前大气化学和大气环境领域的最新研究成果，将区域对流层大气作为整体，周密的考虑所有已知的物理和化学过程，综合考虑了不同物种之间的相互影响与转化， 最大限度的模拟真实的大气环境，可用于局地到区域多种尺度光化学烟雾，区域酸沉降、大气颗粒物质等大气污染问题的理论研究与业务预报。Models-3为Third-Generation量模式三部分组成。其核心是Community Air Quality Modeling System的通称，由中尺度气象模式、污染排放模式和多尺度空气质量模式系统，所以也可以称其为Models-3/CMAQ模式。</p>
+<p>CMAQ的最大特色在一个大气（One-Atmosphere）的观念，打破了传统模式对单一物种的模拟。将复杂的空气污染情况如对流层的臭氧、PM、有毒物质、酸沉降及能见度等问题综合处理，用于多尺度、多污染物的空气质量预报、评估和决策政策等多种途径。美国环保局研制的未来第四代空气质量模型系统，将尽可能考虑气圈、永圈、和生物圈之闯的互相作用，以便提供一个更加全面的方法对整个 生态系统中的污染物的输送和消亡过程进行预报和评估。 CMAQ是目前国际领先水平的空气质量模型系统。<br>有关质量预报和评估系统</p>
+<h2 id="MM5-WRF-CMAQ耦合模式组成"><a href="#MM5-WRF-CMAQ耦合模式组成" class="headerlink" title="MM5/WRF-CMAQ耦合模式组成"></a>MM5/WRF-CMAQ耦合模式组成</h2><ul>
+<li><strong>气象驱动部分：</strong></li>
+</ul>
+<ul>
+<li><p>MM5：<br>MM5模式是由美国大气研究中心(NCAR)和美国宾州大学(PSU)在MM4模式基础上联合研制并发展起来的，是较先进的中尺度气象数值预报模式之一，已被广泛应用于各种中尺度现象的研究</p>
+</li>
+<li><p>WRF：<br>WRF（Weather Research and Forecasting Model）模式是由美国环境预测中心NCEP,美国国家大气研究中心NCAR等美国科研机构中心着手开发的一种统一的中尺度天气预报模式。模式分为ARW(the Advanced Research WRF)和NMM(the Nonhydrostatic Mesoscale Model)两种，即研究用和业务用两种形式。</p>
+</li>
+<li><p>主要设置内容：<br>模拟区域网格资料（网格大小、网格尺寸等）；<br>模拟时间（Julia Date ）；<br>垂直分层（Sigma Layer 为分层基准）；<br>下垫面资料（土地利用、土壤、地形等）；<br>气温、气压等气象资料；<br>物理参数化方案组合；</p>
+</li>
+</ul>
+<ul>
+<li><strong>源处理部分：</strong></li>
+</ul>
+<ul>
+<li>SMOKE<br>包含固定源、移动源、面源、生物源四大处理模块</li>
+</ul>
+<ul>
+<li><strong>CMAQ化学部分：</strong></li>
+</ul>
+<ul>
+<li>初始值模块(Initial conditions processor, ICON)；</li>
+<li>边界值模块(Boundary conditions processor, BCON)；</li>
+<li>光解速率常数模块(Photolysis rate processor, JPROC)；</li>
+<li>化学反应机制处理(Chemical-transport model processor, CCTM)</li>
+<li>垂直对流效应；</li>
+<li>水平对流效应；</li>
+<li>垂直扩散效应；</li>
+<li>水平扩散效应；</li>
+<li>云程序机制；</li>
+<li>气象化学反应机制；</li>
+<li>液相化学反应机制；</li>
+<li>云混合模型机制；</li>
+<li>气悬胶动力与粒径机制；</li>
+<li>烟流化学效应；</li>
+<li>干沉降机制；</li>
+<li>模式流程分析模块；</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://keenmisty.github.io/2016/03/17/cmaq-learn/" data-id="ck4xkbouk0004cwusxvf112ba" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CMAQ/">CMAQ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learning/">Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WRF/">WRF</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-GISPython-learn" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/15/GISPython-learn/" class="article-date">
+  <time datetime="2016-02-15T05:02:00.000Z" itemprop="datePublished">2016-02-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/15/GISPython-learn/">GIS中Python的使用&lt;1&gt;</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="GIS-Modeling与Python介绍"><a href="#GIS-Modeling与Python介绍" class="headerlink" title="GIS Modeling与Python介绍"></a>GIS Modeling与Python介绍</h1><hr>
+<p><strong>ArcGIS中提供了两种写Python的方式：</strong></p>
+<ul>
+<li>ModelBuilder</li>
+<li>IDLE</li>
+</ul>
+<p>ModelBuilder的使用很简单，可以先拿来做模型的结构设计。<br>但是一些复杂的处理则需要写Python Script来实现。</p>
+<p>因此：</p>
+<p><strong>Using Python window in ArcGIS：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line">arcpy.Buffer_analysis(<span class="string">"us_cities"</span>, <span class="string">"us_cities_buffered"</span>, <span class="string">"15 miles"</span>, <span class="string">""</span>, <span class="string">""</span>, <span class="string">"ALL"</span>)</span><br></pre></td></tr></table></figure>
+<p>注意：所有需要调用ArcGIS的Tools的脚本，都需要<code>import arcpy</code></p>
+<p>比如打印feature的空间参考：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Opens a feature class from a geodatabase and prints the spatial reference</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line">  </span><br><span class="line">featureClass = <span class="string">"C:/Data/USA/USA.gdb/StateBoundaries"</span></span><br><span class="line">   </span><br><span class="line"><span class="comment"># Describe the feature class and get its spatial reference   </span></span><br><span class="line">desc = arcpy.Describe(featureClass)</span><br><span class="line">spatialRef = desc.spatialReference</span><br><span class="line">    </span><br><span class="line"><span class="comment"># Print the spatial reference name</span></span><br><span class="line"><span class="keyword">print</span> spatialRef.Name</span><br></pre></td></tr></table></figure>
+<p>参考: Python Scripting for ArcGIS by Paul A. Zandbergen</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://keenmisty.github.io/2016/02/15/GISPython-learn/" data-id="ck4xkbouj0003cwusmzw6bcxy" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ArcGIS/">ArcGIS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learning/">Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-20160202-sth-md" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/02/20160202-sth-md/" class="article-date">
+  <time datetime="2016-02-02T10:34:15.000Z" itemprop="datePublished">2016-02-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/02/20160202-sth-md/">Noah-MP Learning</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="The-NoahMP-calling-tree"><a href="#The-NoahMP-calling-tree" class="headerlink" title="The NoahMP calling tree"></a>The NoahMP calling tree</h1><hr>
+<h2 id="Init"><a href="#Init" class="headerlink" title="Init"></a>Init</h2><ul>
+<li>noahmp_options</li>
+<li>NOAHMP_SFLX</li>
+<li>REDPRM</li>
+<li>FRH2O</li>
+</ul>
+<h2 id="Run"><a href="#Run" class="headerlink" title="Run"></a>Run</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">ATM</span><br><span class="line">PHENOLOGY</span><br><span class="line">ENERGY</span><br><span class="line">      THERMOPROP</span><br><span class="line">              CSNOW</span><br><span class="line">              TDFCND</span><br><span class="line">      RADIATION</span><br><span class="line">              ALBEDO</span><br><span class="line">                        SNOW\_AGE</span><br><span class="line">                        SNOWALB\_BATS  </span><br><span class="line">                        SNOWALB\_CLASS</span><br><span class="line">                        GROUNDALB</span><br><span class="line">                        TWOSTREAM</span><br><span class="line">              SURRAD</span><br><span class="line">      VEGE\_FLUX</span><br><span class="line">              SFCDIF1                  </span><br><span class="line">              SFCDIF2                </span><br><span class="line">              STOMATA                  </span><br><span class="line">              CANRES                  </span><br><span class="line">              ESAT</span><br><span class="line">              RAGRB</span><br><span class="line">      BARE\_FLUX</span><br><span class="line">      TSNOSOI</span><br><span class="line">              HRT</span><br><span class="line">              HSTEP   </span><br><span class="line">                        ROSR12</span><br><span class="line">      PHASECHANGE</span><br><span class="line">WATER</span><br><span class="line">      CANWATER</span><br><span class="line">      SNOWWATER</span><br><span class="line">              SNOWFALL</span><br><span class="line">              COMBINE</span><br><span class="line">              DIVIDE</span><br><span class="line">                        COMBO</span><br><span class="line">              COMPACT</span><br><span class="line">              SNOWH2O</span><br><span class="line">      SOILWATER</span><br><span class="line">              ZWTEQ</span><br><span class="line">              INFIL</span><br><span class="line">              SRT</span><br><span class="line">                        WDFCND1        </span><br><span class="line">                        WDFCND2       </span><br><span class="line">              SSTEP</span><br><span class="line">      GROUNDWATER</span><br><span class="line">CARBON</span><br><span class="line">      CO2FLUX</span><br><span class="line">ERROR</span><br></pre></td></tr></table></figure>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://keenmisty.github.io/2016/02/02/20160202-sth-md/" data-id="ck4xkboug0001cwuszpcieiy5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fortran/">Fortran</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learning/">Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NoahMP/">NoahMP</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-blog-building" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/26/blog-building/" class="article-date">
+  <time datetime="2016-01-26T15:16:00.000Z" itemprop="datePublished">2016-01-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/26/blog-building/">建站说明</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>建设这个站点，用来整理以前积攒的知识，用来学习还没有掌握的知识。</p>
+<p>顺便用来记录生活，记录成长。</p>
+</blockquote>
+<hr>
+<p><strong>开博缘由:</strong></p>
+<blockquote>
+<p>在建立改造博客网站的过程中，学习和巩固基本知识；<br>通过写博客的方式，加深理解，显性化自己的隐性知识；<br>共享知识，吸引同好，交流进步。</p>
+</blockquote>
+<p><strong>一些个人相关信息和经验:</strong></p>
+<blockquote>
+<ol>
+<li>非计算机类专业，编程经验基本为零；</li>
+<li>能流畅阅读大部分英文资料；</li>
+<li>经常折腾各种系统、软件和手机 APP；</li>
+<li>善用利用搜索解决各类问题；</li>
+<li>追求“混乱”，并不喜欢变得井井有条。</li>
+</ol>
+</blockquote>
+<p><strong>欢迎交流:</strong></p>
+<blockquote>
+<p>个人邮件及社交网站等信息见边栏底部；<br>有什么留言或问题直接在文末留下评论即可。</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://keenmisty.github.io/2016/01/26/blog-building/" data-id="ck4xkbouc0000cwus4xx2q8ad" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">下一页 &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArcGIS/">ArcGIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CMAQ/">CMAQ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Doxygen/">Doxygen</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EMEP/">EMEP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fortran/">Fortran</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Graphviz/">Graphviz</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTeX/">LaTeX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Learning/">Learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NoahMP/">NoahMP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WRF/">WRF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WRF-Chem/">WRF-Chem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data/">data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kml/">kml</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/landuse/">landuse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learning/">learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lidar/">lidar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ncl/">ncl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thesisi/">thesisi</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ArcGIS/" style="font-size: 10px;">ArcGIS</a> <a href="/tags/CMAQ/" style="font-size: 10px;">CMAQ</a> <a href="/tags/Doxygen/" style="font-size: 10px;">Doxygen</a> <a href="/tags/EMEP/" style="font-size: 10px;">EMEP</a> <a href="/tags/Fortran/" style="font-size: 10px;">Fortran</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Graphviz/" style="font-size: 10px;">Graphviz</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/LaTeX/" style="font-size: 10px;">LaTeX</a> <a href="/tags/Learning/" style="font-size: 16.67px;">Learning</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/NoahMP/" style="font-size: 10px;">NoahMP</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/WRF/" style="font-size: 13.33px;">WRF</a> <a href="/tags/WRF-Chem/" style="font-size: 10px;">WRF-Chem</a> <a href="/tags/data/" style="font-size: 10px;">data</a> <a href="/tags/kml/" style="font-size: 10px;">kml</a> <a href="/tags/landuse/" style="font-size: 10px;">landuse</a> <a href="/tags/learning/" style="font-size: 20px;">learning</a> <a href="/tags/lidar/" style="font-size: 10px;">lidar</a> <a href="/tags/ncl/" style="font-size: 10px;">ncl</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/thesisi/" style="font-size: 10px;">thesisi</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/24/newterm20190924/">又是一个新学期了</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/06/20180706pythondocx-md/">基于python-docx生成半自动化的word报告</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/02/glcdata0402/">GLC2015土地覆被的邪门问题</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/28/update0328/">郁闷的升级</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/07/change0807/">新的主题，新的开始</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 偿酩<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
