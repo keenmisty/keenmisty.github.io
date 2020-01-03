@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>又是一个新学期了</title>
+      <link href="/2019/09/24/newterm20190924/"/>
+      <url>/2019/09/24/newterm20190924/</url>
+      
+        <content type="html"><![CDATA[<p>一年多了，完全没时间写点什么。</p><p>整个人已经是随时要垮掉的状态了。</p><p>带学生带的心累，再也没有刚刚工作，刚刚成为导师时那样的冲劲，恨不得把所有自己会的东西都灌给所有的师弟师妹。<br>然而赤裸裸的现实一直在打我脸，我越是花精力去带的学生，学的就越差。<br>基础薄弱却不好学，磨洋工之余像一个黑洞，不作为，不反馈。哎。。。也不知道到底是谁要毕业。催一催，push一下，反倒成恶人了。</p><p>就像老板说的那样，佛系了，爱怎样怎样吧，做自己的工作就是了。</p><p>奇怪的是，放下这种为学生前途负责的心态撒手不管之后，倒是开始有了些自己的时间。</p><hr><p>希望新的一个学期，能够有新的同路人，一起做想做的研究。</p><hr>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> learning </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>基于python-docx生成半自动化的word报告</title>
+      <link href="/2018/07/06/20180706pythondocx-md/"/>
+      <url>/2018/07/06/20180706pythondocx-md/</url>
+      
+        <content type="html"><![CDATA[<p>缘起：<br>一直以来都有个需求是将固定格式的文档自动化生成，我以前曾经拿<code>latex</code>尝试过，效果其实很好，在<code>linux</code>下直接就可以生成pdf文档，非常适宜于放在服务器上。<br>然而，可悲的现实在于，<code>latex</code>过于阳春白雪。要说服更多的人走出自己的舒服区掌握一项新技能，实在是一件比触动灵魂更难的事情。<br>好在<code>word</code>还算是很多人都会的一个软件，而<code>python</code>也受到越来越多的人的青睐，我也希望走出自己的舒服区来尽量多的尝试它、学会它。</p><hr><h2 id="快速入门："><a href="#快速入门：" class="headerlink" title="快速入门："></a>快速入门：</h2><p>讲真，最快的入门方式就是看它的官方文档，即：<code>https://python-docx.readthedocs.io/en/latest/</code><br>不过我想，还是有一些值得记录下来的点作为笔记留作后用：</p><ul><li><p>安装<br>python-docx的安装很简单，pip install即可。如果有anaconda的话，可以conda安装。</p></li><li><p>避免版本问题<br>由于python有2和3的问题，所以调用module时需要针对性的进行一些修改。</p></li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># for python 2.7</span></span><br><span class="line">reload(sys)</span><br><span class="line">sys.setdefaultencoding(<span class="string">'utf-8'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># for python &lt;=3.3</span></span><br><span class="line"><span class="keyword">import</span> imp</span><br><span class="line">imp.reload(sys)</span><br><span class="line">        </span><br><span class="line"><span class="comment"># for python &gt;=3.4</span></span><br><span class="line"><span class="keyword">import</span> importlib</span><br><span class="line">importlib.reload(sys)</span><br></pre></td></tr></table></figure><ul><li>设置字体<br>python-docx使用styles.font来指定字体的设置。方式如下：</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document.styles[<span class="string">'Normal'</span>].font.name = <span class="string">u'仿宋'</span></span><br><span class="line">document.styles[<span class="string">'Normal'</span>]._element.rPr.rFonts.set(qn(<span class="string">'w:eastAsia'</span>), <span class="string">u'仿宋'</span>)</span><br></pre></td></tr></table></figure><ul><li><p>添加分页符</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.add_page_break()</span><br></pre></td></tr></table></figure></li><li><p>表格</p></li><li><p>与其他数据的衔接</p></li><li><p>后期调整</p></li></ul><p>待续。。。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>GLC2015土地覆被的邪门问题</title>
+      <link href="/2018/04/02/glcdata0402/"/>
+      <url>/2018/04/02/glcdata0402/</url>
+      
+        <content type="html"><![CDATA[<p>之前更新了GLC2015的土地覆被资料到EMEP模型的输入，但是测试来测试去居然跟default的土地覆被资料模拟所得到的结果完全一致。<br>奇哉怪哉，难道说EMEP模型模拟时landuse不起作用吗？</p><h2 id="这个疑问看来要花点精力去解决了。"><a href="#这个疑问看来要花点精力去解决了。" class="headerlink" title="这个疑问看来要花点精力去解决了。"></a>这个疑问看来要花点精力去解决了。</h2><p>今日又遇到了另一个邪门问题，GLC2015的资料按USGS的24类体系重新分类之后，居然在东北华北出现了大面积的水体。</p><h2 id="检查来检查去发现，GLC2015把自身的第11类设为了Herbaceous-Cover，这尼玛什么鬼。。。"><a href="#检查来检查去发现，GLC2015把自身的第11类设为了Herbaceous-Cover，这尼玛什么鬼。。。" class="headerlink" title="检查来检查去发现，GLC2015把自身的第11类设为了Herbaceous Cover，这尼玛什么鬼。。。"></a>检查来检查去发现，GLC2015把自身的第11类设为了Herbaceous Cover，这尼玛什么鬼。。。</h2><p>待续。。。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> WRF </tag>
+            
+            <tag> landuse </tag>
+            
+            <tag> EMEP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>郁闷的升级</title>
+      <link href="/2018/03/28/update0328/"/>
+      <url>/2018/03/28/update0328/</url>
+      
+        <content type="html"><![CDATA[<p>好久没有更新博客了，天天忙各种杂事。</p><p>抽出晚饭的一点时间，本来是想升级一下hexo的版本，结果发现自己的node版本太旧无法支持升级，于是又升级node。搜索了一下以为很容易，没想到windows下又各种坑，不停的失败。<br>还好<code>-force</code>选项解救了我。。。然后顺利的更新了依赖链上的每个环节。</p><p><code>-force</code>，如果也可以不停的<code>-force</code>其他人就好了，可惜总是我才是被<code>-force</code>的那个。。。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> learning </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>新的主题，新的开始</title>
+      <link href="/2017/08/07/change0807/"/>
+      <url>/2017/08/07/change0807/</url>
+      
+        <content type="html"><![CDATA[<p>趁着暑假，忙里偷闲，把主题换成了Meterial，感觉清爽了很多。<br>同时从下个学期，正式获得了教师的身份，抛开过去，新的开始。</p><p>希望过去不再不堪回首，现在不再不堪忍受，未来不再不堪想象…</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> learning </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>用Doxygen+Graphviz生成WRF-Chem程序结构图</title>
+      <link href="/2016/10/31/doxygen/"/>
+      <url>/2016/10/31/doxygen/</url>
+      
+        <content type="html"><![CDATA[<h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><p>做毕业论文的时候要改机制代码，并且要耦合到WRF-Chem模式里面使它生效，所以就需要搞清楚WRF-Chem的结构，以便调用和输出。</p><p>虽然可以通过长时间的看WRF-Chem源代码、debug尝试以及IDE帮忙，但有一份calling tree还是很好的，给师弟师妹们讲起来也方便很多。</p><p>因此，考虑尝试用程序结构自动分析工具Doxygen对它进行分析，用Graphviz生成出来。</p><h2 id="Doxygen简介"><a href="#Doxygen简介" class="headerlink" title="Doxygen简介"></a>Doxygen简介</h2><p>Doxygen是一种程序结构自动分析的工具，也是一个程序文档自动生成的工具，它的<a href="http://www.stack.nl/~dimitri/doxygen/index.html" target="_blank" rel="noopener">官网</a>，具体的使用方法可以在上面找到。</p><p>由于Doxygen支持<code>Fortran</code>，因此，直接拿来分析WRF-Chem就很简单了，配置好输出的目录及分析的项目，设置好调用Graphviz的路径，就可以直接运行输出了。</p><p>它可以生成<code>html</code>版的网页说明，也可以生成<code>LaTeX</code>文件及pdf文档。</p><h2 id="WRF-Chem-Calling-Tree"><a href="#WRF-Chem-Calling-Tree" class="headerlink" title="WRF-Chem Calling Tree"></a>WRF-Chem Calling Tree</h2><p>物理机制-微物理过程调用：<br><img src="/img/physicscalls1.png" alt="physicscall1" title="microphysics"></p><p>物理机制-辐射过程调用：<br><img src="/img/physicscalls2.png" alt="physicscall2" title="radiation"></p><p>物理机制-积云过程调用：<br><img src="/img/physicscalls3.png" alt="physicscall3" title="cumulus"></p><p>物理机制-陆面及边界层过程调用：<br><img src="/img/physicscalls4.png" alt="physicscall4" title="surface with PBL"></p><p>化学机制-化学过程调用：<br><img src="/img/chemdriver.png" alt="chemcall" title="chemdriver"></p><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>其实真的要改机制时还是要进去一点一点的看code的，这些图也就帮助下新手理解…<br>(说白了其实没啥用，然而做无用之事不是我辈博士生打发生命的最佳方式吗2333)</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> WRF-Chem </tag>
+            
+            <tag> Doxygen </tag>
+            
+            <tag> Graphviz </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>希望死在自己选择的道路上</title>
+      <link href="/2016/09/07/latex-notepad-config/"/>
+      <url>/2016/09/07/latex-notepad-config/</url>
+      
+        <content type="html"><![CDATA[<p>读博是很痛苦的…<br>然而却乐在其中…</p><p>如果有一天我们终将死去，我希望我是在写出答案之后死在办公台旁…</p><p><img src="/img/working.JPG" alt="working" title="New working desk of mine"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> learning </tag>
+            
+            <tag> thesisi </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>NCL生成kml文件</title>
+      <link href="/2016/06/12/ncl-kml/"/>
+      <url>/2016/06/12/ncl-kml/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>KML(Keyhold Markup Language)是一种XML语法格式的标记语言，可以在多种应用程序中显示，包括 Google Earth、Google Map、ArcGIS(ArcMap/ArcGlobe)等，驴友们制作路书的时候也经常采用这种格式制作。</p><p>它的优势是可以把几何、符号系统、描述、属性、影像和行为等数据封装到单个源中，非常方便数据的共享和在线展示。</p><p>NCL对于KML的支持起自2013年，由Mohammad Abouali开发，他制作了一个名为 <a href="http://www.ncl.ucar.edu/Document/Manuals/GETools/NCL_GETools.html" target="_blank" rel="noopener">NCL_GETools</a> 的NCL输出库，使得NCL可以将各种气象模型结果输出成KML格式，从而可以方便的在各类GIS软件中与其他地理信息数据一起进行处理，或是通过Google Earth/Map的API进行在线的展示。</p><p>NCL_GETools 需要6.2.0之后版本的NCL。</p><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>首先，需要在你自己的ncl脚本中声明调用这一工具：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">load &quot;$NCARG_ROOT/lib/ncarg/nclscripts/contrib/NCL_GETools.ncl&quot;</span><br></pre></td></tr></table></figure><p>然后即可在你个人的ncl脚本中调用以下函数或者过程，来完成相应的动作：</p><ul><li><p>函数</p><ul><li>get_coordinate_system_string</li><li>GetAltModeNumber</li><li>read_ict</li><li>squeeze</li><li>get_KML_IconHref</li><li>ones</li><li>zeros</li><li>dim_dimsizes</li><li>Gray2RGBA</li><li>Gray2cIndex</li><li>ToHex</li><li>add_KML_ColorMapStyles</li></ul></li><li><p>过程</p><ul><li>add_KML_Description</li><li>add_KML_Address</li><li>add_KML_Range</li><li>add_KML_Name</li><li>add_KML_Coordinates</li><li>add_KML_Width</li><li>add_KML_Open</li><li>add_KML_FlyToView</li><li>add_KML_Extrude</li><li>add_KML_Visibility</li><li>add_KML_Tessellate</li><li>add_KML_Fill</li><li>add_KML_Outline</li><li>add_KML_Altitude</li><li>add_KML_AltMode</li><li>add_KML_Color</li><li>add_KML_North</li><li>add_KML_South</li><li>add_KML_East</li><li>add_KML_West</li><li>add_KML_Rotation</li><li>add_KML_StyleUrl</li><li>add_KML_HideChildrenStyle</li><li>hide_KML_Children</li><li>add_KML_Href</li><li>add_KML_Icon</li><li>add_KML_Heading</li><li>add_KML_TimeSpan</li><li>add_KML_TimeStamp_When</li><li>add_KML_LineStyle</li><li>add_KML_IconStyle</li><li>add_KML_PolyStyle</li><li>add_KML_LineString</li><li>add_KML_LatLonBox</li><li>add_KML_LinearRing</li><li>add_KML_OuterBoundaryIs</li><li>add_KML_InnerBoundaryIs</li><li>add_KML_GOverlay</li><li>add_KML_Polygon</li><li>add_KML_nSidedPolygon</li><li>add_KML_Point</li><li>Open_KML_MultiGeometry</li><li>Close_KML_MultiGeometry</li><li>Open_KML_Link</li><li>Close_KML_Link</li><li>Open_KML_NetworkLink</li><li>Close_KML_NetworkLink</li><li>Open_KML_Folder</li><li>Close_KML_Folder</li><li>Open_KML_Placemark</li><li>Close_KML_Placemark</li><li>Open_KML_Style</li><li>Close_KML_Style</li><li>Open_KML_Document</li><li>Close_KML_Document</li><li>OpenKML</li><li>CloseKML</li><li>RasterTimeSeries2KML</li><li>SHP2KML</li><li>Point2KML</li><li>Velocity2KML</li><li>Points2KML</li><li>Collect_KMLs</li><li>Path2KML</li><li>Measurements2KML</li><li>UnstructGrid2KML</li><li>UnstructData2KML</li><li>UnstructVelocity2KML</li></ul></li></ul><h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><ul><li>Point2KML的使用</li></ul><p>新增一个文件名为 <code>1.ncl</code> 的脚本，内容如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">load &quot;$NCARG_ROOT/lib/ncarg/nclscripts/contrib/NCL_GETools.ncl&quot;</span><br><span class="line">begin      </span><br><span class="line">; 设置图层属性</span><br><span class="line">    Opt=True</span><br><span class="line">    Opt@Name=&quot;Dihuan Building&quot;</span><br><span class="line">    Opt@Lat=23.103685</span><br><span class="line">    Opt@Lon=113.294506</span><br><span class="line">    Opt@Description=&quot;School of Atmospheric Science, Sun yat-sen University&quot;</span><br><span class="line">    Opt@Verbose=True</span><br><span class="line">; 设置输出</span><br><span class="line">    kml_FileName=&quot;sysu_sas_building&quot;</span><br><span class="line">    Point2KML(kml_FileName, Opt)</span><br><span class="line">end</span><br></pre></td></tr></table></figure><p>执行这个ncl，即可得到一个名为 <code>sysu_sas_building.kml</code> 的文件，把它放入GoogleEarth中，即可看到如下的样子(当然，首先要能加载出来GE中的地球，否则需要首先翻下墙)：</p><p><img src="https://github.com/keenmisty/NCL/blob/master/images/extensions/point2kml.png" alt="point2kml"></p><h2 id="其他值得注意的事情"><a href="#其他值得注意的事情" class="headerlink" title="其他值得注意的事情"></a>其他值得注意的事情</h2><ul><li>Ryan Pavlick制作了一个更深入的ncl制作kml的库，<a href="https://github.com/rpavlick/kmlncl" target="_blank" rel="noopener">link</a></li><li>更推荐使用ArcGIS等地理信息系统工具处理kml文件</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> ncl </tag>
+            
+            <tag> kml </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>收集的一些LiDAR数据库</title>
+      <link href="/2016/06/01/lidar-data/"/>
+      <url>/2016/06/01/lidar-data/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一些LiDAR数据："><a href="#一些LiDAR数据：" class="headerlink" title="一些LiDAR数据："></a>一些LiDAR数据：</h1><ol><li><p>大气重要参数高分辨率垂直分布探查数据库<br><a href="http://atmosdb.aiofm.ac.cn/" target="_blank" rel="noopener">http://atmosdb.aiofm.ac.cn/</a></p></li><li><p>Lidar Group of ABC<br><a href="http://lidar.abct.lmd.polytechnique.fr" target="_blank" rel="noopener">http://lidar.abct.lmd.polytechnique.fr</a></p></li></ol><hr><h2 id="六一儿童节快乐…"><a href="#六一儿童节快乐…" class="headerlink" title="六一儿童节快乐…"></a>六一儿童节快乐…</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> lidar </tag>
+            
+            <tag> data </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>NotePad++编辑LaTeX文档的高亮及自动编译配置</title>
+      <link href="/2016/05/12/latex-notepad-config/"/>
+      <url>/2016/05/12/latex-notepad-config/</url>
+      
+        <content type="html"><![CDATA[<h1 id="NotePad-高亮显示LaTeX注释"><a href="#NotePad-高亮显示LaTeX注释" class="headerlink" title="NotePad++高亮显示LaTeX注释"></a>NotePad++高亮显示LaTeX注释</h1><p>NOTEPAD++是一个相当优秀的文本编辑器，支持多种编程、脚本和标记语言的语法高亮显示和代码折叠。</p><p>它原生支持TeX的语法高亮，只需要在工具栏中依次选中“语言-T-Tex”即可。</p><p>然而有人发现这个高亮对于注释而言只是第一个<code>%</code>符号，后面仍然跟正文一样。</p><p>我看了一下，这个其实解决起来很简单，在“设置-语言格式设置”中对它的色彩样式进行修改就好了。</p><p>选中语言<code>TeX</code>，样式<code>DEFAULT</code>，把它的前景色改变即可。</p><h1 id="自动编译"><a href="#自动编译" class="headerlink" title="自动编译"></a>自动编译</h1><p>首先需要安装一个插件<code>NppExec</code>，安装好之后，使用F6快捷键，在弹出来的命令框中输入以下命令：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> $(CURRENT_DIRECTORY)</span><br><span class="line">~\xelatex.exe $(NAME_PART).tex <span class="variable">$EXIT</span></span><br><span class="line">~\bibtex.exe $(NAME_PART).tex <span class="variable">$EXIT</span></span><br><span class="line">~\xelatex.exe $(NAME_PART).tex <span class="variable">$EXIT</span></span><br><span class="line">~\xelatex.exe $(NAME_PART).tex <span class="variable">$EXIT</span></span><br><span class="line">~\SumatraPDF.exe $(NAME_PART).pdf</span><br></pre></td></tr></table></figure><p>其中，<code>~</code>是这些exe的路径。</p><p>可以把上述命令用 save… 起一个名字保存起来，下次还可以再重复调用。</p><hr><p>效果棒棒哒：$\color{red}{E=mc^2}$</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> LaTeX </tag>
+            
+            <tag> learning </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>获取机场实时气象报告方法</title>
+      <link href="/2016/04/18/get-airport-weather/"/>
+      <url>/2016/04/18/get-airport-weather/</url>
+      
+        <content type="html"><![CDATA[<p>最近坐飞机的时候总是遇到下雨，延误的很凄惨。坐在候机厅里问当班空姐吧，其实她们也不知道。<br>于是乎还是发挥咱半吊子的气象专业特长，找找看有没有什么办法获取机场气象站的实时报告。</p><h1 id="手机端app："><a href="#手机端app：" class="headerlink" title="手机端app："></a>手机端app：</h1><p>手机端的天气app看起来挺多的，但是提供每十五分钟电文的少之又少。<br>航旅纵横或是飞常准虽然有这功能吧，但要么需要业内认证，要么需要花钱搞专业版。<br>找来找去，发现Flight Meteo这个app是可以提供各个机场的METAR和TAF的。<br><img src="/img/312667456527139479.jpg" alt="FlightMeteo" title="Flight Meteo"></p><h1 id="电脑端："><a href="#电脑端：" class="headerlink" title="电脑端："></a>电脑端：</h1><p>用电脑的话那就办法多多了，各种网站一堆一堆的。<br>然而没有那么多流量的时候，我还是更喜欢用脚本或者命令来获取。</p><p>这里安利两个办法，一个是<code>weather-util</code>，一个是<code>python-metar</code>。</p><p><code>python-metar</code>可以从<a href="https://github.com/timetric/python-metar" target="_blank" rel="noopener">pyhton-metar</a>下载到。<br>各位如果要结合python做批量获取，就在这个基础上改改改就好啦。</p><p>而如果像我一样只是在候机的时候查所在机场的气象报文，那么<code>weather-util</code>更合适。<br>它的安装很简单，直接<code>sudo apt-get install weather-util</code>就可以安装好。<br>而使用嘛，安装好之后一句命令即可：</p><p><code>weather &lt;code&gt;</code></p><p>其中，<code>&lt;code&gt;</code>是机场的ICAO代码，比如说广州就是ZGGG，北京就是ZBAA。</p><p>在<a href="http://www.feeyo.com/airport_code.asp" target="_blank" rel="noopener">这里</a>可以查询全球机场的四字码。</p><p>weather-util查到的结果就像这样：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">admin@ubuntu:~$ weather ZGGG</span><br><span class="line">Searching via station...</span><br><span class="line">[caching result Guangzhou, China]</span><br><span class="line">Current conditions at Guangzhou, China (ZGGG) 23-10N 113-20E 42M</span><br><span class="line">Last updated Apr 18, 2016 - 07:00 AM EDT / 2016.04.18 1100 UTC</span><br><span class="line">Temperature: 77 F (25 C)</span><br><span class="line">Relative Humidity: 65%</span><br><span class="line">Wind: Calm</span><br><span class="line">Sky conditions: mostly cloudy</span><br></pre></td></tr></table></figure><p>如果需要看METAR电文的话，可以<code>weather -v &lt;code&gt;</code>，<br>那么输出的结果会变为：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">admin@ubuntu:~$ weather -v ZGGG</span><br><span class="line">Searching via station...</span><br><span class="line">[caching result Guangzhou, China]</span><br><span class="line">Guangzhou, China (ZGGG) 23-10N 113-20E 42M</span><br><span class="line">Apr 18, 2016 - 07:00 AM EDT / 2016.04.18 1100 UTC</span><br><span class="line">Wind: Calm:0</span><br><span class="line">Visibility: greater than 7 mile(s):0</span><br><span class="line">Sky conditions: mostly cloudy</span><br><span class="line">Temperature: 77 F (25 C)</span><br><span class="line">Dew Point: 64 F (18 C)</span><br><span class="line">Relative Humidity: 65%</span><br><span class="line">Pressure (altimeter): 29.94 in. Hg (1014 hPa)</span><br><span class="line">ob: ZGGG 181100Z 00000MPS 9999 BKN060 25/18 Q1014 NOSIG</span><br><span class="line">cycle: 11</span><br></pre></td></tr></table></figure></p><p>其中，ob这一行就是。</p><p>可以看到现在广州白云机场的能见度很好，也没有下雨。<br>那飞机很快就可以起飞咯，再也不去骚扰坐台的空姐了^_^</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Learning </tag>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>WRF-CMAQ基本概述</title>
+      <link href="/2016/03/17/cmaq-learn/"/>
+      <url>/2016/03/17/cmaq-learn/</url>
+      
+        <content type="html"><![CDATA[<h1 id="WRF-CMAQ空气质量模式系统"><a href="#WRF-CMAQ空气质量模式系统" class="headerlink" title="WRF-CMAQ空气质量模式系统"></a>WRF-CMAQ空气质量模式系统</h1><h2 id="空气污染预报概念"><a href="#空气污染预报概念" class="headerlink" title="空气污染预报概念"></a>空气污染预报概念</h2><p>空气污染预报是基于污染排放源（包含排放源清单及实时监测数据）、气象数据，通过耦合了物理、化学机制的空气质量模型进行预测的过程。</p><h2 id="CMAQ历史"><a href="#CMAQ历史" class="headerlink" title="CMAQ历史"></a>CMAQ历史</h2><p>CMAQ是美国1997年发布的第三代空气质量模型，它是美国环保局开发的用来模拟空气质量运算的开源项目。</p><p>90年代开始，随着计算机性能的增强，特别是高性能计算与通信计划的实施，更复杂的考虑多种大气过程、多尺度的空气质量模式的开发工作在美国展开。模式中需要考虑多种排放源，如工业、电厂、交通、生物排放等过程，研究的污染物和污染问题包括首要污染物、臭氧、颗粒物、能见度、酸沉降等。９０年代末开发的代表目前国际领先水平的综合多尺度空气质量模式Models-3/CMAQ（Community Multi-scale Air Quality），本着“一个大气”（One Atomosphere）的设计理念，融入了许多当前大气化学和大气环境领域的最新研究成果，将区域对流层大气作为整体，周密的考虑所有已知的物理和化学过程，综合考虑了不同物种之间的相互影响与转化， 最大限度的模拟真实的大气环境，可用于局地到区域多种尺度光化学烟雾，区域酸沉降、大气颗粒物质等大气污染问题的理论研究与业务预报。Models-3为Third-Generation量模式三部分组成。其核心是Community Air Quality Modeling System的通称，由中尺度气象模式、污染排放模式和多尺度空气质量模式系统，所以也可以称其为Models-3/CMAQ模式。</p><p>CMAQ的最大特色在一个大气（One-Atmosphere）的观念，打破了传统模式对单一物种的模拟。将复杂的空气污染情况如对流层的臭氧、PM、有毒物质、酸沉降及能见度等问题综合处理，用于多尺度、多污染物的空气质量预报、评估和决策政策等多种途径。美国环保局研制的未来第四代空气质量模型系统，将尽可能考虑气圈、永圈、和生物圈之闯的互相作用，以便提供一个更加全面的方法对整个 生态系统中的污染物的输送和消亡过程进行预报和评估。 CMAQ是目前国际领先水平的空气质量模型系统。<br>有关质量预报和评估系统</p><h2 id="MM5-WRF-CMAQ耦合模式组成"><a href="#MM5-WRF-CMAQ耦合模式组成" class="headerlink" title="MM5/WRF-CMAQ耦合模式组成"></a>MM5/WRF-CMAQ耦合模式组成</h2><ul><li><strong>气象驱动部分：</strong></li></ul><ul><li><p>MM5：<br>MM5模式是由美国大气研究中心(NCAR)和美国宾州大学(PSU)在MM4模式基础上联合研制并发展起来的，是较先进的中尺度气象数值预报模式之一，已被广泛应用于各种中尺度现象的研究</p></li><li><p>WRF：<br>WRF（Weather Research and Forecasting Model）模式是由美国环境预测中心NCEP,美国国家大气研究中心NCAR等美国科研机构中心着手开发的一种统一的中尺度天气预报模式。模式分为ARW(the Advanced Research WRF)和NMM(the Nonhydrostatic Mesoscale Model)两种，即研究用和业务用两种形式。</p></li><li><p>主要设置内容：<br>模拟区域网格资料（网格大小、网格尺寸等）；<br>模拟时间（Julia Date ）；<br>垂直分层（Sigma Layer 为分层基准）；<br>下垫面资料（土地利用、土壤、地形等）；<br>气温、气压等气象资料；<br>物理参数化方案组合；</p></li></ul><ul><li><strong>源处理部分：</strong></li></ul><ul><li>SMOKE<br>包含固定源、移动源、面源、生物源四大处理模块</li></ul><ul><li><strong>CMAQ化学部分：</strong></li></ul><ul><li>初始值模块(Initial conditions processor, ICON)；</li><li>边界值模块(Boundary conditions processor, BCON)；</li><li>光解速率常数模块(Photolysis rate processor, JPROC)；</li><li>化学反应机制处理(Chemical-transport model processor, CCTM)</li><li>垂直对流效应；</li><li>水平对流效应；</li><li>垂直扩散效应；</li><li>水平扩散效应；</li><li>云程序机制；</li><li>气象化学反应机制；</li><li>液相化学反应机制；</li><li>云混合模型机制；</li><li>气悬胶动力与粒径机制；</li><li>烟流化学效应；</li><li>干沉降机制；</li><li>模式流程分析模块；</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Learning </tag>
+            
+            <tag> WRF </tag>
+            
+            <tag> CMAQ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>GIS中Python的使用&lt;1&gt;</title>
+      <link href="/2016/02/15/GISPython-learn/"/>
+      <url>/2016/02/15/GISPython-learn/</url>
+      
+        <content type="html"><![CDATA[<h1 id="GIS-Modeling与Python介绍"><a href="#GIS-Modeling与Python介绍" class="headerlink" title="GIS Modeling与Python介绍"></a>GIS Modeling与Python介绍</h1><hr><p><strong>ArcGIS中提供了两种写Python的方式：</strong></p><ul><li>ModelBuilder</li><li>IDLE</li></ul><p>ModelBuilder的使用很简单，可以先拿来做模型的结构设计。<br>但是一些复杂的处理则需要写Python Script来实现。</p><p>因此：</p><p><strong>Using Python window in ArcGIS：</strong></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line">arcpy.Buffer_analysis(<span class="string">"us_cities"</span>, <span class="string">"us_cities_buffered"</span>, <span class="string">"15 miles"</span>, <span class="string">""</span>, <span class="string">""</span>, <span class="string">"ALL"</span>)</span><br></pre></td></tr></table></figure><p>注意：所有需要调用ArcGIS的Tools的脚本，都需要<code>import arcpy</code></p><p>比如打印feature的空间参考：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Opens a feature class from a geodatabase and prints the spatial reference</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line">  </span><br><span class="line">featureClass = <span class="string">"C:/Data/USA/USA.gdb/StateBoundaries"</span></span><br><span class="line">   </span><br><span class="line"><span class="comment"># Describe the feature class and get its spatial reference   </span></span><br><span class="line">desc = arcpy.Describe(featureClass)</span><br><span class="line">spatialRef = desc.spatialReference</span><br><span class="line">    </span><br><span class="line"><span class="comment"># Print the spatial reference name</span></span><br><span class="line"><span class="keyword">print</span> spatialRef.Name</span><br></pre></td></tr></table></figure><p>参考: Python Scripting for ArcGIS by Paul A. Zandbergen</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Learning </tag>
+            
+            <tag> ArcGIS </tag>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Noah-MP Learning</title>
+      <link href="/2016/02/02/20160202-sth-md/"/>
+      <url>/2016/02/02/20160202-sth-md/</url>
+      
+        <content type="html"><![CDATA[<h1 id="The-NoahMP-calling-tree"><a href="#The-NoahMP-calling-tree" class="headerlink" title="The NoahMP calling tree"></a>The NoahMP calling tree</h1><hr><h2 id="Init"><a href="#Init" class="headerlink" title="Init"></a>Init</h2><ul><li>noahmp_options</li><li>NOAHMP_SFLX</li><li>REDPRM</li><li>FRH2O</li></ul><h2 id="Run"><a href="#Run" class="headerlink" title="Run"></a>Run</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">ATM</span><br><span class="line">PHENOLOGY</span><br><span class="line">ENERGY</span><br><span class="line">      THERMOPROP</span><br><span class="line">              CSNOW</span><br><span class="line">              TDFCND</span><br><span class="line">      RADIATION</span><br><span class="line">              ALBEDO</span><br><span class="line">                        SNOW\_AGE</span><br><span class="line">                        SNOWALB\_BATS  </span><br><span class="line">                        SNOWALB\_CLASS</span><br><span class="line">                        GROUNDALB</span><br><span class="line">                        TWOSTREAM</span><br><span class="line">              SURRAD</span><br><span class="line">      VEGE\_FLUX</span><br><span class="line">              SFCDIF1                  </span><br><span class="line">              SFCDIF2                </span><br><span class="line">              STOMATA                  </span><br><span class="line">              CANRES                  </span><br><span class="line">              ESAT</span><br><span class="line">              RAGRB</span><br><span class="line">      BARE\_FLUX</span><br><span class="line">      TSNOSOI</span><br><span class="line">              HRT</span><br><span class="line">              HSTEP   </span><br><span class="line">                        ROSR12</span><br><span class="line">      PHASECHANGE</span><br><span class="line">WATER</span><br><span class="line">      CANWATER</span><br><span class="line">      SNOWWATER</span><br><span class="line">              SNOWFALL</span><br><span class="line">              COMBINE</span><br><span class="line">              DIVIDE</span><br><span class="line">                        COMBO</span><br><span class="line">              COMPACT</span><br><span class="line">              SNOWH2O</span><br><span class="line">      SOILWATER</span><br><span class="line">              ZWTEQ</span><br><span class="line">              INFIL</span><br><span class="line">              SRT</span><br><span class="line">                        WDFCND1        </span><br><span class="line">                        WDFCND2       </span><br><span class="line">              SSTEP</span><br><span class="line">      GROUNDWATER</span><br><span class="line">CARBON</span><br><span class="line">      CO2FLUX</span><br><span class="line">ERROR</span><br></pre></td></tr></table></figure><hr>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Learning </tag>
+            
+            <tag> Fortran </tag>
+            
+            <tag> NoahMP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>建站说明</title>
+      <link href="/2016/01/26/blog-building/"/>
+      <url>/2016/01/26/blog-building/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>建设这个站点，用来整理以前积攒的知识，用来学习还没有掌握的知识。</p><p>顺便用来记录生活，记录成长。</p></blockquote><hr><p><strong>开博缘由:</strong></p><blockquote><p>在建立改造博客网站的过程中，学习和巩固基本知识；<br>通过写博客的方式，加深理解，显性化自己的隐性知识；<br>共享知识，吸引同好，交流进步。</p></blockquote><p><strong>一些个人相关信息和经验:</strong></p><blockquote><ol><li>非计算机类专业，编程经验基本为零；</li><li>能流畅阅读大部分英文资料；</li><li>经常折腾各种系统、软件和手机 APP；</li><li>善用利用搜索解决各类问题；</li><li>追求“混乱”，并不喜欢变得井井有条。</li></ol></blockquote><p><strong>欢迎交流:</strong></p><blockquote><p>个人邮件及社交网站等信息见边栏底部；<br>有什么留言或问题直接在文末留下评论即可。</p></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> GitHub </tag>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2016/01/26/hello-world/"/>
+      <url>/2016/01/26/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
