@@ -170,7 +170,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-            Startseite
+            Accueil
           </a>
         </li>
       
@@ -178,7 +178,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-            Über
+            A propos
           </a>
         </li>
       
@@ -186,7 +186,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -205,7 +205,7 @@
             <a href="#" class="popup-trigger">
           
             
-            Suche
+            recherche
           </a>
         </li>
       
@@ -259,7 +259,7 @@
               
                 
                 <a class="post-title-link" href="/2020/11/09/20201109sftp/" itemprop="url">
-                  20201109sftp
+                  sftp与lftp传输文件技巧
                 </a>
               
             
@@ -271,8 +271,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2020-11-09T16:04:46+08:00" content="2020-11-09">
+            <span class="post-meta-item-text">Posté le</span>
+            <time itemprop="dateCreated" datetime="2020-11-09T15:27:25+08:00" content="2020-11-09">
               2020-11-09
             </time>
           </span>
@@ -309,7 +309,15 @@
       
         
           
-            
+            <p>题记：<br>最近被网络折腾的毫无脾气，不是这里安全问题就是那里权限问题，想要传输个文件真是难得要死。<br>历经千辛万苦，终于搭成功了定时sftp传输文件的操作，这技巧一定得记下来，以后估计会很常用：</p>
+<hr>
+<p>背景：<br>学校超算由于安全需要不支持ftp传输文件，而合作方的服务器不支持rsync和scp等操作，于是综合考虑，选择使用sftp进行文件的传输。<br>sftp与ftp语法基本一致，好处是使用了sshd守护进程，坏处是传输效率比较低，还好在我的应用中只是传输小文件，所以sftp恰巧适合。<br>同时，由于最终的要求是每天将我们自己定时运行的空气质量预报的结果图片传递给合作方服务器，因此选择在crontab中加了个shell脚本使用lftp驱动sftp进行文件的上传。</p>
+<hr>
+<p>批量文件夹上传脚本如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># write by changming</span></span><br><span class="line"><span class="comment"># 2020-11-09</span></span><br><span class="line"></span><br><span class="line">USER=username <span class="comment"># 远程sftp服务器端用户名</span></span><br><span class="line">PASSWORD=password <span class="comment"># 远程sftp服务器端密码</span></span><br><span class="line">SCRDIR=/localpath/localpath <span class="comment"># 本地服务器拟上传路径</span></span><br><span class="line">DESDIR=/dongguan/output <span class="comment"># 远程sftp服务器拟存储路径</span></span><br><span class="line">IP=XX.XX.XX.XX <span class="comment"># 远程sftp服务器IP</span></span><br><span class="line">PORT=XXXXX <span class="comment"># 远程端口</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$&#123;SCRDIR&#125;</span></span><br><span class="line">FILES=`ls`</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> FILE <span class="keyword">in</span> <span class="variable">$&#123;FILES&#125;</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$&#123;FILE&#125;</span></span><br><span class="line">lftp -u <span class="variable">$&#123;USER&#125;</span>,<span class="variable">$&#123;PASSWORD&#125;</span> sftp://<span class="variable">$&#123;IP&#125;</span>:<span class="variable">$&#123;PORT&#125;</span> &lt;&lt;EOF</span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$&#123;DESDIR&#125;</span></span><br><span class="line">lcd <span class="variable">$&#123;SCRDIR&#125;</span></span><br><span class="line">mirror -R <span class="variable">$&#123;FILE&#125;</span> <span class="variable">$&#123;FILE&#125;</span></span><br><span class="line"><span class="built_in">bye</span></span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"commit to sftp successfully"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">exit</span> 0</span><br></pre></td></tr></table></figure>
+<hr>
+<p>代码详解</p>
+
           
         
       
@@ -371,7 +379,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posté le</span>
             <time itemprop="dateCreated" datetime="2020-06-05T17:59:03+08:00" content="2020-06-05">
               2020-06-05
             </time>
@@ -482,7 +490,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posté le</span>
             <time itemprop="dateCreated" datetime="2020-04-01T15:54:33+08:00" content="2020-04-01">
               2020-04-01
             </time>
@@ -593,7 +601,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posté le</span>
             <time itemprop="dateCreated" datetime="2020-01-03T16:32:46+08:00" content="2020-01-03">
               2020-01-03
             </time>
@@ -720,7 +728,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posté le</span>
             <time itemprop="dateCreated" datetime="2019-09-24T17:32:17+08:00" content="2019-09-24">
               2019-09-24
             </time>
@@ -840,7 +848,7 @@
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">20</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-name">articles</span>
             </a>
           </div>
 
@@ -850,7 +858,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">24</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               </a>
             </div>
           
@@ -970,11 +978,11 @@
 </div>
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  Theme -
+  Thème -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
