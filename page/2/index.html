@@ -170,7 +170,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -178,7 +178,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-            About
+            Über
           </a>
         </li>
       
@@ -186,7 +186,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -205,7 +205,7 @@
             <a href="#" class="popup-trigger">
           
             
-            Search
+            Suche
           </a>
         </li>
       
@@ -258,6 +258,132 @@
             
               
                 
+                <a class="post-title-link" href="/2018/07/06/20180706pythondocx-md/" itemprop="url">
+                  基于python-docx生成半自动化的word报告
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2018-07-06T15:49:47+08:00" content="2018-07-06">
+              2018-07-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/07/06/20180706pythondocx-md/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/07/06/20180706pythondocx-md/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>缘起：<br>一直以来都有个需求是将固定格式的文档自动化生成，我以前曾经拿<code>latex</code>尝试过，效果其实很好，在<code>linux</code>下直接就可以生成pdf文档，非常适宜于放在服务器上。<br>然而，可悲的现实在于，<code>latex</code>过于阳春白雪。要说服更多的人走出自己的舒服区掌握一项新技能，实在是一件比触动灵魂更难的事情。<br>好在<code>word</code>还算是很多人都会的一个软件，而<code>python</code>也受到越来越多的人的青睐，我也希望走出自己的舒服区来尽量多的尝试它、学会它。</p>
+<hr>
+<h2 id="快速入门："><a href="#快速入门：" class="headerlink" title="快速入门："></a>快速入门：</h2><p>讲真，最快的入门方式就是看它的官方文档，即：<code>https://python-docx.readthedocs.io/en/latest/</code><br>不过我想，还是有一些值得记录下来的点作为笔记留作后用：</p>
+<ul>
+<li><p>安装<br>python-docx的安装很简单，pip install即可。如果有anaconda的话，可以conda安装。</p>
+</li>
+<li><p>避免版本问题<br>由于python有2和3的问题，所以调用module时需要针对性的进行一些修改。</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># for python 2.7</span></span><br><span class="line">reload(sys)</span><br><span class="line">sys.setdefaultencoding(<span class="string">'utf-8'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># for python &lt;=3.3</span></span><br><span class="line"><span class="keyword">import</span> imp</span><br><span class="line">imp.reload(sys)</span><br><span class="line">        </span><br><span class="line"><span class="comment"># for python &gt;=3.4</span></span><br><span class="line"><span class="keyword">import</span> importlib</span><br><span class="line">importlib.reload(sys)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>设置字体<br>python-docx使用styles.font来指定字体的设置。方式如下：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document.styles[<span class="string">'Normal'</span>].font.name = <span class="string">u'仿宋'</span></span><br><span class="line">document.styles[<span class="string">'Normal'</span>]._element.rPr.rFonts.set(qn(<span class="string">'w:eastAsia'</span>), <span class="string">u'仿宋'</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>添加分页符</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.add_page_break()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>表格</p>
+</li>
+<li><p>与其他数据的衔接</p>
+</li>
+<li><p>后期调整</p>
+</li>
+</ul>
+<p>待续。。。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2018/04/02/glcdata0402/" itemprop="url">
                   GLC2015土地覆被的邪门问题
                 </a>
@@ -271,7 +397,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2018-04-02T09:12:18+08:00" content="2018-04-02">
               2018-04-02
             </time>
@@ -374,7 +500,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2018-03-28T19:12:18+08:00" content="2018-03-28">
               2018-03-28
             </time>
@@ -477,7 +603,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2017-08-07T17:22:18+08:00" content="2017-08-07">
               2017-08-07
             </time>
@@ -579,7 +705,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-10-31T14:10:00+08:00" content="2016-10-31">
               2016-10-31
             </time>
@@ -657,109 +783,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/07/latex-notepad-config/" itemprop="url">
-                  希望死在自己选择的道路上
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-07T06:22:18+08:00" content="2016-09-07">
-              2016-09-07
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/07/latex-notepad-config/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/07/latex-notepad-config/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>读博是很痛苦的…<br>然而却乐在其中…</p>
-<p>如果有一天我们终将死去，我希望我是在写出答案之后死在办公台旁…</p>
-<p><img src="/img/working.JPG" alt="working" title="New working desk of mine"></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -805,8 +828,8 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
@@ -816,7 +839,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">24</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -936,7 +959,7 @@
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
