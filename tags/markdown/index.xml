@@ -2,17 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Markdown on Even - A super concise theme for Hugo</title>
-    <link>http://localhost:1313/tags/markdown/</link>
+    <link>http://keenmisty.github.io/tags/markdown/</link>
     <description>Recent content in Markdown on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 26 Jan 2016 23:16:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>keenmisty</copyright>
+    <lastBuildDate>Tue, 26 Jan 2016 23:16:00 +0000</lastBuildDate><atom:link href="http://keenmisty.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>建站说明</title>
-      <link>http://localhost:1313/post/20160126-buildup-blog/</link>
+      <link>http://keenmisty.github.io/post/20160126-buildup-blog/</link>
       <pubDate>Tue, 26 Jan 2016 23:16:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/20160126-buildup-blog/</guid>
+      <guid>http://keenmisty.github.io/post/20160126-buildup-blog/</guid>
       <description>建设这个站点，用来整理以前积攒的知识，用来学习还没有掌握的知识。 顺便用来记录生活，记录成长。 开博缘由: 在建立改造博客网站的过程中，学习和巩固</description>
     </item>
     

@@ -2,17 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CMAQ on Even - A super concise theme for Hugo</title>
-    <link>http://localhost:1313/tags/cmaq/</link>
+    <link>http://keenmisty.github.io/tags/cmaq/</link>
     <description>Recent content in CMAQ on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 17 Mar 2016 23:02:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/cmaq/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>keenmisty</copyright>
+    <lastBuildDate>Thu, 17 Mar 2016 23:02:00 +0000</lastBuildDate><atom:link href="http://keenmisty.github.io/tags/cmaq/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WRF-CMAQ基本概述</title>
-      <link>http://localhost:1313/post/20160317-cmaq-intro/</link>
+      <link>http://keenmisty.github.io/post/20160317-cmaq-intro/</link>
       <pubDate>Thu, 17 Mar 2016 23:02:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/20160317-cmaq-intro/</guid>
+      <guid>http://keenmisty.github.io/post/20160317-cmaq-intro/</guid>
       <description>WRF-CMAQ空气质量模式系统 空气污染预报概念 空气污染预报是基于污染排放源（包含排放源清单及实时监测数据）、气象数据，通过耦合了物理、化学</description>
     </item>
     

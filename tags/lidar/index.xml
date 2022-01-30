@@ -2,26 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>lidar on Even - A super concise theme for Hugo</title>
-    <link>http://localhost:1313/tags/lidar/</link>
+    <link>http://keenmisty.github.io/tags/lidar/</link>
     <description>Recent content in lidar on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 03 Jan 2020 16:32:46 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/lidar/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>keenmisty</copyright>
+    <lastBuildDate>Fri, 03 Jan 2020 16:32:46 +0000</lastBuildDate><atom:link href="http://keenmisty.github.io/tags/lidar/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>只争朝夕，不负韶华</title>
-      <link>http://localhost:1313/post/20200103-saysth/</link>
+      <link>http://keenmisty.github.io/post/20200103-saysth/</link>
       <pubDate>Fri, 03 Jan 2020 16:32:46 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/20200103-saysth/</guid>
+      <guid>http://keenmisty.github.io/post/20200103-saysth/</guid>
       <description>2020年的第一个周五，捣鼓了一整个下午，终于恢复了对自己GitHub的pull/push操作能力。由此可见我的coding能力下降了多少，</description>
     </item>
     
     <item>
       <title>收集的一些LiDAR数据库</title>
-      <link>http://localhost:1313/post/20160601/</link>
+      <link>http://keenmisty.github.io/post/20160601/</link>
       <pubDate>Wed, 01 Jun 2016 15:30:18 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/20160601/</guid>
+      <guid>http://keenmisty.github.io/post/20160601/</guid>
       <description>一些LiDAR数据： 大气重要参数高分辨率垂直分布探查数据库 http://atmosdb.aiofm.ac.cn/ Lidar Group of ABC http://lidar.abct.lmd.polytechnique.fr 六一儿童节快乐&amp;hellip;</description>
     </item>
     

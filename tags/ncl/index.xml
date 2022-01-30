@@ -2,17 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ncl on Even - A super concise theme for Hugo</title>
-    <link>http://localhost:1313/tags/ncl/</link>
+    <link>http://keenmisty.github.io/tags/ncl/</link>
     <description>Recent content in ncl on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 12 Jun 2016 16:30:18 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/ncl/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>keenmisty</copyright>
+    <lastBuildDate>Sun, 12 Jun 2016 16:30:18 +0000</lastBuildDate><atom:link href="http://keenmisty.github.io/tags/ncl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NCL生成kml文件</title>
-      <link>http://localhost:1313/post/20160612-ncl/</link>
+      <link>http://keenmisty.github.io/post/20160612-ncl/</link>
       <pubDate>Sun, 12 Jun 2016 16:30:18 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/20160612-ncl/</guid>
+      <guid>http://keenmisty.github.io/post/20160612-ncl/</guid>
       <description>简介 KML(Keyhold Markup Language)是一种XML语法格式的标记语言，可以在多种应用程序中显示，包括 Google Earth、Google Map、ArcGIS(Ar</description>
     </item>
     

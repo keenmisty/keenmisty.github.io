@@ -2,80 +2,81 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Learning on Even - A super concise theme for Hugo</title>
-    <link>http://localhost:1313/tags/learning/</link>
+    <link>http://keenmisty.github.io/tags/learning/</link>
     <description>Recent content in Learning on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 24 Sep 2019 17:32:17 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/learning/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>keenmisty</copyright>
+    <lastBuildDate>Tue, 24 Sep 2019 17:32:17 +0000</lastBuildDate><atom:link href="http://keenmisty.github.io/tags/learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>又是一个新学期了</title>
-      <link>http://localhost:1313/post/newterm20190924/</link>
+      <link>http://keenmisty.github.io/post/newterm20190924/</link>
       <pubDate>Tue, 24 Sep 2019 17:32:17 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/newterm20190924/</guid>
+      <guid>http://keenmisty.github.io/post/newterm20190924/</guid>
       <description>一年多了，完全没时间写点什么。 整个人已经是随时要垮掉的状态了。 带学生带的心累，再也没有刚刚工作，刚刚成为导师时那样的冲劲，恨不得把所有自己会</description>
     </item>
     
     <item>
       <title>郁闷的升级</title>
-      <link>http://localhost:1313/post/20180328-update-npm/</link>
+      <link>http://keenmisty.github.io/post/20180328-update-npm/</link>
       <pubDate>Wed, 28 Mar 2018 19:12:18 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/20180328-update-npm/</guid>
+      <guid>http://keenmisty.github.io/post/20180328-update-npm/</guid>
       <description>好久没有更新博客了，天天忙各种杂事。 抽出晚饭的一点时间，本来是想升级一下hexo的版本，结果发现自己的node版本太旧无法支持升级，于是又升</description>
     </item>
     
     <item>
       <title>新的主题，新的开始</title>
-      <link>http://localhost:1313/post/20170807-change/</link>
+      <link>http://keenmisty.github.io/post/20170807-change/</link>
       <pubDate>Mon, 07 Aug 2017 17:22:18 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/20170807-change/</guid>
+      <guid>http://keenmisty.github.io/post/20170807-change/</guid>
       <description>趁着暑假，忙里偷闲，把主题换成了Meterial，感觉清爽了很多。 同时从下个学期，正式获得了教师的身份，抛开过去，新的开始。 希望过去不再不堪</description>
     </item>
     
     <item>
       <title>希望死在自己选择的道路上</title>
-      <link>http://localhost:1313/post/20160907-thesis/</link>
+      <link>http://keenmisty.github.io/post/20160907-thesis/</link>
       <pubDate>Wed, 07 Sep 2016 06:22:18 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/20160907-thesis/</guid>
+      <guid>http://keenmisty.github.io/post/20160907-thesis/</guid>
       <description>读博是很痛苦的&amp;hellip; 然而却乐在其中&amp;hellip; 如果有一天我们终将死去，我希望我是在写出答案之后死在办公台旁&amp;hellip;</description>
     </item>
     
     <item>
       <title>NotePad&#43;&#43;编辑LaTeX文档的高亮及自动编译配置</title>
-      <link>http://localhost:1313/post/20160512-latex/</link>
+      <link>http://keenmisty.github.io/post/20160512-latex/</link>
       <pubDate>Thu, 12 May 2016 00:22:18 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/20160512-latex/</guid>
+      <guid>http://keenmisty.github.io/post/20160512-latex/</guid>
       <description>NotePad++高亮显示LaTeX注释 NOTEPAD++是一个相当优秀的文本编辑器，支持多种编程、脚本和标记语言的语法高亮显示和代码折叠。</description>
     </item>
     
     <item>
       <title>WRF-CMAQ基本概述</title>
-      <link>http://localhost:1313/post/20160317-cmaq-intro/</link>
+      <link>http://keenmisty.github.io/post/20160317-cmaq-intro/</link>
       <pubDate>Thu, 17 Mar 2016 23:02:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/20160317-cmaq-intro/</guid>
+      <guid>http://keenmisty.github.io/post/20160317-cmaq-intro/</guid>
       <description>WRF-CMAQ空气质量模式系统 空气污染预报概念 空气污染预报是基于污染排放源（包含排放源清单及实时监测数据）、气象数据，通过耦合了物理、化学</description>
     </item>
     
     <item>
       <title>GIS中Python的使用&lt;1&gt;</title>
-      <link>http://localhost:1313/post/20160215-gis-programming-and-automation1/</link>
+      <link>http://keenmisty.github.io/post/20160215-gis-programming-and-automation1/</link>
       <pubDate>Mon, 15 Feb 2016 13:02:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/20160215-gis-programming-and-automation1/</guid>
+      <guid>http://keenmisty.github.io/post/20160215-gis-programming-and-automation1/</guid>
       <description>GIS Modeling与Python介绍 ArcGIS中提供了两种写Python的方式： ModelBuilder IDLE ModelBuilder的使用很简单，可以先拿来做模型</description>
     </item>
     
     <item>
       <title>Noah-MP Learning</title>
-      <link>http://localhost:1313/post/20160202-sth-md/</link>
+      <link>http://keenmisty.github.io/post/20160202-sth-md/</link>
       <pubDate>Tue, 02 Feb 2016 18:34:15 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/20160202-sth-md/</guid>
+      <guid>http://keenmisty.github.io/post/20160202-sth-md/</guid>
       <description>The NoahMP calling tree  Init  noahmp_options NOAHMP_SFLX REDPRM FRH2O  Run 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47  ATM PHENOLOGY ENERGY THERMOPROP CSNOW TDFCND RADIATION ALBEDO SNOW\_AGE SNOWALB\_BATS SNOWALB\_CLASS GROUNDALB TWOSTREAM SURRAD VEGE\_FLUX SFCDIF1 SFCDIF2 STOMATA CANRES ESAT RAGRB BARE\_FLUX TSNOSOI HRT HSTEP ROSR12 PHASECHANGE WATER CANWATER SNOWWATER SNOWFALL COMBINE DIVIDE COMBO COMPACT SNOWH2O SOILWATER ZWTEQ INFIL SRT WDFCND1 WDFCND2 SSTEP GROUNDWATER CARBON CO2FLUX ERROR    </description>
     </item>
     
