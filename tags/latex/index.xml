@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LaTeX on Even - A super concise theme for Hugo</title>
+    <link>http://localhost:1313/tags/latex/</link>
+    <description>Recent content in LaTeX on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 12 May 2016 00:22:18 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NotePad&#43;&#43;编辑LaTeX文档的高亮及自动编译配置</title>
+      <link>http://localhost:1313/post/20160512-latex/</link>
+      <pubDate>Thu, 12 May 2016 00:22:18 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/20160512-latex/</guid>
+      <description>NotePad++高亮显示LaTeX注释 NOTEPAD++是一个相当优秀的文本编辑器，支持多种编程、脚本和标记语言的语法高亮显示和代码折叠。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>thesisi on Even - A super concise theme for Hugo</title>
+    <link>http://localhost:1313/tags/thesisi/</link>
+    <description>Recent content in thesisi on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 07 Sep 2016 06:22:18 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/thesisi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>希望死在自己选择的道路上</title>
+      <link>http://localhost:1313/post/20160907-thesis/</link>
+      <pubDate>Wed, 07 Sep 2016 06:22:18 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/20160907-thesis/</guid>
+      <description>读博是很痛苦的&amp;hellip; 然而却乐在其中&amp;hellip; 如果有一天我们终将死去，我希望我是在写出答案之后死在办公台旁&amp;hellip;</description>
+    </item>
+    
+  </channel>
+</rss>

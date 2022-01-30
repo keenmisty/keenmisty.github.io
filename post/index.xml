@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Even - A super concise theme for Hugo</title>
+    <link>http://localhost:1313/post/</link>
+    <description>Recent content in Posts on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 09 Nov 2020 15:27:25 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>sftp与lftp传输文件技巧</title>
+      <link>http://localhost:1313/post/20201109sftp/</link>
+      <pubDate>Mon, 09 Nov 2020 15:27:25 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/20201109sftp/</guid>
+      <description>题记： 最近被网络折腾的毫无脾气，不是这里安全问题就是那里权限问题，想要传输个文件真是难得要死。 历经千辛万苦，终于搭成功了定时sftp传输文件</description>
+    </item>
+    
+    <item>
+      <title>芒种喜雨</title>
+      <link>http://localhost:1313/post/20200605hjrsb/</link>
+      <pubDate>Fri, 05 Jun 2020 17:59:03 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/20200605hjrsb/</guid>
+      <description>今日芒种，穹宇壮阔，雷雨正浓。 今天也是环境日，美丽中国，很自豪的作为一个行动者投身其中。 今天开心的事情很多，花最多精力带的学生，发表了一篇环</description>
+    </item>
+    
+    <item>
+      <title>愚人才乐</title>
+      <link>http://localhost:1313/post/20200401-happyapr/</link>
+      <pubDate>Wed, 01 Apr 2020 15:54:33 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/20200401-happyapr/</guid>
+      <description>Bazinga! 今天不知道为什么，Google断掉了。正在写着的一个draft写不下去了。 烦躁，写一篇blog静静心。 疫情发生以来，越来越习惯于蹲在办公室</description>
+    </item>
+    
+    <item>
+      <title>只争朝夕，不负韶华</title>
+      <link>http://localhost:1313/post/20200103-saysth/</link>
+      <pubDate>Fri, 03 Jan 2020 16:32:46 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/20200103-saysth/</guid>
+      <description>2020年的第一个周五，捣鼓了一整个下午，终于恢复了对自己GitHub的pull/push操作能力。由此可见我的coding能力下降了多少，</description>
+    </item>
+    
+    <item>
+      <title>又是一个新学期了</title>
+      <link>http://localhost:1313/post/newterm20190924/</link>
+      <pubDate>Tue, 24 Sep 2019 17:32:17 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/newterm20190924/</guid>
+      <description>一年多了，完全没时间写点什么。 整个人已经是随时要垮掉的状态了。 带学生带的心累，再也没有刚刚工作，刚刚成为导师时那样的冲劲，恨不得把所有自己会</description>
+    </item>
+    
+    <item>
+      <title>基于python-docx生成半自动化的word报告</title>
+      <link>http://localhost:1313/post/20180706pythondocx-md/</link>
+      <pubDate>Fri, 06 Jul 2018 15:49:47 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/20180706pythondocx-md/</guid>
+      <description>缘起： 一直以来都有个需求是将固定格式的文档自动化生成，我以前曾经拿latex尝试过，效果其实很好，在linux下直接就可以生成pdf文档，非</description>
+    </item>
+    
+    <item>
+      <title>GLC2015土地覆被的邪门问题</title>
+      <link>http://localhost:1313/post/20180402-glc/</link>
+      <pubDate>Mon, 02 Apr 2018 09:12:18 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/20180402-glc/</guid>
+      <description>之前更新了GLC2015的土地覆被资料到EMEP模型的输入，但是测试来测试去居然跟default的土地覆被资料模拟所得到的结果完全一致。 奇哉</description>
+    </item>
+    
+    <item>
+      <title>郁闷的升级</title>
+      <link>http://localhost:1313/post/20180328-update-npm/</link>
+      <pubDate>Wed, 28 Mar 2018 19:12:18 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/20180328-update-npm/</guid>
+      <description>好久没有更新博客了，天天忙各种杂事。 抽出晚饭的一点时间，本来是想升级一下hexo的版本，结果发现自己的node版本太旧无法支持升级，于是又升</description>
+    </item>
+    
+    <item>
+      <title>新的主题，新的开始</title>
+      <link>http://localhost:1313/post/20170807-change/</link>
+      <pubDate>Mon, 07 Aug 2017 17:22:18 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/20170807-change/</guid>
+      <description>趁着暑假，忙里偷闲，把主题换成了Meterial，感觉清爽了很多。 同时从下个学期，正式获得了教师的身份，抛开过去，新的开始。 希望过去不再不堪</description>
+    </item>
+    
+    <item>
+      <title>希望死在自己选择的道路上</title>
+      <link>http://localhost:1313/post/20160907-thesis/</link>
+      <pubDate>Wed, 07 Sep 2016 06:22:18 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/20160907-thesis/</guid>
+      <description>读博是很痛苦的&amp;hellip; 然而却乐在其中&amp;hellip; 如果有一天我们终将死去，我希望我是在写出答案之后死在办公台旁&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>NCL生成kml文件</title>
+      <link>http://localhost:1313/post/20160612-ncl/</link>
+      <pubDate>Sun, 12 Jun 2016 16:30:18 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/20160612-ncl/</guid>
+      <description>简介 KML(Keyhold Markup Language)是一种XML语法格式的标记语言，可以在多种应用程序中显示，包括 Google Earth、Google Map、ArcGIS(Ar</description>
+    </item>
+    
+    <item>
+      <title>收集的一些LiDAR数据库</title>
+      <link>http://localhost:1313/post/20160601/</link>
+      <pubDate>Wed, 01 Jun 2016 15:30:18 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/20160601/</guid>
+      <description>一些LiDAR数据： 大气重要参数高分辨率垂直分布探查数据库 http://atmosdb.aiofm.ac.cn/ Lidar Group of ABC http://lidar.abct.lmd.polytechnique.fr 六一儿童节快乐&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>NotePad&#43;&#43;编辑LaTeX文档的高亮及自动编译配置</title>
+      <link>http://localhost:1313/post/20160512-latex/</link>
+      <pubDate>Thu, 12 May 2016 00:22:18 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/20160512-latex/</guid>
+      <description>NotePad++高亮显示LaTeX注释 NOTEPAD++是一个相当优秀的文本编辑器，支持多种编程、脚本和标记语言的语法高亮显示和代码折叠。</description>
+    </item>
+    
+    <item>
+      <title>WRF-CMAQ基本概述</title>
+      <link>http://localhost:1313/post/20160317-cmaq-intro/</link>
+      <pubDate>Thu, 17 Mar 2016 23:02:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/20160317-cmaq-intro/</guid>
+      <description>WRF-CMAQ空气质量模式系统 空气污染预报概念 空气污染预报是基于污染排放源（包含排放源清单及实时监测数据）、气象数据，通过耦合了物理、化学</description>
+    </item>
+    
+    <item>
+      <title>GIS中Python的使用&lt;1&gt;</title>
+      <link>http://localhost:1313/post/20160215-gis-programming-and-automation1/</link>
+      <pubDate>Mon, 15 Feb 2016 13:02:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/20160215-gis-programming-and-automation1/</guid>
+      <description>GIS Modeling与Python介绍 ArcGIS中提供了两种写Python的方式： ModelBuilder IDLE ModelBuilder的使用很简单，可以先拿来做模型</description>
+    </item>
+    
+    <item>
+      <title>Noah-MP Learning</title>
+      <link>http://localhost:1313/post/20160202-sth-md/</link>
+      <pubDate>Tue, 02 Feb 2016 18:34:15 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/20160202-sth-md/</guid>
+      <description>The NoahMP calling tree  Init  noahmp_options NOAHMP_SFLX REDPRM FRH2O  Run 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47  ATM PHENOLOGY ENERGY THERMOPROP CSNOW TDFCND RADIATION ALBEDO SNOW\_AGE SNOWALB\_BATS SNOWALB\_CLASS GROUNDALB TWOSTREAM SURRAD VEGE\_FLUX SFCDIF1 SFCDIF2 STOMATA CANRES ESAT RAGRB BARE\_FLUX TSNOSOI HRT HSTEP ROSR12 PHASECHANGE WATER CANWATER SNOWWATER SNOWFALL COMBINE DIVIDE COMBO COMPACT SNOWH2O SOILWATER ZWTEQ INFIL SRT WDFCND1 WDFCND2 SSTEP GROUNDWATER CARBON CO2FLUX ERROR    </description>
+    </item>
+    
+    <item>
+      <title>建站说明</title>
+      <link>http://localhost:1313/post/20160126-buildup-blog/</link>
+      <pubDate>Tue, 26 Jan 2016 23:16:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/20160126-buildup-blog/</guid>
+      <description>建设这个站点，用来整理以前积攒的知识，用来学习还没有掌握的知识。 顺便用来记录生活，记录成长。 开博缘由: 在建立改造博客网站的过程中，学习和巩固</description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>http://localhost:1313/post/hello-world/</link>
+      <pubDate>Tue, 26 Jan 2016 21:05:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/hello-world/</guid>
+      <description>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick Start Create a new post 1  $ hexo new &amp;#34;My New Post&amp;#34;   More info: Writing
+Run server 1  $ hexo server   More info: Server
+Generate static files 1  $ hexo generate   More info: Generating</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/post/20160418-get_airport_weather/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/20160418-get_airport_weather/</guid>
+      <description>title: 获取机场实时气象报告方法 date: 2016-04-18 14:45:00 tags: python Learning permalink: get-airport-weather 最近坐飞机的时候总是遇到下雨，延误的很凄惨。坐在候机厅里问当班空姐吧，其实她们也不知道。 于是乎还是</description>
+    </item>
+    
+    <item>
+      <title>用Doxygen&#43;Graphviz生成WRF-Chem程序结构图</title>
+      <link>http://localhost:1313/post/20161031-doxygen/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/20161031-doxygen/</guid>
+      <description>缘起 做毕业论文的时候要改机制代码，并且要耦合到WRF-Chem模式里面使它生效，所以就需要搞清楚WRF-Chem的结构，以便调用和输出。 虽然</description>
+    </item>
+    
+  </channel>
+</rss>

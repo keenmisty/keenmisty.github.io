@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>NCL生成kml文件 - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="简介 KML(Keyhold Markup Language)是一种XML语法格式的标记语言，可以在多种应用程序中显示，包括 Google Earth、Google Map、ArcGIS(Ar" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.92.0 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/20160612-ncl/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="NCL生成kml文件" />
+<meta property="og:description" content="简介 KML(Keyhold Markup Language)是一种XML语法格式的标记语言，可以在多种应用程序中显示，包括 Google Earth、Google Map、ArcGIS(Ar" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/20160612-ncl/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-06-12T16:30:18+00:00" />
+<meta property="article:modified_time" content="2016-06-12T16:30:18+00:00" />
+
+<meta itemprop="name" content="NCL生成kml文件">
+<meta itemprop="description" content="简介 KML(Keyhold Markup Language)是一种XML语法格式的标记语言，可以在多种应用程序中显示，包括 Google Earth、Google Map、ArcGIS(Ar"><meta itemprop="datePublished" content="2016-06-12T16:30:18+00:00" />
+<meta itemprop="dateModified" content="2016-06-12T16:30:18+00:00" />
+<meta itemprop="wordCount" content="692">
+<meta itemprop="keywords" content="ncl,kml," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="NCL生成kml文件"/>
+<meta name="twitter:description" content="简介 KML(Keyhold Markup Language)是一种XML语法格式的标记语言，可以在多种应用程序中显示，包括 Google Earth、Google Map、ArcGIS(Ar"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Even</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">NCL生成kml文件</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-06-12 </span>
+        
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#简介">简介</a></li>
+        <li><a href="#使用">使用</a></li>
+        <li><a href="#例子">例子</a></li>
+        <li><a href="#其他值得注意的事情">其他值得注意的事情</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="简介">简介</h2>
+<p>KML(Keyhold Markup Language)是一种XML语法格式的标记语言，可以在多种应用程序中显示，包括 Google Earth、Google Map、ArcGIS(ArcMap/ArcGlobe)等，驴友们制作路书的时候也经常采用这种格式制作。</p>
+<p>它的优势是可以把几何、符号系统、描述、属性、影像和行为等数据封装到单个源中，非常方便数据的共享和在线展示。</p>
+<p>NCL对于KML的支持起自2013年，由Mohammad Abouali开发，他制作了一个名为 <a href="http://www.ncl.ucar.edu/Document/Manuals/GETools/NCL_GETools.html">NCL_GETools</a> 的NCL输出库，使得NCL可以将各种气象模型结果输出成KML格式，从而可以方便的在各类GIS软件中与其他地理信息数据一起进行处理，或是通过Google Earth/Map的API进行在线的展示。</p>
+<p>NCL_GETools 需要6.2.0之后版本的NCL。</p>
+<h2 id="使用">使用</h2>
+<p>首先，需要在你自己的ncl脚本中声明调用这一工具：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    load &#34;$NCARG_ROOT/lib/ncarg/nclscripts/contrib/NCL_GETools.ncl&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p>然后即可在你个人的ncl脚本中调用以下函数或者过程，来完成相应的动作：</p>
+<ul>
+<li>
+<p>函数</p>
+<ul>
+<li>get_coordinate_system_string</li>
+<li>GetAltModeNumber</li>
+<li>read_ict</li>
+<li>squeeze</li>
+<li>get_KML_IconHref</li>
+<li>ones</li>
+<li>zeros</li>
+<li>dim_dimsizes</li>
+<li>Gray2RGBA</li>
+<li>Gray2cIndex</li>
+<li>ToHex</li>
+<li>add_KML_ColorMapStyles</li>
+</ul>
+</li>
+<li>
+<p>过程</p>
+<ul>
+<li>add_KML_Description</li>
+<li>add_KML_Address</li>
+<li>add_KML_Range</li>
+<li>add_KML_Name</li>
+<li>add_KML_Coordinates</li>
+<li>add_KML_Width</li>
+<li>add_KML_Open</li>
+<li>add_KML_FlyToView</li>
+<li>add_KML_Extrude</li>
+<li>add_KML_Visibility</li>
+<li>add_KML_Tessellate</li>
+<li>add_KML_Fill</li>
+<li>add_KML_Outline</li>
+<li>add_KML_Altitude</li>
+<li>add_KML_AltMode</li>
+<li>add_KML_Color</li>
+<li>add_KML_North</li>
+<li>add_KML_South</li>
+<li>add_KML_East</li>
+<li>add_KML_West</li>
+<li>add_KML_Rotation</li>
+<li>add_KML_StyleUrl</li>
+<li>add_KML_HideChildrenStyle</li>
+<li>hide_KML_Children</li>
+<li>add_KML_Href</li>
+<li>add_KML_Icon</li>
+<li>add_KML_Heading</li>
+<li>add_KML_TimeSpan</li>
+<li>add_KML_TimeStamp_When</li>
+<li>add_KML_LineStyle</li>
+<li>add_KML_IconStyle</li>
+<li>add_KML_PolyStyle</li>
+<li>add_KML_LineString</li>
+<li>add_KML_LatLonBox</li>
+<li>add_KML_LinearRing</li>
+<li>add_KML_OuterBoundaryIs</li>
+<li>add_KML_InnerBoundaryIs</li>
+<li>add_KML_GOverlay</li>
+<li>add_KML_Polygon</li>
+<li>add_KML_nSidedPolygon</li>
+<li>add_KML_Point</li>
+<li>Open_KML_MultiGeometry</li>
+<li>Close_KML_MultiGeometry</li>
+<li>Open_KML_Link</li>
+<li>Close_KML_Link</li>
+<li>Open_KML_NetworkLink</li>
+<li>Close_KML_NetworkLink</li>
+<li>Open_KML_Folder</li>
+<li>Close_KML_Folder</li>
+<li>Open_KML_Placemark</li>
+<li>Close_KML_Placemark</li>
+<li>Open_KML_Style</li>
+<li>Close_KML_Style</li>
+<li>Open_KML_Document</li>
+<li>Close_KML_Document</li>
+<li>OpenKML</li>
+<li>CloseKML</li>
+<li>RasterTimeSeries2KML</li>
+<li>SHP2KML</li>
+<li>Point2KML</li>
+<li>Velocity2KML</li>
+<li>Points2KML</li>
+<li>Collect_KMLs</li>
+<li>Path2KML</li>
+<li>Measurements2KML</li>
+<li>UnstructGrid2KML</li>
+<li>UnstructData2KML</li>
+<li>UnstructVelocity2KML</li>
+</ul>
+</li>
+</ul>
+<h2 id="例子">例子</h2>
+<ul>
+<li>Point2KML的使用</li>
+</ul>
+<p>新增一个文件名为 <code>1.ncl</code> 的脚本，内容如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    load &#34;$NCARG_ROOT/lib/ncarg/nclscripts/contrib/NCL_GETools.ncl&#34;
+    begin      
+    ; 设置图层属性
+        Opt=True
+        Opt@Name=&#34;Dihuan Building&#34;
+        Opt@Lat=23.103685
+        Opt@Lon=113.294506
+        Opt@Description=&#34;School of Atmospheric Science, Sun yat-sen University&#34;
+        Opt@Verbose=True
+    ; 设置输出
+        kml_FileName=&#34;sysu_sas_building&#34;
+        Point2KML(kml_FileName, Opt)
+    end
+</code></pre></td></tr></table>
+</div>
+</div><p>执行这个ncl，即可得到一个名为 <code>sysu_sas_building.kml</code> 的文件，把它放入GoogleEarth中，即可看到如下的样子(当然，首先要能加载出来GE中的地球，否则需要首先翻下墙)：</p>
+<p><img src="https://github.com/keenmisty/NCL/blob/master/images/extensions/point2kml.png" alt="point2kml"></p>
+<h2 id="其他值得注意的事情">其他值得注意的事情</h2>
+<ul>
+<li>Ryan Pavlick制作了一个更深入的ncl制作kml的库，<a href="https://github.com/rpavlick/kmlncl">link</a></li>
+<li>更推荐使用ArcGIS等地理信息系统工具处理kml文件</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">olOwOlo</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2016-06-12
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/ncl/">ncl</a>
+          <a href="/tags/kml/">kml</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/20160907-thesis/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">希望死在自己选择的道路上</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/20160601/">
+            <span class="next-text nav-default">收集的一些LiDAR数据库</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2015 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
