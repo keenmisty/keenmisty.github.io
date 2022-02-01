@@ -6,11 +6,12 @@
     <description>Recent content in Doxygen on 苟利国家生死以 岂因祸福避趋之</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>keenmisty</copyright><atom:link href="http://keenmisty.github.io/tags/doxygen/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>keenmisty</copyright>
+    <lastBuildDate>Mon, 31 Oct 2016 14:10:30 +0000</lastBuildDate><atom:link href="http://keenmisty.github.io/tags/doxygen/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>用Doxygen&#43;Graphviz生成WRF-Chem程序结构图</title>
       <link>http://keenmisty.github.io/post/20161031-doxygen/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 31 Oct 2016 14:10:30 +0000</pubDate>
       
       <guid>http://keenmisty.github.io/post/20161031-doxygen/</guid>
       <description>缘起 做毕业论文的时候要改机制代码，并且要耦合到WRF-Chem模式里面使它生效，所以就需要搞清楚WRF-Chem的结构，以便调用和输出。 虽然</description>
