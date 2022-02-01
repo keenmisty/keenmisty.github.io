@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>keenmisty</copyright>
-    <lastBuildDate>Mon, 09 Nov 2020 15:27:25 +0000</lastBuildDate><atom:link href="http://keenmisty.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Feb 2022 21:47:31 +0800</lastBuildDate><atom:link href="http://keenmisty.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>从Hexo迁移到Hugo</title>
+      <link>http://keenmisty.github.io/post/20220201hugo/</link>
+      <pubDate>Tue, 01 Feb 2022 21:47:31 +0800</pubDate>
+      
+      <guid>http://keenmisty.github.io/post/20220201hugo/</guid>
+      <description>一年了登不上自己的blog，惨啊真是惨&amp;hellip; 费尽力气先配置了VPN，又配置好Github的ssh连接，突然发现之前用的Hexo框架</description>
+    </item>
+    
     <item>
       <title>sftp与lftp传输文件技巧</title>
       <link>http://keenmisty.github.io/post/20201109sftp/</link>

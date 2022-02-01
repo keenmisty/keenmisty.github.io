@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://keenmisty.github.io/post/</loc>
+    <lastmod>2022-02-01T21:47:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://keenmisty.github.io/post/20220201hugo/</loc>
+    <lastmod>2022-02-01T21:47:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://keenmisty.github.io/</loc>
+    <lastmod>2022-02-01T21:47:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://keenmisty.github.io/about/</loc>
     <lastmod>2022-01-30T14:25:44+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -9,21 +30,7 @@
   </url>
   
   <url>
-    <loc>http://keenmisty.github.io/post/</loc>
-    <lastmod>2020-11-09T15:27:25+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://keenmisty.github.io/post/20201109sftp/</loc>
-    <lastmod>2020-11-09T15:27:25+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://keenmisty.github.io/</loc>
     <lastmod>2020-11-09T15:27:25+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
