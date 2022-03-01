@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>keenmisty</copyright>
-    <lastBuildDate>Tue, 01 Feb 2022 21:47:31 +0800</lastBuildDate><atom:link href="http://keenmisty.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Mar 2022 10:32:08 +0800</lastBuildDate><atom:link href="http://keenmisty.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>发一发牢骚</title>
+      <link>http://keenmisty.github.io/post/20220301laosao/</link>
+      <pubDate>Tue, 01 Mar 2022 10:32:08 +0800</pubDate>
+      
+      <guid>http://keenmisty.github.io/post/20220301laosao/</guid>
+      <description>最近陷入了写基金本子的汪洋大海中，大量看文献大量读书。写了一个自我感觉还算满意的本子，至少说服了自己想做的问题和内容就算基金委不资助，还是想</description>
+    </item>
+    
     <item>
       <title>从Hexo迁移到Hugo</title>
       <link>http://keenmisty.github.io/post/20220201hugo/</link>
