@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.95.0 with theme even" />
 
 
 <link rel="canonical" href="http://keenmisty.github.io/post/20160215-gis-programming-and-automation1/" />
@@ -49,7 +49,7 @@
 <meta itemprop="name" content="GIS中Python的使用&lt;1&gt;">
 <meta itemprop="description" content="GIS Modeling与Python介绍 ArcGIS中提供了两种写Python的方式： ModelBuilder IDLE ModelBuilder的使用很简单，可以先拿来做模型"><meta itemprop="datePublished" content="2016-02-15T13:02:00+00:00" />
 <meta itemprop="dateModified" content="2016-02-15T13:02:00+00:00" />
-<meta itemprop="wordCount" content="248">
+<meta itemprop="wordCount" content="247">
 <meta itemprop="keywords" content="ArcGIS,Python,Learning," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="GIS中Python的使用&lt;1&gt;"/>
 <meta name="twitter:description" content="GIS Modeling与Python介绍 ArcGIS中提供了两种写Python的方式： ModelBuilder IDLE ModelBuilder的使用很简单，可以先拿来做模型"/>
@@ -156,13 +156,11 @@
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">arcpy</span>
-<span class="n">arcpy</span><span class="o">.</span><span class="n">Buffer_analysis</span><span class="p">(</span><span class="s2">&#34;us_cities&#34;</span><span class="p">,</span> <span class="s2">&#34;us_cities_buffered&#34;</span><span class="p">,</span> <span class="s2">&#34;15 miles&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="s2">&#34;ALL&#34;</span><span class="p">)</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">arcpy</span>
+</span></span><span class="line"><span class="cl"><span class="n">arcpy</span><span class="o">.</span><span class="n">Buffer_analysis</span><span class="p">(</span><span class="s2">&#34;us_cities&#34;</span><span class="p">,</span> <span class="s2">&#34;us_cities_buffered&#34;</span><span class="p">,</span> <span class="s2">&#34;15 miles&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="s2">&#34;ALL&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>注意：所有需要调用ArcGIS的Tools的脚本，都需要<code>import arcpy</code></p>
 <p>比如打印feature的空间参考：</p>
@@ -182,19 +180,19 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Opens a feature class from a geodatabase and prints the spatial reference</span>
- 
-<span class="kn">import</span> <span class="nn">arcpy</span>
-  
-<span class="n">featureClass</span> <span class="o">=</span> <span class="s2">&#34;C:/Data/USA/USA.gdb/StateBoundaries&#34;</span>
-   
-<span class="c1"># Describe the feature class and get its spatial reference   </span>
-<span class="n">desc</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">Describe</span><span class="p">(</span><span class="n">featureClass</span><span class="p">)</span>
-<span class="n">spatialRef</span> <span class="o">=</span> <span class="n">desc</span><span class="o">.</span><span class="n">spatialReference</span>
-    
-<span class="c1"># Print the spatial reference name</span>
-<span class="nb">print</span> <span class="n">spatialRef</span><span class="o">.</span><span class="n">Name</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Opens a feature class from a geodatabase and prints the spatial reference</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">arcpy</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="n">featureClass</span> <span class="o">=</span> <span class="s2">&#34;C:/Data/USA/USA.gdb/StateBoundaries&#34;</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl"><span class="c1"># Describe the feature class and get its spatial reference   </span>
+</span></span><span class="line"><span class="cl"><span class="n">desc</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">Describe</span><span class="p">(</span><span class="n">featureClass</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">spatialRef</span> <span class="o">=</span> <span class="n">desc</span><span class="o">.</span><span class="n">spatialReference</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="c1"># Print the spatial reference name</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="n">spatialRef</span><span class="o">.</span><span class="n">Name</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>参考: Python Scripting for ArcGIS by Paul A. Zandbergen</p>
 
@@ -285,7 +283,7 @@
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
   <script type="text/javascript">
     window.MathJax = {
       tex: {

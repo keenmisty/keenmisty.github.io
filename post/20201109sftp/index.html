@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.95.0 with theme even" />
 
 
 <link rel="canonical" href="http://keenmisty.github.io/post/20201109sftp/" />
@@ -49,7 +49,7 @@
 <meta itemprop="name" content="sftp与lftp传输文件技巧">
 <meta itemprop="description" content="题记： 最近被网络折腾的毫无脾气，不是这里安全问题就是那里权限问题，想要传输个文件真是难得要死。 历经千辛万苦，终于搭成功了定时sftp传输文件"><meta itemprop="datePublished" content="2020-11-09T15:27:25+00:00" />
 <meta itemprop="dateModified" content="2020-11-09T15:27:25+00:00" />
-<meta itemprop="wordCount" content="635">
+<meta itemprop="wordCount" content="647">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="sftp与lftp传输文件技巧"/>
 <meta name="twitter:description" content="题记： 最近被网络折腾的毫无脾气，不是这里安全问题就是那里权限问题，想要传输个文件真是难得要死。 历经千辛万苦，终于搭成功了定时sftp传输文件"/>
@@ -180,42 +180,42 @@ sftp与ftp语法基本一致，好处是使用了sshd守护进程，坏处是传
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
-</span><span class="cp"></span><span class="c1"># write by changming</span>
-<span class="c1"># 2020-11-09</span>
-
-<span class="nv">USER</span><span class="o">=</span>username <span class="c1"># 远程sftp服务器端用户名</span>
-<span class="nv">PASSWORD</span><span class="o">=</span>password <span class="c1"># 远程sftp服务器端密码</span>
-<span class="nv">SCRDIR</span><span class="o">=</span>/localpath/localpath <span class="c1"># 本地服务器拟上传路径</span>
-<span class="nv">DESDIR</span><span class="o">=</span>/dongguan/output <span class="c1"># 远程sftp服务器拟存储路径</span>
-<span class="nv">IP</span><span class="o">=</span>XX.XX.XX.XX <span class="c1"># 远程sftp服务器IP</span>
-<span class="nv">PORT</span><span class="o">=</span>XXXXX <span class="c1"># 远程端口</span>
-
-<span class="nb">cd</span> <span class="si">${</span><span class="nv">SCRDIR</span><span class="si">}</span>
-<span class="nv">FILES</span><span class="o">=</span><span class="sb">`</span>ls<span class="sb">`</span>
-
-<span class="k">for</span> FILE in <span class="si">${</span><span class="nv">FILES</span><span class="si">}</span>
-<span class="k">do</span>
-    <span class="nb">echo</span> <span class="si">${</span><span class="nv">FILE</span><span class="si">}</span>
-lftp -u <span class="si">${</span><span class="nv">USER</span><span class="si">}</span>,<span class="si">${</span><span class="nv">PASSWORD</span><span class="si">}</span> sftp://<span class="si">${</span><span class="nv">IP</span><span class="si">}</span>:<span class="si">${</span><span class="nv">PORT</span><span class="si">}</span> <span class="s">&lt;&lt;EOF
-</span><span class="s">cd ${DESDIR}
-</span><span class="s">lcd ${SCRDIR}
-</span><span class="s">mirror -R ${FILE} ${FILE}
-</span><span class="s">bye
-</span><span class="s">EOF</span>
-
-<span class="nb">echo</span> <span class="s2">&#34;commit to sftp successfully&#34;</span>
-
-<span class="k">done</span>
-
-<span class="nb">exit</span> <span class="m">0</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1"># write by changming</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2020-11-09</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">USER</span><span class="o">=</span>username <span class="c1"># 远程sftp服务器端用户名</span>
+</span></span><span class="line"><span class="cl"><span class="nv">PASSWORD</span><span class="o">=</span>password <span class="c1"># 远程sftp服务器端密码</span>
+</span></span><span class="line"><span class="cl"><span class="nv">SCRDIR</span><span class="o">=</span>/localpath/localpath <span class="c1"># 本地服务器拟上传路径</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DESDIR</span><span class="o">=</span>/dongguan/output <span class="c1"># 远程sftp服务器拟存储路径</span>
+</span></span><span class="line"><span class="cl"><span class="nv">IP</span><span class="o">=</span>XX.XX.XX.XX <span class="c1"># 远程sftp服务器IP</span>
+</span></span><span class="line"><span class="cl"><span class="nv">PORT</span><span class="o">=</span>XXXXX <span class="c1"># 远程端口</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> <span class="si">${</span><span class="nv">SCRDIR</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl"><span class="nv">FILES</span><span class="o">=</span><span class="sb">`</span>ls<span class="sb">`</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> FILE in <span class="si">${</span><span class="nv">FILES</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="si">${</span><span class="nv">FILE</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl">lftp -u <span class="si">${</span><span class="nv">USER</span><span class="si">}</span>,<span class="si">${</span><span class="nv">PASSWORD</span><span class="si">}</span> sftp://<span class="si">${</span><span class="nv">IP</span><span class="si">}</span>:<span class="si">${</span><span class="nv">PORT</span><span class="si">}</span> <span class="s">&lt;&lt;EOF
+</span></span></span><span class="line"><span class="cl"><span class="s">cd ${DESDIR}
+</span></span></span><span class="line"><span class="cl"><span class="s">lcd ${SCRDIR}
+</span></span></span><span class="line"><span class="cl"><span class="s">mirror -R ${FILE} ${FILE}
+</span></span></span><span class="line"><span class="cl"><span class="s">bye
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;commit to sftp successfully&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">exit</span> <span class="m">0</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
 <p>代码详解:</p>
 <ol>
 <li>使用lftp驱动sftp的原因是因为sftp无法以eof的形式传递参数；</li>
-<li>sftp直接操作的格式是&rsquo;sftp -P 端口 用户名@ip'，使用lftp时则是&rsquo;lftp -u 用户名,密码 sftp://ip:端口'；</li>
+<li>sftp直接操作的格式是&rsquo;sftp -P 端口 用户名@ip&rsquo;，使用lftp时则是&rsquo;lftp -u 用户名,密码 sftp://ip:端口&rsquo;；</li>
 <li>传递文件夹的话需要在sftp中使用mirror命令，如果只是上传文件可以使用put命令</li>
 </ol>
 
@@ -302,7 +302,7 @@ lftp -u <span class="si">${</span><span class="nv">USER</span><span class="si">}
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
   <script type="text/javascript">
     window.MathJax = {
       tex: {

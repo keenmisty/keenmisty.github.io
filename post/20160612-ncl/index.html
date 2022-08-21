@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.95.0 with theme even" />
 
 
 <link rel="canonical" href="http://keenmisty.github.io/post/20160612-ncl/" />
@@ -160,8 +160,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    load &#34;$NCARG_ROOT/lib/ncarg/nclscripts/contrib/NCL_GETools.ncl&#34;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">    load &#34;$NCARG_ROOT/lib/ncarg/nclscripts/contrib/NCL_GETools.ncl&#34;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>然后即可在你个人的ncl脚本中调用以下函数或者过程，来完成相应的动作：</p>
 <ul>
@@ -278,20 +278,20 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    load &#34;$NCARG_ROOT/lib/ncarg/nclscripts/contrib/NCL_GETools.ncl&#34;
-    begin      
-    ; 设置图层属性
-        Opt=True
-        Opt@Name=&#34;Dihuan Building&#34;
-        Opt@Lat=23.103685
-        Opt@Lon=113.294506
-        Opt@Description=&#34;School of Atmospheric Science, Sun yat-sen University&#34;
-        Opt@Verbose=True
-    ; 设置输出
-        kml_FileName=&#34;sysu_sas_building&#34;
-        Point2KML(kml_FileName, Opt)
-    end
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">    load &#34;$NCARG_ROOT/lib/ncarg/nclscripts/contrib/NCL_GETools.ncl&#34;
+</span></span><span class="line"><span class="cl">    begin      
+</span></span><span class="line"><span class="cl">    ; 设置图层属性
+</span></span><span class="line"><span class="cl">        Opt=True
+</span></span><span class="line"><span class="cl">        Opt@Name=&#34;Dihuan Building&#34;
+</span></span><span class="line"><span class="cl">        Opt@Lat=23.103685
+</span></span><span class="line"><span class="cl">        Opt@Lon=113.294506
+</span></span><span class="line"><span class="cl">        Opt@Description=&#34;School of Atmospheric Science, Sun yat-sen University&#34;
+</span></span><span class="line"><span class="cl">        Opt@Verbose=True
+</span></span><span class="line"><span class="cl">    ; 设置输出
+</span></span><span class="line"><span class="cl">        kml_FileName=&#34;sysu_sas_building&#34;
+</span></span><span class="line"><span class="cl">        Point2KML(kml_FileName, Opt)
+</span></span><span class="line"><span class="cl">    end
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>执行这个ncl，即可得到一个名为 <code>sysu_sas_building.kml</code> 的文件，把它放入GoogleEarth中，即可看到如下的样子(当然，首先要能加载出来GE中的地球，否则需要首先翻下墙)：</p>
 <p><img src="https://github.com/keenmisty/NCL/blob/master/images/extensions/point2kml.png" alt="point2kml"></p>
@@ -387,7 +387,7 @@
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
   <script type="text/javascript">
     window.MathJax = {
       tex: {

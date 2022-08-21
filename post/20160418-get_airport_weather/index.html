@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.95.0 with theme even" />
 
 
 <link rel="canonical" href="http://keenmisty.github.io/post/20160418-get_airport_weather/" />
@@ -184,16 +184,16 @@ permalink: get-airport-weather</li>
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">admin@ubuntu:~$ weather ZGGG
-Searching via station...
-<span class="o">[</span>caching result Guangzhou, China<span class="o">]</span>
-Current conditions at Guangzhou, China <span class="o">(</span>ZGGG<span class="o">)</span> 23-10N 113-20E 42M
-Last updated Apr 18, <span class="m">2016</span> - 07:00 AM EDT / 2016.04.18 <span class="m">1100</span> UTC
-Temperature: <span class="m">77</span> F <span class="o">(</span><span class="m">25</span> C<span class="o">)</span>
-Relative Humidity: 65%
-Wind: Calm
-Sky conditions: mostly cloudy
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">admin@ubuntu:~$ weather ZGGG
+</span></span><span class="line"><span class="cl">Searching via station...
+</span></span><span class="line"><span class="cl"><span class="o">[</span>caching result Guangzhou, China<span class="o">]</span>
+</span></span><span class="line"><span class="cl">Current conditions at Guangzhou, China <span class="o">(</span>ZGGG<span class="o">)</span> 23-10N 113-20E 42M
+</span></span><span class="line"><span class="cl">Last updated Apr 18, <span class="m">2016</span> - 07:00 AM EDT / 2016.04.18 <span class="m">1100</span> UTC
+</span></span><span class="line"><span class="cl">Temperature: <span class="m">77</span> F <span class="o">(</span><span class="m">25</span> C<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Relative Humidity: 65%
+</span></span><span class="line"><span class="cl">Wind: Calm
+</span></span><span class="line"><span class="cl">Sky conditions: mostly cloudy
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>如果需要看METAR电文的话，可以<code>weather -v &lt;code&gt;</code>，
 那么输出的结果会变为：</p>
@@ -215,21 +215,21 @@ Sky conditions: mostly cloudy
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">admin@ubuntu:~$ weather -v ZGGG
-Searching via station...
-<span class="o">[</span>caching result Guangzhou, China<span class="o">]</span>
-Guangzhou, China <span class="o">(</span>ZGGG<span class="o">)</span> 23-10N 113-20E 42M
-Apr 18, <span class="m">2016</span> - 07:00 AM EDT / 2016.04.18 <span class="m">1100</span> UTC
-Wind: Calm:0
-Visibility: greater than <span class="m">7</span> mile<span class="o">(</span>s<span class="o">)</span>:0
-Sky conditions: mostly cloudy
-Temperature: <span class="m">77</span> F <span class="o">(</span><span class="m">25</span> C<span class="o">)</span>
-Dew Point: <span class="m">64</span> F <span class="o">(</span><span class="m">18</span> C<span class="o">)</span>
-Relative Humidity: 65%
-Pressure <span class="o">(</span>altimeter<span class="o">)</span>: 29.94 in. Hg <span class="o">(</span><span class="m">1014</span> hPa<span class="o">)</span>
-ob: ZGGG 181100Z 00000MPS <span class="m">9999</span> BKN060 25/18 Q1014 NOSIG
-cycle: <span class="m">11</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">admin@ubuntu:~$ weather -v ZGGG
+</span></span><span class="line"><span class="cl">Searching via station...
+</span></span><span class="line"><span class="cl"><span class="o">[</span>caching result Guangzhou, China<span class="o">]</span>
+</span></span><span class="line"><span class="cl">Guangzhou, China <span class="o">(</span>ZGGG<span class="o">)</span> 23-10N 113-20E 42M
+</span></span><span class="line"><span class="cl">Apr 18, <span class="m">2016</span> - 07:00 AM EDT / 2016.04.18 <span class="m">1100</span> UTC
+</span></span><span class="line"><span class="cl">Wind: Calm:0
+</span></span><span class="line"><span class="cl">Visibility: greater than <span class="m">7</span> mile<span class="o">(</span>s<span class="o">)</span>:0
+</span></span><span class="line"><span class="cl">Sky conditions: mostly cloudy
+</span></span><span class="line"><span class="cl">Temperature: <span class="m">77</span> F <span class="o">(</span><span class="m">25</span> C<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Dew Point: <span class="m">64</span> F <span class="o">(</span><span class="m">18</span> C<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Relative Humidity: 65%
+</span></span><span class="line"><span class="cl">Pressure <span class="o">(</span>altimeter<span class="o">)</span>: 29.94 in. Hg <span class="o">(</span><span class="m">1014</span> hPa<span class="o">)</span>
+</span></span><span class="line"><span class="cl">ob: ZGGG 181100Z 00000MPS <span class="m">9999</span> BKN060 25/18 Q1014 NOSIG
+</span></span><span class="line"><span class="cl">cycle: <span class="m">11</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>其中，ob这一行就是。</p>
 <p>可以看到现在广州白云机场的能见度很好，也没有下雨。
@@ -314,7 +314,7 @@ cycle: <span class="m">11</span>
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
   <script type="text/javascript">
     window.MathJax = {
       tex: {

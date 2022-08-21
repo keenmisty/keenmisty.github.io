@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.95.0 with theme even" />
 
 
 <link rel="canonical" href="http://keenmisty.github.io/post/20180706pythondocx-md/" />
@@ -178,18 +178,18 @@ python-docx的安装很简单，pip install即可。如果有anaconda的话，�
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python">   <span class="c1"># for python 2.7</span>
-   <span class="n">reload</span><span class="p">(</span><span class="n">sys</span><span class="p">)</span>
-   <span class="n">sys</span><span class="o">.</span><span class="n">setdefaultencoding</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
-
-   <span class="c1"># for python &lt;=3.3</span>
-   <span class="kn">import</span> <span class="nn">imp</span>
-   <span class="n">imp</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">sys</span><span class="p">)</span>
-		         
-   <span class="c1"># for python &gt;=3.4</span>
-   <span class="kn">import</span> <span class="nn">importlib</span>
-   <span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">sys</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">   <span class="c1"># for python 2.7</span>
+</span></span><span class="line"><span class="cl">   <span class="n">reload</span><span class="p">(</span><span class="n">sys</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="n">sys</span><span class="o">.</span><span class="n">setdefaultencoding</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="c1"># for python &lt;=3.3</span>
+</span></span><span class="line"><span class="cl">   <span class="kn">import</span> <span class="nn">imp</span>
+</span></span><span class="line"><span class="cl">   <span class="n">imp</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">sys</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		         
+</span></span><span class="line"><span class="cl">   <span class="c1"># for python &gt;=3.4</span>
+</span></span><span class="line"><span class="cl">   <span class="kn">import</span> <span class="nn">importlib</span>
+</span></span><span class="line"><span class="cl">   <span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">sys</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>设置字体
@@ -201,9 +201,9 @@ python-docx使用styles.font来指定字体的设置。方式如下：</li>
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python">   <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="p">[</span><span class="s1">&#39;Normal&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;仿宋&#39;</span>
-   <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="p">[</span><span class="s1">&#39;Normal&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">_element</span><span class="o">.</span><span class="n">rPr</span><span class="o">.</span><span class="n">rFonts</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">qn</span><span class="p">(</span><span class="s1">&#39;w:eastAsia&#39;</span><span class="p">),</span> <span class="sa">u</span><span class="s1">&#39;仿宋&#39;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">   <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="p">[</span><span class="s1">&#39;Normal&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;仿宋&#39;</span>
+</span></span><span class="line"><span class="cl">   <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="p">[</span><span class="s1">&#39;Normal&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">_element</span><span class="o">.</span><span class="n">rPr</span><span class="o">.</span><span class="n">rFonts</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">qn</span><span class="p">(</span><span class="s1">&#39;w:eastAsia&#39;</span><span class="p">),</span> <span class="sa">u</span><span class="s1">&#39;仿宋&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>添加分页符</li>
@@ -213,8 +213,8 @@ python-docx使用styles.font来指定字体的设置。方式如下：</li>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python">   <span class="n">document</span><span class="o">.</span><span class="n">add_page_break</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">   <span class="n">document</span><span class="o">.</span><span class="n">add_page_break</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>
@@ -312,7 +312,7 @@ python-docx使用styles.font来指定字体的设置。方式如下：</li>
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
   <script type="text/javascript">
     window.MathJax = {
       tex: {
