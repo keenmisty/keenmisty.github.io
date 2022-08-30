@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>keenmisty</copyright>
-    <lastBuildDate>Sun, 21 Aug 2022 22:53:31 +0800</lastBuildDate><atom:link href="http://keenmisty.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Aug 2022 22:09:33 +0800</lastBuildDate><atom:link href="http://keenmisty.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VScode插件梳理</title>
+      <link>http://keenmisty.github.io/post/20220830/</link>
+      <pubDate>Tue, 30 Aug 2022 22:09:33 +0800</pubDate>
+      
+      <guid>http://keenmisty.github.io/post/20220830/</guid>
+      <description>最近终于开始有时间琢磨一些技术上的事情了. 那么,工欲善其事,必先利其器. 以前一直是用notepad++,然而对着F6按键发现最近它开始和Te</description>
+    </item>
+    
     <item>
       <title>要做咸鱼躺平吗</title>
       <link>http://keenmisty.github.io/post/20220821xianyu/</link>
