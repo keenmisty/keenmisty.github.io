@@ -3,20 +3,27 @@
   
   <url>
     <loc>http://keenmisty.github.io/post/</loc>
-    <lastmod>2022-08-30T22:09:33+08:00</lastmod>
+    <lastmod>2022-10-09T23:32:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://keenmisty.github.io/post/20220830/</loc>
-    <lastmod>2022-08-30T22:09:33+08:00</lastmod>
+    <loc>http://keenmisty.github.io/post/20221009by/</loc>
+    <lastmod>2022-10-09T23:32:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://keenmisty.github.io/</loc>
+    <lastmod>2022-10-09T23:32:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://keenmisty.github.io/post/20220830/</loc>
     <lastmod>2022-08-30T22:09:33+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
