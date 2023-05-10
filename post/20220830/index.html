@@ -1,145 +1,316 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>VScode插件梳理 - 苟利国家生死以 岂因祸福避趋之</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-
-<meta name="author" content="keenmisty" /><meta name="description" content="最近终于开始有时间琢磨一些技术上的事情了. 那么,工欲善其事,必先利其器. 以前一直是用notepad&#43;&#43;,然而对着F6按键发现最近它开始和Te" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.104.3 with theme even" />
-
-
-<link rel="canonical" href="http://keenmisty.github.io/post/20220830/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 
 
-<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="VScode插件梳理" />
-<meta property="og:description" content="最近终于开始有时间琢磨一些技术上的事情了. 那么,工欲善其事,必先利其器. 以前一直是用notepad&#43;&#43;,然而对着F6按键发现最近它开始和Te" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready text-sm lg:text-base"
+  style="--bg: #faf6f1"
+  lang="en"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>VScode插件梳理 - 南村新造</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="最近终于开始有时间琢磨一些技术上的事情了.
+那么,工欲善其事,必先利其器.
+以前一直是用notepad&#43;&#43;,然而对着F6按键发现最近它开始和TeXlive之间貌似有点不兼容了. 于是乎,换到VScode吧,反正也用过它写文章.
+更新了之后发现变化很大,比起以前有用过的Atom和JetBrains的编辑器来说,最让我觉得好用的就是多了SSH远程功能.
+那么第一组好用的插件就是Remote Development系列, -SSH,-WSL,-Containers,&hellip;让我彻底弃用xshell了.
+紧接着的第二组那就是vim,这个不必多说.
+第三组是基于TeX写论文用的,这个我试来试去感觉还是LaTeX Workshop好用,左边扩展选好编译方式,右边直接pdf跟随就出来. 配合Translator之类的插件,基本上写论文的时候就可以很顺手.当然,论文嘛,第一要务还是论文的内容本身&hellip;
+第四组是和我们专业相关的几个语言插件,Fortran,python,matlab,ncl,嗯,想不到这么小众的语言,也都配备了相关的扩展,看来一起摸鱼的小同行都不少嘛&hellip;hhhh
+第五组嘛,既然都说到了摸鱼,那么,必要的摸鱼插件还是要有的,为了保持愉悦,必要的美化插件也是要有的. 至于是什么嘛&hellip;身为老师,我还是不要讲出来了.
+如果能就此专注搞技术钻研该多好~" />
+  <meta name="author" content="Chang Ming" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://keenmisty.github.io/main.min.css" />
+
+  
+  <script
+    defer
+    src="http://keenmisty.github.io/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+   
+  <link rel="preload" as="image" href="http://keenmisty.github.io/theme.png" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/bac06b4b84584727160f6bf7b358377d?s=160&amp;d=identicon" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="http://keenmisty.github.io/github.svg" />
+  
+  <link rel="preload" as="image" href="http://keenmisty.github.io/rss.svg" />
+  
+
+  
+  <link rel="icon" href="http://keenmisty.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://keenmisty.github.io/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.111.3">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="VScode插件梳理" />
+<meta property="og:description" content="最近终于开始有时间琢磨一些技术上的事情了.
+那么,工欲善其事,必先利其器.
+以前一直是用notepad&#43;&#43;,然而对着F6按键发现最近它开始和TeXlive之间貌似有点不兼容了. 于是乎,换到VScode吧,反正也用过它写文章.
+更新了之后发现变化很大,比起以前有用过的Atom和JetBrains的编辑器来说,最让我觉得好用的就是多了SSH远程功能.
+那么第一组好用的插件就是Remote Development系列, -SSH,-WSL,-Containers,&hellip;让我彻底弃用xshell了.
+紧接着的第二组那就是vim,这个不必多说.
+第三组是基于TeX写论文用的,这个我试来试去感觉还是LaTeX Workshop好用,左边扩展选好编译方式,右边直接pdf跟随就出来. 配合Translator之类的插件,基本上写论文的时候就可以很顺手.当然,论文嘛,第一要务还是论文的内容本身&hellip;
+第四组是和我们专业相关的几个语言插件,Fortran,python,matlab,ncl,嗯,想不到这么小众的语言,也都配备了相关的扩展,看来一起摸鱼的小同行都不少嘛&hellip;hhhh
+第五组嘛,既然都说到了摸鱼,那么,必要的摸鱼插件还是要有的,为了保持愉悦,必要的美化插件也是要有的. 至于是什么嘛&hellip;身为老师,我还是不要讲出来了.
+如果能就此专注搞技术钻研该多好~" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://keenmisty.github.io/post/20220830/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-08-30T22:09:33+08:00" />
 <meta property="article:modified_time" content="2022-08-30T22:09:33+08:00" />
 
-<meta itemprop="name" content="VScode插件梳理">
-<meta itemprop="description" content="最近终于开始有时间琢磨一些技术上的事情了. 那么,工欲善其事,必先利其器. 以前一直是用notepad&#43;&#43;,然而对着F6按键发现最近它开始和Te"><meta itemprop="datePublished" content="2022-08-30T22:09:33+08:00" />
+  
+  <meta itemprop="name" content="VScode插件梳理">
+<meta itemprop="description" content="最近终于开始有时间琢磨一些技术上的事情了.
+那么,工欲善其事,必先利其器.
+以前一直是用notepad&#43;&#43;,然而对着F6按键发现最近它开始和TeXlive之间貌似有点不兼容了. 于是乎,换到VScode吧,反正也用过它写文章.
+更新了之后发现变化很大,比起以前有用过的Atom和JetBrains的编辑器来说,最让我觉得好用的就是多了SSH远程功能.
+那么第一组好用的插件就是Remote Development系列, -SSH,-WSL,-Containers,&hellip;让我彻底弃用xshell了.
+紧接着的第二组那就是vim,这个不必多说.
+第三组是基于TeX写论文用的,这个我试来试去感觉还是LaTeX Workshop好用,左边扩展选好编译方式,右边直接pdf跟随就出来. 配合Translator之类的插件,基本上写论文的时候就可以很顺手.当然,论文嘛,第一要务还是论文的内容本身&hellip;
+第四组是和我们专业相关的几个语言插件,Fortran,python,matlab,ncl,嗯,想不到这么小众的语言,也都配备了相关的扩展,看来一起摸鱼的小同行都不少嘛&hellip;hhhh
+第五组嘛,既然都说到了摸鱼,那么,必要的摸鱼插件还是要有的,为了保持愉悦,必要的美化插件也是要有的. 至于是什么嘛&hellip;身为老师,我还是不要讲出来了.
+如果能就此专注搞技术钻研该多好~"><meta itemprop="datePublished" content="2022-08-30T22:09:33+08:00" />
 <meta itemprop="dateModified" content="2022-08-30T22:09:33+08:00" />
-<meta itemprop="wordCount" content="586">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta itemprop="wordCount" content="16">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="VScode插件梳理"/>
-<meta name="twitter:description" content="最近终于开始有时间琢磨一些技术上的事情了. 那么,工欲善其事,必先利其器. 以前一直是用notepad&#43;&#43;,然而对着F6按键发现最近它开始和Te"/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
-
-</head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">南村新造</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/">
-        <li class="mobile-menu-item">Home</li>
-      </a><a href="/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="/about/">
-        <li class="mobile-menu-item">About</li>
-      </a>
-  </ul>
+<meta name="twitter:description" content="最近终于开始有时间琢磨一些技术上的事情了.
+那么,工欲善其事,必先利其器.
+以前一直是用notepad&#43;&#43;,然而对着F6按键发现最近它开始和TeXlive之间貌似有点不兼容了. 于是乎,换到VScode吧,反正也用过它写文章.
+更新了之后发现变化很大,比起以前有用过的Atom和JetBrains的编辑器来说,最让我觉得好用的就是多了SSH远程功能.
+那么第一组好用的插件就是Remote Development系列, -SSH,-WSL,-Containers,&hellip;让我彻底弃用xshell了.
+紧接着的第二组那就是vim,这个不必多说.
+第三组是基于TeX写论文用的,这个我试来试去感觉还是LaTeX Workshop好用,左边扩展选好编译方式,右边直接pdf跟随就出来. 配合Translator之类的插件,基本上写论文的时候就可以很顺手.当然,论文嘛,第一要务还是论文的内容本身&hellip;
+第四组是和我们专业相关的几个语言插件,Fortran,python,matlab,ncl,嗯,想不到这么小众的语言,也都配备了相关的扩展,看来一起摸鱼的小同行都不少嘛&hellip;hhhh
+第五组嘛,既然都说到了摸鱼,那么,必要的摸鱼插件还是要有的,为了保持愉悦,必要的美化插件也是要有的. 至于是什么嘛&hellip;身为老师,我还是不要讲出来了.
+如果能就此专注搞技术钻研该多好~"/>
 
   
+  
+</head>
 
-
-</nav>
-
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">南村新造</a>
-</div>
-
-
-
-
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="/">Home</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/about/">About</a>
-      </li>
-  </ul>
-</nav>
-
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
-    
-    <header class="post-header">
-      <h1 class="post-title">VScode插件梳理</h1>
-
-      <div class="post-meta">
-        <span class="post-time"> 2022-08-30 </span>
-        
-          <span class="more-meta"> 586 words </span>
-          <span class="more-meta"> 2 mins read </span>
-        
-      </div>
-    </header>
-
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-0.5 text-3xl font-bold"
+      href="http://keenmisty.github.io/"
+      >南村新造</a
+    >
+    <div
+      class="btn-dark text-[0] ml-6 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
   </div>
-</div>
-    <div class="post-content">
-      <blockquote>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = `"#faf6f1"`.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/contact/"
+        >Contact</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:mt-0 lg:ml-12 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/keenmisty"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./rss.svg)"
+        href="http://keenmisty.github.io/index.xml"
+        target="_blank"
+        rel="alternate"
+      >
+        rss
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pt-16 pb-24 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-20">
+    <h1 class="!my-0 pb-2.5">VScode插件梳理</h1>
+
+    
+    <div class="text-sm opacity-60">
+      
+      <time>Aug 30, 2022</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><blockquote>
 <p>最近终于开始有时间琢磨一些技术上的事情了.</p>
 </blockquote>
 <p>那么,工欲善其事,必先利其器.</p>
@@ -160,107 +331,60 @@
 <p>如果能就此专注搞技术钻研该多好~</p>
 </blockquote>
 </blockquote>
+</section>
 
-    </div>
-
-    <div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">Author</span>
-    <span class="item-content">keenmisty</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">LastMod</span>
-    <span class="item-content">
-        2022-08-30
-        
-    </span>
-  </p>
   
-  
-</div>
-<footer class="post-footer">
-      
-      <nav class="post-nav">
-        <a class="prev" href="/post/20221009by/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">十一看房归来自省</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/20220821xianyu/">
-            <span class="next-text nav-default">要做咸鱼躺平吗</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-        </div>
-        
-
   
 
   
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://keenmisty.github.io/post/20221009by/"
+      ><span class="mr-1.5">←</span><span>十一看房归来自省</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://keenmisty.github.io/post/20220821xianyu/"
+      ><span>要做咸鱼躺平吗</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
 
-      </div>
+  
+  
+
+  
+  
+</article>
+
+
     </main>
 
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:keenmisty@gmail.com" class="iconfont icon-email" title="email"></a>
-      <a href="https://www.facebook.com/keenmisty/" class="iconfont icon-facebook" title="facebook"></a>
-      <a href="https://github.com/keenmisty" class="iconfont icon-github" title="github"></a>
-      <a href="https://www.zhihu.com/people/chang-ming-58" class="iconfont icon-zhihu" title="zhihu"></a>
-  <a href="http://keenmisty.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  
-
-  <span class="copyright-year">
-    &copy; 
-    2015 - 
-    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>keenmisty</span>
-  </span>
-</div>
-
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
+    <footer
+  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="http://keenmisty.github.io/">南村新造</a>
   </div>
-  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >Theme Paper</a
+  >
+</footer>
 
-
-
-<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
-  <script type="text/javascript">
-    window.MathJax = {
-      tex: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        }
-    };
-  </script>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
-
-
-
-
-
-
-
-
-</body>
+  </body>
 </html>

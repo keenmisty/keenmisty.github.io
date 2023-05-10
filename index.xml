@@ -5,14 +5,15 @@
     <link>http://keenmisty.github.io/</link>
     <description>Recent content on 南村新造</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en</language>
+    <copyright>Copyright © 2015–2023, changming@email.jnu.edu.cn; all rights reserved.</copyright>
     <lastBuildDate>Sun, 09 Oct 2022 23:32:22 +0800</lastBuildDate><atom:link href="http://keenmisty.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>十一看房归来自省</title>
-      <link>http://keenmisty.github.io/20221009by/</link>
+      <link>http://keenmisty.github.io/post/20221009by/</link>
       <pubDate>Sun, 09 Oct 2022 23:32:22 +0800</pubDate>
       
-      <guid>http://keenmisty.github.io/20221009by/</guid>
+      <guid>http://keenmisty.github.io/post/20221009by/</guid>
       <description>今年的这个十一假期过的异常忙碌，然而忙碌之后却毫无收获。
 往年假期时，我要么是在加班工作，要么是在返乡探亲，要么是休息放空。但或多或少的，总有一些获得或者修整。然而，今年过的很失败。
 我在各种看房子。
@@ -32,10 +33,10 @@
     
     <item>
       <title>VScode插件梳理</title>
-      <link>http://keenmisty.github.io/20220830/</link>
+      <link>http://keenmisty.github.io/post/20220830/</link>
       <pubDate>Tue, 30 Aug 2022 22:09:33 +0800</pubDate>
       
-      <guid>http://keenmisty.github.io/20220830/</guid>
+      <guid>http://keenmisty.github.io/post/20220830/</guid>
       <description>最近终于开始有时间琢磨一些技术上的事情了.
 那么,工欲善其事,必先利其器.
 以前一直是用notepad++,然而对着F6按键发现最近它开始和TeXlive之间貌似有点不兼容了. 于是乎,换到VScode吧,反正也用过它写文章.
@@ -50,10 +51,10 @@
     
     <item>
       <title>要做咸鱼躺平吗</title>
-      <link>http://keenmisty.github.io/20220821xianyu/</link>
+      <link>http://keenmisty.github.io/post/20220821xianyu/</link>
       <pubDate>Sun, 21 Aug 2022 22:53:31 +0800</pubDate>
       
-      <guid>http://keenmisty.github.io/20220821xianyu/</guid>
+      <guid>http://keenmisty.github.io/post/20220821xianyu/</guid>
       <description>2022年的这个暑假，过的尤其充实。 确切的说，过的尤其疲惫，感觉没日没夜都在工作，然而点检下来却没有做出什么成果。
 好在今年毕业季我没有自己的毕业生。嗯，原因嘛，想来应该是因为我这个人太可恶，使得我这一届的三个学生退学了一个、转导师了两个。。。好在小朋友们发展的不错：退学的小伙子听说也去做了老师，不晓得伊某个晚上会不会后悔；转导师的两位小女生追寻着自己的理想去搞了青藏高原研究，然而那些花儿已经离去在人海茫茫。。。
 如果说2020年是总算摆脱了一部分掣肘有时间写论文的一年，2021年是总算有了可爱的学生可以让无人机+雷达+模型的研究路子开花结果，那么2022年我的感觉就是在永无止境的开会、沟通、反复和劳累。
@@ -68,10 +69,10 @@
     
     <item>
       <title>发一发牢骚</title>
-      <link>http://keenmisty.github.io/20220301laosao/</link>
+      <link>http://keenmisty.github.io/post/20220301laosao/</link>
       <pubDate>Tue, 01 Mar 2022 10:32:08 +0800</pubDate>
       
-      <guid>http://keenmisty.github.io/20220301laosao/</guid>
+      <guid>http://keenmisty.github.io/post/20220301laosao/</guid>
       <description>最近陷入了写基金本子的汪洋大海中，大量看文献大量读书。写了一个自我感觉还算满意的本子，至少说服了自己想做的问题和内容就算基金委不资助，还是想做。
 然而真正准备往系统上报的时候却发现了一个纠结和蛋疼的事情：填报关键词只能在某个申请代码的某个方向中选择。
 这可就要了老命了。
@@ -85,10 +86,10 @@
     
     <item>
       <title>从Hexo迁移到Hugo</title>
-      <link>http://keenmisty.github.io/20220201hugo/</link>
+      <link>http://keenmisty.github.io/post/20220201hugo/</link>
       <pubDate>Tue, 01 Feb 2022 21:47:31 +0800</pubDate>
       
-      <guid>http://keenmisty.github.io/20220201hugo/</guid>
+      <guid>http://keenmisty.github.io/post/20220201hugo/</guid>
       <description>一年了登不上自己的blog，惨啊真是惨&amp;hellip; 费尽力气先配置了VPN，又配置好Github的ssh连接，突然发现之前用的Hexo框架所需的依赖库全都不知道什么时候废掉了&amp;hellip; 于是， 一怒之下干脆换框架好了。 搜索了一下知乎，发现Hugo相比Hexo更加简单方便，于是顺理成章的，迁移！迁移！
 安装方法还算简单，直接brew install hugo就ok了，然后就是配置theme，配置好之后从exampleSite里找到config文件一通编辑，确实方便很多。 然后把之前hexo下的markdown博文放到content下的post文件夹里，直接deploy就有模有样了。 嗯，反正我也只是要恢复一个记录经验教训的荒蛮之地，美化什么的等日后有空再说吧，那就这样啦~
 话说发现一个快速deploy的shell脚本，真是好用，分享在这里：
@@ -109,10 +110,10 @@ Research Interest: Land Surface Process Air Pollutant Deposition Modelling Geogr
     
     <item>
       <title>sftp与lftp传输文件技巧</title>
-      <link>http://keenmisty.github.io/20201109sftp/</link>
+      <link>http://keenmisty.github.io/post/20201109sftp/</link>
       <pubDate>Mon, 09 Nov 2020 15:27:25 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/20201109sftp/</guid>
+      <guid>http://keenmisty.github.io/post/20201109sftp/</guid>
       <description>题记： 最近被网络折腾的毫无脾气，不是这里安全问题就是那里权限问题，想要传输个文件真是难得要死。 历经千辛万苦，终于搭成功了定时sftp传输文件的操作，这技巧一定得记下来，以后估计会很常用：
 背景： 学校超算由于安全需要不支持ftp传输文件，而合作方的服务器不支持rsync和scp等操作，于是综合考虑，选择使用sftp进行文件的传输。 sftp与ftp语法基本一致，好处是使用了sshd守护进程，坏处是传输效率比较低，还好在我的应用中只是传输小文件，所以sftp恰巧适合。 同时，由于最终的要求是每天将我们自己定时运行的空气质量预报的结果图片传递给合作方服务器，因此选择在crontab中加了个shell脚本使用lftp驱动sftp进行文件的上传。
 批量文件夹上传脚本如下：
@@ -122,10 +123,10 @@ Research Interest: Land Surface Process Air Pollutant Deposition Modelling Geogr
     
     <item>
       <title>芒种喜雨</title>
-      <link>http://keenmisty.github.io/20200605hjrsb/</link>
+      <link>http://keenmisty.github.io/post/20200605hjrsb/</link>
       <pubDate>Fri, 05 Jun 2020 17:59:03 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/20200605hjrsb/</guid>
+      <guid>http://keenmisty.github.io/post/20200605hjrsb/</guid>
       <description>今日芒种，穹宇壮阔，雷雨正浓。
 今天也是环境日，美丽中国，很自豪的作为一个行动者投身其中。
 今天开心的事情很多，花最多精力带的学生，发表了一篇环境科学学报文章。
@@ -139,10 +140,10 @@ Research Interest: Land Surface Process Air Pollutant Deposition Modelling Geogr
     
     <item>
       <title>愚人才乐</title>
-      <link>http://keenmisty.github.io/20200401-happyapr/</link>
+      <link>http://keenmisty.github.io/post/20200401-happyapr/</link>
       <pubDate>Wed, 01 Apr 2020 15:54:33 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/20200401-happyapr/</guid>
+      <guid>http://keenmisty.github.io/post/20200401-happyapr/</guid>
       <description>Bazinga!
 今天不知道为什么，Google断掉了。正在写着的一个draft写不下去了。 烦躁，写一篇blog静静心。
 疫情发生以来，越来越习惯于蹲在办公室远程和学生们交流了。以前我还试图推过worktile之类的web在线协同工具，然而却推不动。如今借着这一契机，大家全都对企业微信之类的工具使用纯熟了，我也越来越习惯在日程上每2个周盯一下进度。
@@ -155,10 +156,10 @@ Research Interest: Land Surface Process Air Pollutant Deposition Modelling Geogr
     
     <item>
       <title>只争朝夕，不负韶华</title>
-      <link>http://keenmisty.github.io/20200103-saysth/</link>
+      <link>http://keenmisty.github.io/post/20200103-saysth/</link>
       <pubDate>Fri, 03 Jan 2020 16:32:46 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/20200103-saysth/</guid>
+      <guid>http://keenmisty.github.io/post/20200103-saysth/</guid>
       <description>2020年的第一个周五，捣鼓了一整个下午，终于恢复了对自己GitHub的pull/push操作能力。由此可见我的coding能力下降了多少，每天被报告、报表、事务、跑腿所包围，在学术上和技术上感觉我自己已经废了，真是绝望的要命。
 回顾2019年，最美好的经历是在除夕前和老婆一起拥有了一个女儿，从此成为一个光荣的带娃男。然后在10月份不管不顾的搞出来两篇小文章，算是总算有那么一点点科学收获。此外，居然有空重读了一遍文明之光、在北京飞回广州的航班上看了一遍流浪地球。至于其他的，都是小事情了。
 用学生的话讲，常老师越来越佛了。。。
@@ -173,10 +174,10 @@ UAVs&amp;amp;ROBOTs Lidar uEMEP 想要戒掉的坏习惯：
     
     <item>
       <title>又是一个新学期了</title>
-      <link>http://keenmisty.github.io/newterm20190924/</link>
+      <link>http://keenmisty.github.io/post/newterm20190924/</link>
       <pubDate>Tue, 24 Sep 2019 17:32:17 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/newterm20190924/</guid>
+      <guid>http://keenmisty.github.io/post/newterm20190924/</guid>
       <description>一年多了，完全没时间写点什么。
 整个人已经是随时要垮掉的状态了。
 带学生带的心累，再也没有刚刚工作，刚刚成为导师时那样的冲劲，恨不得把所有自己会的东西都灌给所有的师弟师妹。 然而赤裸裸的现实一直在打我脸，我越是花精力去带的学生，学的就越差。 基础薄弱却不好学，磨洋工之余像一个黑洞，不作为，不反馈。哎。。。也不知道到底是谁要毕业。催一催，push一下，反倒成恶人了。
@@ -187,10 +188,10 @@ UAVs&amp;amp;ROBOTs Lidar uEMEP 想要戒掉的坏习惯：
     
     <item>
       <title>基于python-docx生成半自动化的word报告</title>
-      <link>http://keenmisty.github.io/20180706pythondocx-md/</link>
+      <link>http://keenmisty.github.io/post/20180706pythondocx-md/</link>
       <pubDate>Fri, 06 Jul 2018 15:49:47 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/20180706pythondocx-md/</guid>
+      <guid>http://keenmisty.github.io/post/20180706pythondocx-md/</guid>
       <description>缘起： 一直以来都有个需求是将固定格式的文档自动化生成，我以前曾经拿latex尝试过，效果其实很好，在linux下直接就可以生成pdf文档，非常适宜于放在服务器上。 然而，可悲的现实在于，latex过于阳春白雪。要说服更多的人走出自己的舒服区掌握一项新技能，实在是一件比触动灵魂更难的事情。 好在word还算是很多人都会的一个软件，而python也受到越来越多的人的青睐，我也希望走出自己的舒服区来尽量多的尝试它、学会它。
 快速入门： 讲真，最快的入门方式就是看它的官方文档，即：https://python-docx.readthedocs.io/en/latest/ 不过我想，还是有一些值得记录下来的点作为笔记留作后用：
 安装 python-docx的安装很简单，pip install即可。如果有anaconda的话，可以conda安装。
@@ -203,19 +204,19 @@ UAVs&amp;amp;ROBOTs Lidar uEMEP 想要戒掉的坏习惯：
     
     <item>
       <title>GLC2015土地覆被的邪门问题</title>
-      <link>http://keenmisty.github.io/20180402-glc/</link>
+      <link>http://keenmisty.github.io/post/20180402-glc/</link>
       <pubDate>Mon, 02 Apr 2018 09:12:18 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/20180402-glc/</guid>
+      <guid>http://keenmisty.github.io/post/20180402-glc/</guid>
       <description>之前更新了GLC2015的土地覆被资料到EMEP模型的输入，但是测试来测试去居然跟default的土地覆被资料模拟所得到的结果完全一致。 奇哉怪哉，难道说EMEP模型模拟时landuse不起作用吗？ 这个疑问看来要花点精力去解决了。 今日又遇到了另一个邪门问题，GLC2015的资料按USGS的24类体系重新分类之后，居然在东北华北出现了大面积的水体。 检查来检查去发现，GLC2015把自身的第11类设为了Herbaceous Cover，这尼玛什么鬼。。。 待续。。。</description>
     </item>
     
     <item>
       <title>郁闷的升级</title>
-      <link>http://keenmisty.github.io/20180328-update-npm/</link>
+      <link>http://keenmisty.github.io/post/20180328-update-npm/</link>
       <pubDate>Wed, 28 Mar 2018 19:12:18 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/20180328-update-npm/</guid>
+      <guid>http://keenmisty.github.io/post/20180328-update-npm/</guid>
       <description>好久没有更新博客了，天天忙各种杂事。
 抽出晚饭的一点时间，本来是想升级一下hexo的版本，结果发现自己的node版本太旧无法支持升级，于是又升级node。搜索了一下以为很容易，没想到windows下又各种坑，不停的失败。 还好-force选项解救了我。。。然后顺利的更新了依赖链上的每个环节。
 -force，如果也可以不停的-force其他人就好了，可惜总是我才是被-force的那个。。。</description>
@@ -223,20 +224,20 @@ UAVs&amp;amp;ROBOTs Lidar uEMEP 想要戒掉的坏习惯：
     
     <item>
       <title>新的主题，新的开始</title>
-      <link>http://keenmisty.github.io/20170807-change/</link>
+      <link>http://keenmisty.github.io/post/20170807-change/</link>
       <pubDate>Mon, 07 Aug 2017 17:22:18 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/20170807-change/</guid>
+      <guid>http://keenmisty.github.io/post/20170807-change/</guid>
       <description>趁着暑假，忙里偷闲，把主题换成了Meterial，感觉清爽了很多。 同时从下个学期，正式获得了教师的身份，抛开过去，新的开始。
 希望过去不再不堪回首，现在不再不堪忍受，未来不再不堪想象&amp;hellip;</description>
     </item>
     
     <item>
       <title>用Doxygen&#43;Graphviz生成WRF-Chem程序结构图</title>
-      <link>http://keenmisty.github.io/20161031-doxygen/</link>
+      <link>http://keenmisty.github.io/post/20161031-doxygen/</link>
       <pubDate>Mon, 31 Oct 2016 14:10:30 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/20161031-doxygen/</guid>
+      <guid>http://keenmisty.github.io/post/20161031-doxygen/</guid>
       <description>缘起 做毕业论文的时候要改机制代码，并且要耦合到WRF-Chem模式里面使它生效，所以就需要搞清楚WRF-Chem的结构，以便调用和输出。
 虽然可以通过长时间的看WRF-Chem源代码、debug尝试以及IDE帮忙，但有一份calling tree还是很好的，给师弟师妹们讲起来也方便很多。
 因此，考虑尝试用程序结构自动分析工具Doxygen对它进行分析，用Graphviz生成出来。
@@ -248,20 +249,20 @@ WRF-Chem Calling Tree 物理机制-微物理过程调用： 物理机制-辐射�
     
     <item>
       <title>希望死在自己选择的道路上</title>
-      <link>http://keenmisty.github.io/20160907-thesis/</link>
+      <link>http://keenmisty.github.io/post/20160907-thesis/</link>
       <pubDate>Wed, 07 Sep 2016 06:22:18 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/20160907-thesis/</guid>
+      <guid>http://keenmisty.github.io/post/20160907-thesis/</guid>
       <description>读博是很痛苦的&amp;hellip; 然而却乐在其中&amp;hellip;
 如果有一天我们终将死去，我希望我是在写出答案之后死在办公台旁&amp;hellip;</description>
     </item>
     
     <item>
       <title>NCL生成kml文件</title>
-      <link>http://keenmisty.github.io/20160612-ncl/</link>
+      <link>http://keenmisty.github.io/post/20160612-ncl/</link>
       <pubDate>Sun, 12 Jun 2016 16:30:18 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/20160612-ncl/</guid>
+      <guid>http://keenmisty.github.io/post/20160612-ncl/</guid>
       <description>简介 KML(Keyhold Markup Language)是一种XML语法格式的标记语言，可以在多种应用程序中显示，包括 Google Earth、Google Map、ArcGIS(ArcMap/ArcGlobe)等，驴友们制作路书的时候也经常采用这种格式制作。
 它的优势是可以把几何、符号系统、描述、属性、影像和行为等数据封装到单个源中，非常方便数据的共享和在线展示。
 NCL对于KML的支持起自2013年，由Mohammad Abouali开发，他制作了一个名为 NCL_GETools 的NCL输出库，使得NCL可以将各种气象模型结果输出成KML格式，从而可以方便的在各类GIS软件中与其他地理信息数据一起进行处理，或是通过Google Earth/Map的API进行在线的展示。
@@ -275,10 +276,10 @@ add_KML_Description add_KML_Address add_KML_Range add_KML_Name add_KML_Coordinat
     
     <item>
       <title>收集的一些LiDAR数据库</title>
-      <link>http://keenmisty.github.io/20160601/</link>
+      <link>http://keenmisty.github.io/post/20160601/</link>
       <pubDate>Wed, 01 Jun 2016 15:30:18 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/20160601/</guid>
+      <guid>http://keenmisty.github.io/post/20160601/</guid>
       <description>一些LiDAR数据： 大气重要参数高分辨率垂直分布探查数据库 http://atmosdb.aiofm.ac.cn/
 Lidar Group of ABC http://lidar.abct.lmd.polytechnique.fr
 六一儿童节快乐&amp;hellip; </description>
@@ -286,10 +287,10 @@ Lidar Group of ABC http://lidar.abct.lmd.polytechnique.fr
     
     <item>
       <title>NotePad&#43;&#43;编辑LaTeX文档的高亮及自动编译配置</title>
-      <link>http://keenmisty.github.io/20160512-latex/</link>
+      <link>http://keenmisty.github.io/post/20160512-latex/</link>
       <pubDate>Thu, 12 May 2016 00:22:18 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/20160512-latex/</guid>
+      <guid>http://keenmisty.github.io/post/20160512-latex/</guid>
       <description>NotePad++高亮显示LaTeX注释 NOTEPAD++是一个相当优秀的文本编辑器，支持多种编程、脚本和标记语言的语法高亮显示和代码折叠。
 它原生支持TeX的语法高亮，只需要在工具栏中依次选中“语言-T-Tex”即可。
 然而有人发现这个高亮对于注释而言只是第一个%符号，后面仍然跟正文一样。
@@ -303,10 +304,10 @@ cd $(CURRENT_DIRECTORY) ~\xelatex.exe $(NAME_PART).tex $EXIT ~\bibtex.exe $(NAME
     
     <item>
       <title>WRF-CMAQ基本概述</title>
-      <link>http://keenmisty.github.io/20160317-cmaq-intro/</link>
+      <link>http://keenmisty.github.io/post/20160317-cmaq-intro/</link>
       <pubDate>Thu, 17 Mar 2016 23:02:00 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/20160317-cmaq-intro/</guid>
+      <guid>http://keenmisty.github.io/post/20160317-cmaq-intro/</guid>
       <description>WRF-CMAQ空气质量模式系统 空气污染预报概念 空气污染预报是基于污染排放源（包含排放源清单及实时监测数据）、气象数据，通过耦合了物理、化学机制的空气质量模型进行预测的过程。
 CMAQ历史 CMAQ是美国1997年发布的第三代空气质量模型，它是美国环保局开发的用来模拟空气质量运算的开源项目。
 90年代开始，随着计算机性能的增强，特别是高性能计算与通信计划的实施，更复杂的考虑多种大气过程、多尺度的空气质量模式的开发工作在美国展开。模式中需要考虑多种排放源，如工业、电厂、交通、生物排放等过程，研究的污染物和污染问题包括首要污染物、臭氧、颗粒物、能见度、酸沉降等。９０年代末开发的代表目前国际领先水平的综合多尺度空气质量模式Models-3/CMAQ（Community Multi-scale Air Quality），本着“一个大气”（One Atomosphere）的设计理念，融入了许多当前大气化学和大气环境领域的最新研究成果，将区域对流层大气作为整体，周密的考虑所有已知的物理和化学过程，综合考虑了不同物种之间的相互影响与转化， 最大限度的模拟真实的大气环境，可用于局地到区域多种尺度光化学烟雾，区域酸沉降、大气颗粒物质等大气污染问题的理论研究与业务预报。Models-3为Third-Generation量模式三部分组成。其核心是Community Air Quality Modeling System的通称，由中尺度气象模式、污染排放模式和多尺度空气质量模式系统，所以也可以称其为Models-3/CMAQ模式。
@@ -319,10 +320,10 @@ WRF： WRF（Weather Research and Forecasting Model）模式是由美国环境�
     
     <item>
       <title>GIS中Python的使用&lt;1&gt;</title>
-      <link>http://keenmisty.github.io/20160215-gis-programming-and-automation1/</link>
+      <link>http://keenmisty.github.io/post/20160215-gis-programming-and-automation1/</link>
       <pubDate>Mon, 15 Feb 2016 13:02:00 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/20160215-gis-programming-and-automation1/</guid>
+      <guid>http://keenmisty.github.io/post/20160215-gis-programming-and-automation1/</guid>
       <description>GIS Modeling与Python介绍 ArcGIS中提供了两种写Python的方式：
 ModelBuilder IDLE ModelBuilder的使用很简单，可以先拿来做模型的结构设计。 但是一些复杂的处理则需要写Python Script来实现。
 因此：
@@ -334,19 +335,19 @@ import arcpy arcpy.Buffer_analysis(&amp;#34;us_cities&amp;#34;, &amp;#34;us_citi
     
     <item>
       <title>Noah-MP Learning</title>
-      <link>http://keenmisty.github.io/20160202-sth-md/</link>
+      <link>http://keenmisty.github.io/post/20160202-sth-md/</link>
       <pubDate>Tue, 02 Feb 2016 18:34:15 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/20160202-sth-md/</guid>
+      <guid>http://keenmisty.github.io/post/20160202-sth-md/</guid>
       <description>The NoahMP calling tree Init noahmp_options NOAHMP_SFLX REDPRM FRH2O Run ATM PHENOLOGY ENERGY THERMOPROP CSNOW TDFCND RADIATION ALBEDO SNOW\_AGE SNOWALB\_BATS SNOWALB\_CLASS GROUNDALB TWOSTREAM SURRAD VEGE\_FLUX SFCDIF1 SFCDIF2 STOMATA CANRES ESAT RAGRB BARE\_FLUX TSNOSOI HRT HSTEP ROSR12 PHASECHANGE WATER CANWATER SNOWWATER SNOWFALL COMBINE DIVIDE COMBO COMPACT SNOWH2O SOILWATER ZWTEQ INFIL SRT WDFCND1 WDFCND2 SSTEP GROUNDWATER CARBON CO2FLUX ERROR </description>
     </item>
     
     <item>
       <title>建站说明</title>
-      <link>http://keenmisty.github.io/20160126-buildup-blog/</link>
+      <link>http://keenmisty.github.io/post/20160126-buildup-blog/</link>
       <pubDate>Tue, 26 Jan 2016 23:16:00 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/20160126-buildup-blog/</guid>
+      <guid>http://keenmisty.github.io/post/20160126-buildup-blog/</guid>
       <description>建设这个站点，用来整理以前积攒的知识，用来学习还没有掌握的知识。
 顺便用来记录生活，记录成长。
 开博缘由:
@@ -358,10 +359,10 @@ import arcpy arcpy.Buffer_analysis(&amp;#34;us_cities&amp;#34;, &amp;#34;us_citi
     
     <item>
       <title>Hello World</title>
-      <link>http://keenmisty.github.io/hello-world/</link>
+      <link>http://keenmisty.github.io/post/hello-world/</link>
       <pubDate>Tue, 26 Jan 2016 21:05:00 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/hello-world/</guid>
+      <guid>http://keenmisty.github.io/post/hello-world/</guid>
       <description>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
 Quick Start Create a new post $ hexo new &amp;#34;My New Post&amp;#34; More info: Writing
 Run server $ hexo server More info: Server
@@ -371,10 +372,10 @@ Deploy to remote sites $ hexo deploy More info: Deployment</description>
     
     <item>
       <title></title>
-      <link>http://keenmisty.github.io/20160418-get_airport_weather/</link>
+      <link>http://keenmisty.github.io/post/20160418-get_airport_weather/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/20160418-get_airport_weather/</guid>
+      <guid>http://keenmisty.github.io/post/20160418-get_airport_weather/</guid>
       <description>title: 获取机场实时气象报告方法 date: 2016-04-18 14:45:00 tags:
 python Learning permalink: get-airport-weather 最近坐飞机的时候总是遇到下雨，延误的很凄惨。坐在候机厅里问当班空姐吧，其实她们也不知道。 于是乎还是发挥咱半吊子的气象专业特长，找找看有没有什么办法获取机场气象站的实时报告。
 手机端app： 手机端的天气app看起来挺多的，但是提供每十五分钟电文的少之又少。 航旅纵横或是飞常准虽然有这功能吧，但要么需要业内认证，要么需要花钱搞专业版。 找来找去，发现Flight Meteo这个app是可以提供各个机场的METAR和TAF的。 电脑端： 用电脑的话那就办法多多了，各种网站一堆一堆的。 然而没有那么多流量的时候，我还是更喜欢用脚本或者命令来获取。

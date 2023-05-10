@@ -5,14 +5,15 @@
     <link>http://keenmisty.github.io/tags/arcgis/</link>
     <description>Recent content in ArcGIS on 南村新造</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en</language>
+    <copyright>Copyright © 2015–2023, changming@email.jnu.edu.cn; all rights reserved.</copyright>
     <lastBuildDate>Mon, 15 Feb 2016 13:02:00 +0000</lastBuildDate><atom:link href="http://keenmisty.github.io/tags/arcgis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GIS中Python的使用&lt;1&gt;</title>
-      <link>http://keenmisty.github.io/20160215-gis-programming-and-automation1/</link>
+      <link>http://keenmisty.github.io/post/20160215-gis-programming-and-automation1/</link>
       <pubDate>Mon, 15 Feb 2016 13:02:00 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/20160215-gis-programming-and-automation1/</guid>
+      <guid>http://keenmisty.github.io/post/20160215-gis-programming-and-automation1/</guid>
       <description>GIS Modeling与Python介绍 ArcGIS中提供了两种写Python的方式：
 ModelBuilder IDLE ModelBuilder的使用很简单，可以先拿来做模型的结构设计。 但是一些复杂的处理则需要写Python Script来实现。
 因此：

@@ -5,23 +5,24 @@
     <link>http://keenmisty.github.io/tags/wrf/</link>
     <description>Recent content in WRF on 南村新造</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en</language>
+    <copyright>Copyright © 2015–2023, changming@email.jnu.edu.cn; all rights reserved.</copyright>
     <lastBuildDate>Mon, 02 Apr 2018 09:12:18 +0000</lastBuildDate><atom:link href="http://keenmisty.github.io/tags/wrf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GLC2015土地覆被的邪门问题</title>
-      <link>http://keenmisty.github.io/20180402-glc/</link>
+      <link>http://keenmisty.github.io/post/20180402-glc/</link>
       <pubDate>Mon, 02 Apr 2018 09:12:18 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/20180402-glc/</guid>
+      <guid>http://keenmisty.github.io/post/20180402-glc/</guid>
       <description>之前更新了GLC2015的土地覆被资料到EMEP模型的输入，但是测试来测试去居然跟default的土地覆被资料模拟所得到的结果完全一致。 奇哉怪哉，难道说EMEP模型模拟时landuse不起作用吗？ 这个疑问看来要花点精力去解决了。 今日又遇到了另一个邪门问题，GLC2015的资料按USGS的24类体系重新分类之后，居然在东北华北出现了大面积的水体。 检查来检查去发现，GLC2015把自身的第11类设为了Herbaceous Cover，这尼玛什么鬼。。。 待续。。。</description>
     </item>
     
     <item>
       <title>WRF-CMAQ基本概述</title>
-      <link>http://keenmisty.github.io/20160317-cmaq-intro/</link>
+      <link>http://keenmisty.github.io/post/20160317-cmaq-intro/</link>
       <pubDate>Thu, 17 Mar 2016 23:02:00 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/20160317-cmaq-intro/</guid>
+      <guid>http://keenmisty.github.io/post/20160317-cmaq-intro/</guid>
       <description>WRF-CMAQ空气质量模式系统 空气污染预报概念 空气污染预报是基于污染排放源（包含排放源清单及实时监测数据）、气象数据，通过耦合了物理、化学机制的空气质量模型进行预测的过程。
 CMAQ历史 CMAQ是美国1997年发布的第三代空气质量模型，它是美国环保局开发的用来模拟空气质量运算的开源项目。
 90年代开始，随着计算机性能的增强，特别是高性能计算与通信计划的实施，更复杂的考虑多种大气过程、多尺度的空气质量模式的开发工作在美国展开。模式中需要考虑多种排放源，如工业、电厂、交通、生物排放等过程，研究的污染物和污染问题包括首要污染物、臭氧、颗粒物、能见度、酸沉降等。９０年代末开发的代表目前国际领先水平的综合多尺度空气质量模式Models-3/CMAQ（Community Multi-scale Air Quality），本着“一个大气”（One Atomosphere）的设计理念，融入了许多当前大气化学和大气环境领域的最新研究成果，将区域对流层大气作为整体，周密的考虑所有已知的物理和化学过程，综合考虑了不同物种之间的相互影响与转化， 最大限度的模拟真实的大气环境，可用于局地到区域多种尺度光化学烟雾，区域酸沉降、大气颗粒物质等大气污染问题的理论研究与业务预报。Models-3为Third-Generation量模式三部分组成。其核心是Community Air Quality Modeling System的通称，由中尺度气象模式、污染排放模式和多尺度空气质量模式系统，所以也可以称其为Models-3/CMAQ模式。

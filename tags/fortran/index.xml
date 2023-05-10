@@ -5,14 +5,15 @@
     <link>http://keenmisty.github.io/tags/fortran/</link>
     <description>Recent content in Fortran on 南村新造</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en</language>
+    <copyright>Copyright © 2015–2023, changming@email.jnu.edu.cn; all rights reserved.</copyright>
     <lastBuildDate>Tue, 02 Feb 2016 18:34:15 +0000</lastBuildDate><atom:link href="http://keenmisty.github.io/tags/fortran/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Noah-MP Learning</title>
-      <link>http://keenmisty.github.io/20160202-sth-md/</link>
+      <link>http://keenmisty.github.io/post/20160202-sth-md/</link>
       <pubDate>Tue, 02 Feb 2016 18:34:15 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/20160202-sth-md/</guid>
+      <guid>http://keenmisty.github.io/post/20160202-sth-md/</guid>
       <description>The NoahMP calling tree Init noahmp_options NOAHMP_SFLX REDPRM FRH2O Run ATM PHENOLOGY ENERGY THERMOPROP CSNOW TDFCND RADIATION ALBEDO SNOW\_AGE SNOWALB\_BATS SNOWALB\_CLASS GROUNDALB TWOSTREAM SURRAD VEGE\_FLUX SFCDIF1 SFCDIF2 STOMATA CANRES ESAT RAGRB BARE\_FLUX TSNOSOI HRT HSTEP ROSR12 PHASECHANGE WATER CANWATER SNOWWATER SNOWFALL COMBINE DIVIDE COMBO COMPACT SNOWH2O SOILWATER ZWTEQ INFIL SRT WDFCND1 WDFCND2 SSTEP GROUNDWATER CARBON CO2FLUX ERROR </description>
     </item>
     

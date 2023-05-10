@@ -1,150 +1,318 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title> - 苟利国家生死以 岂因祸福避趋之</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-
-<meta name="author" content="keenmisty" /><meta name="description" content="title: 获取机场实时气象报告方法 date: 2016-04-18 14:45:00 tags: python Learning permalink: get-airport-weather 最近坐飞机的时候总是遇到下雨，延误的很凄惨。坐在候机厅里问当班空姐吧，其实她们也不知道。 于是乎还是" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.104.3 with theme even" />
-
-
-<link rel="canonical" href="http://keenmisty.github.io/post/20160418-get_airport_weather/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 
 
-<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="" />
-<meta property="og:description" content="title: 获取机场实时气象报告方法 date: 2016-04-18 14:45:00 tags: python Learning permalink: get-airport-weather 最近坐飞机的时候总是遇到下雨，延误的很凄惨。坐在候机厅里问当班空姐吧，其实她们也不知道。 于是乎还是" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready text-sm lg:text-base"
+  style="--bg: #faf6f1"
+  lang="en"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title> - 南村新造</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="title: 获取机场实时气象报告方法 date: 2016-04-18 14:45:00 tags:
+python Learning permalink: get-airport-weather 最近坐飞机的时候总是遇到下雨，延误的很凄惨。坐在候机厅里问当班空姐吧，其实她们也不知道。 于是乎还是发挥咱半吊子的气象专业特长，找找看有没有什么办法获取机场气象站的实时报告。
+手机端app： 手机端的天气app看起来挺多的，但是提供每十五分钟电文的少之又少。 航旅纵横或是飞常准虽然有这功能吧，但要么需要业内认证，要么需要花钱搞专业版。 找来找去，发现Flight Meteo这个app是可以提供各个机场的METAR和TAF的。 电脑端： 用电脑的话那就办法多多了，各种网站一堆一堆的。 然而没有那么多流量的时候，我还是更喜欢用脚本或者命令来获取。
+这里安利两个办法，一个是weather-util，一个是python-metar。
+python-metar可以从pyhton-metar下载到。 各位如果要结合python做批量获取，就在这个基础上改改改就好啦。
+而如果像我一样只是在候机的时候查所在机场的气象报文，那么weather-util更合适。 它的安装很简单，直接sudo apt-get install weather-util就可以安装好。 而使用嘛，安装好之后一句命令即可：
+weather &lt;code&gt;
+其中，&lt;code&gt;是机场的ICAO代码，比如说广州就是ZGGG，北京就是ZBAA。
+在这里可以查询全球机场的四字码。
+weather-util查到的结果就像这样：
+admin@ubuntu:~$ weather ZGGG Searching via station... [caching result Guangzhou, China] Current conditions at Guangzhou, China (ZGGG) 23-10N 113-20E 42M Last updated Apr 18, 2016 - 07:00 AM EDT / 2016.04.18 1100 UTC Temperature: 77 F (25 C) Relative Humidity: 65% Wind: Calm Sky conditions: mostly cloudy 如果需要看METAR电文的话，可以weather -v &lt;code&gt;， 那么输出的结果会变为：" />
+  <meta name="author" content="Chang Ming" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://keenmisty.github.io/main.min.css" />
+
+  
+  <script
+    defer
+    src="http://keenmisty.github.io/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+   
+  <link rel="preload" as="image" href="http://keenmisty.github.io/theme.png" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/bac06b4b84584727160f6bf7b358377d?s=160&amp;d=identicon" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="http://keenmisty.github.io/github.svg" />
+  
+  <link rel="preload" as="image" href="http://keenmisty.github.io/rss.svg" />
+  
+
+  
+  <link rel="icon" href="http://keenmisty.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://keenmisty.github.io/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.111.3">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="" />
+<meta property="og:description" content="title: 获取机场实时气象报告方法 date: 2016-04-18 14:45:00 tags:
+python Learning permalink: get-airport-weather 最近坐飞机的时候总是遇到下雨，延误的很凄惨。坐在候机厅里问当班空姐吧，其实她们也不知道。 于是乎还是发挥咱半吊子的气象专业特长，找找看有没有什么办法获取机场气象站的实时报告。
+手机端app： 手机端的天气app看起来挺多的，但是提供每十五分钟电文的少之又少。 航旅纵横或是飞常准虽然有这功能吧，但要么需要业内认证，要么需要花钱搞专业版。 找来找去，发现Flight Meteo这个app是可以提供各个机场的METAR和TAF的。 电脑端： 用电脑的话那就办法多多了，各种网站一堆一堆的。 然而没有那么多流量的时候，我还是更喜欢用脚本或者命令来获取。
+这里安利两个办法，一个是weather-util，一个是python-metar。
+python-metar可以从pyhton-metar下载到。 各位如果要结合python做批量获取，就在这个基础上改改改就好啦。
+而如果像我一样只是在候机的时候查所在机场的气象报文，那么weather-util更合适。 它的安装很简单，直接sudo apt-get install weather-util就可以安装好。 而使用嘛，安装好之后一句命令即可：
+weather &lt;code&gt;
+其中，&lt;code&gt;是机场的ICAO代码，比如说广州就是ZGGG，北京就是ZBAA。
+在这里可以查询全球机场的四字码。
+weather-util查到的结果就像这样：
+admin@ubuntu:~$ weather ZGGG Searching via station... [caching result Guangzhou, China] Current conditions at Guangzhou, China (ZGGG) 23-10N 113-20E 42M Last updated Apr 18, 2016 - 07:00 AM EDT / 2016.04.18 1100 UTC Temperature: 77 F (25 C) Relative Humidity: 65% Wind: Calm Sky conditions: mostly cloudy 如果需要看METAR电文的话，可以weather -v &lt;code&gt;， 那么输出的结果会变为：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://keenmisty.github.io/post/20160418-get_airport_weather/" /><meta property="article:section" content="post" />
 
 
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content="title: 获取机场实时气象报告方法 date: 2016-04-18 14:45:00 tags: python Learning permalink: get-airport-weather 最近坐飞机的时候总是遇到下雨，延误的很凄惨。坐在候机厅里问当班空姐吧，其实她们也不知道。 于是乎还是">
+  
+  <meta itemprop="name" content="">
+<meta itemprop="description" content="title: 获取机场实时气象报告方法 date: 2016-04-18 14:45:00 tags:
+python Learning permalink: get-airport-weather 最近坐飞机的时候总是遇到下雨，延误的很凄惨。坐在候机厅里问当班空姐吧，其实她们也不知道。 于是乎还是发挥咱半吊子的气象专业特长，找找看有没有什么办法获取机场气象站的实时报告。
+手机端app： 手机端的天气app看起来挺多的，但是提供每十五分钟电文的少之又少。 航旅纵横或是飞常准虽然有这功能吧，但要么需要业内认证，要么需要花钱搞专业版。 找来找去，发现Flight Meteo这个app是可以提供各个机场的METAR和TAF的。 电脑端： 用电脑的话那就办法多多了，各种网站一堆一堆的。 然而没有那么多流量的时候，我还是更喜欢用脚本或者命令来获取。
+这里安利两个办法，一个是weather-util，一个是python-metar。
+python-metar可以从pyhton-metar下载到。 各位如果要结合python做批量获取，就在这个基础上改改改就好啦。
+而如果像我一样只是在候机的时候查所在机场的气象报文，那么weather-util更合适。 它的安装很简单，直接sudo apt-get install weather-util就可以安装好。 而使用嘛，安装好之后一句命令即可：
+weather &lt;code&gt;
+其中，&lt;code&gt;是机场的ICAO代码，比如说广州就是ZGGG，北京就是ZBAA。
+在这里可以查询全球机场的四字码。
+weather-util查到的结果就像这样：
+admin@ubuntu:~$ weather ZGGG Searching via station... [caching result Guangzhou, China] Current conditions at Guangzhou, China (ZGGG) 23-10N 113-20E 42M Last updated Apr 18, 2016 - 07:00 AM EDT / 2016.04.18 1100 UTC Temperature: 77 F (25 C) Relative Humidity: 65% Wind: Calm Sky conditions: mostly cloudy 如果需要看METAR电文的话，可以weather -v &lt;code&gt;， 那么输出的结果会变为：">
 
-<meta itemprop="wordCount" content="826">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta itemprop="wordCount" content="158">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="title: 获取机场实时气象报告方法 date: 2016-04-18 14:45:00 tags: python Learning permalink: get-airport-weather 最近坐飞机的时候总是遇到下雨，延误的很凄惨。坐在候机厅里问当班空姐吧，其实她们也不知道。 于是乎还是"/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
-
-</head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">南村新造</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/">
-        <li class="mobile-menu-item">Home</li>
-      </a><a href="/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="/about/">
-        <li class="mobile-menu-item">About</li>
-      </a>
-  </ul>
+<meta name="twitter:description" content="title: 获取机场实时气象报告方法 date: 2016-04-18 14:45:00 tags:
+python Learning permalink: get-airport-weather 最近坐飞机的时候总是遇到下雨，延误的很凄惨。坐在候机厅里问当班空姐吧，其实她们也不知道。 于是乎还是发挥咱半吊子的气象专业特长，找找看有没有什么办法获取机场气象站的实时报告。
+手机端app： 手机端的天气app看起来挺多的，但是提供每十五分钟电文的少之又少。 航旅纵横或是飞常准虽然有这功能吧，但要么需要业内认证，要么需要花钱搞专业版。 找来找去，发现Flight Meteo这个app是可以提供各个机场的METAR和TAF的。 电脑端： 用电脑的话那就办法多多了，各种网站一堆一堆的。 然而没有那么多流量的时候，我还是更喜欢用脚本或者命令来获取。
+这里安利两个办法，一个是weather-util，一个是python-metar。
+python-metar可以从pyhton-metar下载到。 各位如果要结合python做批量获取，就在这个基础上改改改就好啦。
+而如果像我一样只是在候机的时候查所在机场的气象报文，那么weather-util更合适。 它的安装很简单，直接sudo apt-get install weather-util就可以安装好。 而使用嘛，安装好之后一句命令即可：
+weather &lt;code&gt;
+其中，&lt;code&gt;是机场的ICAO代码，比如说广州就是ZGGG，北京就是ZBAA。
+在这里可以查询全球机场的四字码。
+weather-util查到的结果就像这样：
+admin@ubuntu:~$ weather ZGGG Searching via station... [caching result Guangzhou, China] Current conditions at Guangzhou, China (ZGGG) 23-10N 113-20E 42M Last updated Apr 18, 2016 - 07:00 AM EDT / 2016.04.18 1100 UTC Temperature: 77 F (25 C) Relative Humidity: 65% Wind: Calm Sky conditions: mostly cloudy 如果需要看METAR电文的话，可以weather -v &lt;code&gt;， 那么输出的结果会变为："/>
 
   
+  
+</head>
 
-
-</nav>
-
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">南村新造</a>
-</div>
-
-
-
-
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="/">Home</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/about/">About</a>
-      </li>
-  </ul>
-</nav>
-
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
-    
-    <header class="post-header">
-      <h1 class="post-title"></h1>
-
-      <div class="post-meta">
-        <span class="post-time"> 0001-01-01 </span>
-        
-          <span class="more-meta"> 826 words </span>
-          <span class="more-meta"> 2 mins read </span>
-        
-      </div>
-    </header>
-
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#手机端app">手机端app：</a></li>
-    <li><a href="#电脑端">电脑端：</a></li>
-  </ul>
-</nav>
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-0.5 text-3xl font-bold"
+      href="http://keenmisty.github.io/"
+      >南村新造</a
+    >
+    <div
+      class="btn-dark text-[0] ml-6 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
   </div>
-</div>
-    <div class="post-content">
-      <p>title: 获取机场实时气象报告方法
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = `"#faf6f1"`.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/contact/"
+        >Contact</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:mt-0 lg:ml-12 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/keenmisty"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./rss.svg)"
+        href="http://keenmisty.github.io/index.xml"
+        target="_blank"
+        rel="alternate"
+      >
+        rss
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pt-16 pb-24 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-20">
+    <h1 class="!my-0 pb-2.5"></h1>
+
+    
+    <div class="text-sm opacity-60">
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><p>title: 获取机场实时气象报告方法
 date: 2016-04-18 14:45:00
 tags:</p>
 <ul>
@@ -173,166 +341,82 @@ permalink: get-airport-weather</li>
 <p>其中，<code>&lt;code&gt;</code>是机场的ICAO代码，比如说广州就是ZGGG，北京就是ZBAA。</p>
 <p>在<a href="http://www.feeyo.com/airport_code.asp">这里</a>可以查询全球机场的四字码。</p>
 <p>weather-util查到的结果就像这样：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">admin@ubuntu:~$ weather ZGGG
-</span></span><span class="line"><span class="cl">Searching via station...
-</span></span><span class="line"><span class="cl"><span class="o">[</span>caching result Guangzhou, China<span class="o">]</span>
-</span></span><span class="line"><span class="cl">Current conditions at Guangzhou, China <span class="o">(</span>ZGGG<span class="o">)</span> 23-10N 113-20E 42M
-</span></span><span class="line"><span class="cl">Last updated Apr 18, <span class="m">2016</span> - 07:00 AM EDT / 2016.04.18 <span class="m">1100</span> UTC
-</span></span><span class="line"><span class="cl">Temperature: <span class="m">77</span> F <span class="o">(</span><span class="m">25</span> C<span class="o">)</span>
-</span></span><span class="line"><span class="cl">Relative Humidity: 65%
-</span></span><span class="line"><span class="cl">Wind: Calm
-</span></span><span class="line"><span class="cl">Sky conditions: mostly cloudy
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如果需要看METAR电文的话，可以<code>weather -v &lt;code&gt;</code>，
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>admin@ubuntu:~$ weather ZGGG
+</span></span><span style="display:flex;"><span>Searching via station...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>caching result Guangzhou, China<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Current conditions at Guangzhou, China <span style="color:#f92672">(</span>ZGGG<span style="color:#f92672">)</span> 23-10N 113-20E 42M
+</span></span><span style="display:flex;"><span>Last updated Apr 18, <span style="color:#ae81ff">2016</span> - 07:00 AM EDT / 2016.04.18 <span style="color:#ae81ff">1100</span> UTC
+</span></span><span style="display:flex;"><span>Temperature: <span style="color:#ae81ff">77</span> F <span style="color:#f92672">(</span><span style="color:#ae81ff">25</span> C<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Relative Humidity: 65%
+</span></span><span style="display:flex;"><span>Wind: Calm
+</span></span><span style="display:flex;"><span>Sky conditions: mostly cloudy
+</span></span></code></pre></div><p>如果需要看METAR电文的话，可以<code>weather -v &lt;code&gt;</code>，
 那么输出的结果会变为：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">admin@ubuntu:~$ weather -v ZGGG
-</span></span><span class="line"><span class="cl">Searching via station...
-</span></span><span class="line"><span class="cl"><span class="o">[</span>caching result Guangzhou, China<span class="o">]</span>
-</span></span><span class="line"><span class="cl">Guangzhou, China <span class="o">(</span>ZGGG<span class="o">)</span> 23-10N 113-20E 42M
-</span></span><span class="line"><span class="cl">Apr 18, <span class="m">2016</span> - 07:00 AM EDT / 2016.04.18 <span class="m">1100</span> UTC
-</span></span><span class="line"><span class="cl">Wind: Calm:0
-</span></span><span class="line"><span class="cl">Visibility: greater than <span class="m">7</span> mile<span class="o">(</span>s<span class="o">)</span>:0
-</span></span><span class="line"><span class="cl">Sky conditions: mostly cloudy
-</span></span><span class="line"><span class="cl">Temperature: <span class="m">77</span> F <span class="o">(</span><span class="m">25</span> C<span class="o">)</span>
-</span></span><span class="line"><span class="cl">Dew Point: <span class="m">64</span> F <span class="o">(</span><span class="m">18</span> C<span class="o">)</span>
-</span></span><span class="line"><span class="cl">Relative Humidity: 65%
-</span></span><span class="line"><span class="cl">Pressure <span class="o">(</span>altimeter<span class="o">)</span>: 29.94 in. Hg <span class="o">(</span><span class="m">1014</span> hPa<span class="o">)</span>
-</span></span><span class="line"><span class="cl">ob: ZGGG 181100Z 00000MPS <span class="m">9999</span> BKN060 25/18 Q1014 NOSIG
-</span></span><span class="line"><span class="cl">cycle: <span class="m">11</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>其中，ob这一行就是。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>admin@ubuntu:~$ weather -v ZGGG
+</span></span><span style="display:flex;"><span>Searching via station...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>caching result Guangzhou, China<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Guangzhou, China <span style="color:#f92672">(</span>ZGGG<span style="color:#f92672">)</span> 23-10N 113-20E 42M
+</span></span><span style="display:flex;"><span>Apr 18, <span style="color:#ae81ff">2016</span> - 07:00 AM EDT / 2016.04.18 <span style="color:#ae81ff">1100</span> UTC
+</span></span><span style="display:flex;"><span>Wind: Calm:0
+</span></span><span style="display:flex;"><span>Visibility: greater than <span style="color:#ae81ff">7</span> mile<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>:0
+</span></span><span style="display:flex;"><span>Sky conditions: mostly cloudy
+</span></span><span style="display:flex;"><span>Temperature: <span style="color:#ae81ff">77</span> F <span style="color:#f92672">(</span><span style="color:#ae81ff">25</span> C<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Dew Point: <span style="color:#ae81ff">64</span> F <span style="color:#f92672">(</span><span style="color:#ae81ff">18</span> C<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Relative Humidity: 65%
+</span></span><span style="display:flex;"><span>Pressure <span style="color:#f92672">(</span>altimeter<span style="color:#f92672">)</span>: 29.94 in. Hg <span style="color:#f92672">(</span><span style="color:#ae81ff">1014</span> hPa<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>ob: ZGGG 181100Z 00000MPS <span style="color:#ae81ff">9999</span> BKN060 25/18 Q1014 NOSIG
+</span></span><span style="display:flex;"><span>cycle: <span style="color:#ae81ff">11</span>
+</span></span></code></pre></div><p>其中，ob这一行就是。</p>
 <p>可以看到现在广州白云机场的能见度很好，也没有下雨。
 那飞机很快就可以起飞咯，再也不去骚扰坐台的空姐了^_^</p>
+</section>
 
-    </div>
-
-    <div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">Author</span>
-    <span class="item-content">keenmisty</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">LastMod</span>
-    <span class="item-content">
-        0001-01-01
-        
-    </span>
-  </p>
   
-  
-</div>
-<footer class="post-footer">
-      
-      <nav class="post-nav">
-        <a class="prev" href="/post/hello-world/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Hello World</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        
-      </nav>
-    </footer>
-  </article>
-        </div>
-        
-
   
 
   
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://keenmisty.github.io/post/hello-world/"
+      ><span class="mr-1.5">←</span><span>Hello World</span></a
+    >
+    
+    
+  </nav>
+  
 
-      </div>
+  
+  
+
+  
+  
+</article>
+
+
     </main>
 
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:keenmisty@gmail.com" class="iconfont icon-email" title="email"></a>
-      <a href="https://www.facebook.com/keenmisty/" class="iconfont icon-facebook" title="facebook"></a>
-      <a href="https://github.com/keenmisty" class="iconfont icon-github" title="github"></a>
-      <a href="https://www.zhihu.com/people/chang-ming-58" class="iconfont icon-zhihu" title="zhihu"></a>
-  <a href="http://keenmisty.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  
-
-  <span class="copyright-year">
-    &copy; 
-    2015 - 
-    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>keenmisty</span>
-  </span>
-</div>
-
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
+    <footer
+  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="http://keenmisty.github.io/">南村新造</a>
   </div>
-  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >Theme Paper</a
+  >
+</footer>
 
-
-
-<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
-  <script type="text/javascript">
-    window.MathJax = {
-      tex: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        }
-    };
-  </script>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
-
-
-
-
-
-
-
-
-</body>
+  </body>
 </html>

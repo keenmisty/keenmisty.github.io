@@ -5,14 +5,15 @@
     <link>http://keenmisty.github.io/tags/ncl/</link>
     <description>Recent content in ncl on 南村新造</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en</language>
+    <copyright>Copyright © 2015–2023, changming@email.jnu.edu.cn; all rights reserved.</copyright>
     <lastBuildDate>Sun, 12 Jun 2016 16:30:18 +0000</lastBuildDate><atom:link href="http://keenmisty.github.io/tags/ncl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NCL生成kml文件</title>
-      <link>http://keenmisty.github.io/20160612-ncl/</link>
+      <link>http://keenmisty.github.io/post/20160612-ncl/</link>
       <pubDate>Sun, 12 Jun 2016 16:30:18 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/20160612-ncl/</guid>
+      <guid>http://keenmisty.github.io/post/20160612-ncl/</guid>
       <description>简介 KML(Keyhold Markup Language)是一种XML语法格式的标记语言，可以在多种应用程序中显示，包括 Google Earth、Google Map、ArcGIS(ArcMap/ArcGlobe)等，驴友们制作路书的时候也经常采用这种格式制作。
 它的优势是可以把几何、符号系统、描述、属性、影像和行为等数据封装到单个源中，非常方便数据的共享和在线展示。
 NCL对于KML的支持起自2013年，由Mohammad Abouali开发，他制作了一个名为 NCL_GETools 的NCL输出库，使得NCL可以将各种气象模型结果输出成KML格式，从而可以方便的在各类GIS软件中与其他地理信息数据一起进行处理，或是通过Google Earth/Map的API进行在线的展示。

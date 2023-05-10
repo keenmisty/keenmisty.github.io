@@ -5,14 +5,15 @@
     <link>http://keenmisty.github.io/tags/doxygen/</link>
     <description>Recent content in Doxygen on 南村新造</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en</language>
+    <copyright>Copyright © 2015–2023, changming@email.jnu.edu.cn; all rights reserved.</copyright>
     <lastBuildDate>Mon, 31 Oct 2016 14:10:30 +0000</lastBuildDate><atom:link href="http://keenmisty.github.io/tags/doxygen/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>用Doxygen&#43;Graphviz生成WRF-Chem程序结构图</title>
-      <link>http://keenmisty.github.io/20161031-doxygen/</link>
+      <link>http://keenmisty.github.io/post/20161031-doxygen/</link>
       <pubDate>Mon, 31 Oct 2016 14:10:30 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/20161031-doxygen/</guid>
+      <guid>http://keenmisty.github.io/post/20161031-doxygen/</guid>
       <description>缘起 做毕业论文的时候要改机制代码，并且要耦合到WRF-Chem模式里面使它生效，所以就需要搞清楚WRF-Chem的结构，以便调用和输出。
 虽然可以通过长时间的看WRF-Chem源代码、debug尝试以及IDE帮忙，但有一份calling tree还是很好的，给师弟师妹们讲起来也方便很多。
 因此，考虑尝试用程序结构自动分析工具Doxygen对它进行分析，用Graphviz生成出来。
