@@ -164,7 +164,7 @@ onload='renderMathInElement(document.body);'></script>
 
 	
 </div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
-		datetime="2022-08-30T22:09:33&#43;08:00">2022-8-30 00:00:00</time>
+		datetime="2022-08-30T22:09:33&#43;08:00">2022-8-30</time>
 </div>
 
 <hr />
@@ -235,6 +235,15 @@ onload='renderMathInElement(document.body);'></script>
 	
 	
 	
+	
+	<div id="fastSearch" class="m-0">
+		<input id="searchInput" type="text" size=10 
+			class="bg-gray-100 focus:outline-none border-b border-gray-100 focus:border-eucalyptus-300 md:text-right
+			placeholder-java-500 min-w-0 max-w-xxxs"
+			placeholder="search" />
+		<ul id="searchResults" class="bg-gray-200 px-2 divide-y divide-gray-400">
+		</ul>
+	</div>
 	
 </ul>
 	
@@ -363,6 +372,9 @@ onload='renderMathInElement(document.body);'></script>
 
 <script src="/dist/app.js"></script>
 
+
+<script src="/lib/fuse.min.js"></script> 
+<script src="/lib/fastsearch.js"></script>
 
 	</div>
 </body>
