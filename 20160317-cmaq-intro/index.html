@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="generator" content="Hugo 0.111.3">
+  <link rel="canonical" href="http://keenmisty.github.io/20160317-cmaq-intro/">
+
+  
+    
+    <meta name="description" content="WRF-CMAQ空气质量模式系统 空气污染预报概念 空气污染预报是基于污染排放源（包含排放源清单及实时监测数据）、气象数据，通过耦合了物理、化学机制的空气质量模型进行预测的过程。
+CMAQ历史 CMAQ是美国1997年发布的第三代空气质量模型，它是美国环保局开发的用来模拟空气质量运算的开源项目。
+90年代开始，随着计算机性能的增强，特别是高性能计算与通信计划的实施，更复杂的考虑多种大气过程、多尺度的空气质量模式的开发工作在美国展开。模式中需要考虑多种排放源，如工业、电厂、交通、生物排放等过程，研究的污染物和污染问题包括首要污染物、臭氧、颗粒物、能见度、酸沉降等。９０年代末开发的代表目前国际领先水平的综合多尺度空气质量模式Models-3/CMAQ（Community Multi-scale Air Quality），本着“一个大气”（One Atomosphere）的设计理念，融入了许多当前大气化学和大气环境领域的最新研究成果，将区域对流层大气作为整体，周密的考虑所有已知的物理和化学过程，综合考虑了不同物种之间的相互影响与转化， 最大限度的模拟真实的大气环境，可用于局地到区域多种尺度光化学烟雾，区域酸沉降、大气颗粒物质等大气污染问题的理论研究与业务预报。Models-3为Third-Generation量模式三部分组成。其核心是Community Air Quality Modeling System的通称，由中尺度气象模式、污染排放模式和多尺度空气质量模式系统，所以也可以称其为Models-3/CMAQ模式。
+CMAQ的最大特色在一个大气（One-Atmosphere）的观念，打破了传统模式对单一物种的模拟。将复杂的空气污染情况如对流层的臭氧、PM、有毒物质、酸沉降及能见度等问题综合处理，用于多尺度、多污染物的空气质量预报、评估和决策政策等多种途径。美国环保局研制的未来第四代空气质量模型系统，将尽可能考虑气圈、永圈、和生物圈之闯的互相作用，以便提供一个更加全面的方法对整个 生态系统中的污染物的输送和消亡过程进行预报和评估。 CMAQ是目前国际领先水平的空气质量模型系统。 有关质量预报和评估系统
+MM5/WRF-CMAQ耦合模式组成 气象驱动部分： MM5： MM5模式是由美国大气研究中心(NCAR)和美国宾州大学(PSU)在MM4模式基础上联合研制并发展起来的，是较先进的中尺度气象数值预报模式之一，已被广泛应用于各种中尺度现象的研究
+WRF： WRF（Weather Research and Forecasting Model）模式是由美国环境预测中心NCEP,美国国家大气研究中心NCAR等美国科研机构中心着手开发的一种统一的中尺度天气预报模式。模式分为ARW(the Advanced Research WRF)和NMM(the Nonhydrostatic Mesoscale Model)两种，即研究用和业务用两种形式。
+主要设置内容： 模拟区域网格资料（网格大小、网格尺寸等）； 模拟时间（Julia Date ）； 垂直分层（Sigma Layer 为分层基准）； 下垫面资料（土地利用、土壤、地形等）； 气温、气压等气象资料； 物理参数化方案组合；
+源处理部分： SMOKE 包含固定源、移动源、面源、生物源四大处理模块 CMAQ化学部分： 初始值模块(Initial conditions processor, ICON)； 边界值模块(Boundary conditions processor, BCON)； 光解速率常数模块(Photolysis rate processor, JPROC)； 化学反应机制处理(Chemical-transport model processor, CCTM) 垂直对流效应； 水平对流效应； 垂直扩散效应； 水平扩散效应； 云程序机制； 气象化学反应机制； 液相化学反应机制； 云混合模型机制； 气悬胶动力与粒径机制； 烟流化学效应； 干沉降机制； 模式流程分析模块； ">
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" type="text/css" href="/css/paper.css">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/custom.css">
+  
+  
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-123456789-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+  
+
+  
+  
+  <title>WRF-CMAQ基本概述 | 南村新造</title>
+</head>
+
+  <body>
+    <div class="container paper">
+      <nav class="border split-nav">
+  <div class="nav-brand">
+    <h3><a href="/">南村新造</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+    <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+      
+        <li><a href="/">Blog</a></li>
+      
+        <li><a href="/tags/">Tags</a></li>
+      
+        <li><a href="/about/">About</a></li>
+      
+        <li><a href="/index.xml">RSS</a></li>
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+      <main>
+        
+
+<h1 class="post-title">WRF-CMAQ基本概述</h1>
+
+
+<strong>Publish date: </strong>Mar 17, 17030
+<br>
+
+  <strong>Tags: </strong>
+  
+    <a href="/tags/wrf">WRF</a>
+  
+    <a href="/tags/cmaq">CMAQ</a>
+  
+    <a href="/tags/learning">Learning</a>
+  
+
+
+
+  
+
+<div class="child-borders">
+  <div class="toc border" aria-labelledby="toc-heading">
+    <h2 id="toc-heading">Table of contents</h2>
+    <ol>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#%e7%a9%ba%e6%b0%94%e6%b1%a1%e6%9f%93%e9%a2%84%e6%8a%a5%e6%a6%82%e5%bf%b5">
+            空气污染预报概念
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#cmaq%e5%8e%86%e5%8f%b2">
+            CMAQ历史
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#mm5wrf-cmaq%e8%80%a6%e5%90%88%e6%a8%a1%e5%bc%8f%e7%bb%84%e6%88%90">
+            MM5/WRF-CMAQ耦合模式组成
+          </a>
+        </li>
+      
+    </ol>
+  </div>
+</div>
+
+
+
+<h1 id="wrf-cmaq空气质量模式系统">WRF-CMAQ空气质量模式系统</h1>
+<h2 id="空气污染预报概念">空气污染预报概念</h2>
+<p>空气污染预报是基于污染排放源（包含排放源清单及实时监测数据）、气象数据，通过耦合了物理、化学机制的空气质量模型进行预测的过程。</p>
+<h2 id="cmaq历史">CMAQ历史</h2>
+<p>CMAQ是美国1997年发布的第三代空气质量模型，它是美国环保局开发的用来模拟空气质量运算的开源项目。</p>
+<p>90年代开始，随着计算机性能的增强，特别是高性能计算与通信计划的实施，更复杂的考虑多种大气过程、多尺度的空气质量模式的开发工作在美国展开。模式中需要考虑多种排放源，如工业、电厂、交通、生物排放等过程，研究的污染物和污染问题包括首要污染物、臭氧、颗粒物、能见度、酸沉降等。９０年代末开发的代表目前国际领先水平的综合多尺度空气质量模式Models-3/CMAQ（Community Multi-scale Air Quality），本着“一个大气”（One Atomosphere）的设计理念，融入了许多当前大气化学和大气环境领域的最新研究成果，将区域对流层大气作为整体，周密的考虑所有已知的物理和化学过程，综合考虑了不同物种之间的相互影响与转化， 最大限度的模拟真实的大气环境，可用于局地到区域多种尺度光化学烟雾，区域酸沉降、大气颗粒物质等大气污染问题的理论研究与业务预报。Models-3为Third-Generation量模式三部分组成。其核心是Community Air Quality Modeling System的通称，由中尺度气象模式、污染排放模式和多尺度空气质量模式系统，所以也可以称其为Models-3/CMAQ模式。</p>
+<p>CMAQ的最大特色在一个大气（One-Atmosphere）的观念，打破了传统模式对单一物种的模拟。将复杂的空气污染情况如对流层的臭氧、PM、有毒物质、酸沉降及能见度等问题综合处理，用于多尺度、多污染物的空气质量预报、评估和决策政策等多种途径。美国环保局研制的未来第四代空气质量模型系统，将尽可能考虑气圈、永圈、和生物圈之闯的互相作用，以便提供一个更加全面的方法对整个 生态系统中的污染物的输送和消亡过程进行预报和评估。 CMAQ是目前国际领先水平的空气质量模型系统。
+有关质量预报和评估系统</p>
+<h2 id="mm5wrf-cmaq耦合模式组成">MM5/WRF-CMAQ耦合模式组成</h2>
+<ul>
+<li><strong>气象驱动部分：</strong></li>
+</ul>
+<ul>
+<li>
+<p>MM5：
+MM5模式是由美国大气研究中心(NCAR)和美国宾州大学(PSU)在MM4模式基础上联合研制并发展起来的，是较先进的中尺度气象数值预报模式之一，已被广泛应用于各种中尺度现象的研究</p>
+</li>
+<li>
+<p>WRF：
+WRF（Weather Research and Forecasting Model）模式是由美国环境预测中心NCEP,美国国家大气研究中心NCAR等美国科研机构中心着手开发的一种统一的中尺度天气预报模式。模式分为ARW(the Advanced Research WRF)和NMM(the Nonhydrostatic Mesoscale Model)两种，即研究用和业务用两种形式。</p>
+</li>
+<li>
+<p>主要设置内容：
+模拟区域网格资料（网格大小、网格尺寸等）；
+模拟时间（Julia Date ）；
+垂直分层（Sigma Layer 为分层基准）；
+下垫面资料（土地利用、土壤、地形等）；
+气温、气压等气象资料；
+物理参数化方案组合；</p>
+</li>
+</ul>
+<ul>
+<li><strong>源处理部分：</strong></li>
+</ul>
+<ul>
+<li>SMOKE
+包含固定源、移动源、面源、生物源四大处理模块</li>
+</ul>
+<ul>
+<li><strong>CMAQ化学部分：</strong></li>
+</ul>
+<ul>
+<li>初始值模块(Initial conditions processor, ICON)；</li>
+<li>边界值模块(Boundary conditions processor, BCON)；</li>
+<li>光解速率常数模块(Photolysis rate processor, JPROC)；</li>
+<li>化学反应机制处理(Chemical-transport model processor, CCTM)</li>
+<li>垂直对流效应；</li>
+<li>水平对流效应；</li>
+<li>垂直扩散效应；</li>
+<li>水平扩散效应；</li>
+<li>云程序机制；</li>
+<li>气象化学反应机制；</li>
+<li>液相化学反应机制；</li>
+<li>云混合模型机制；</li>
+<li>气悬胶动力与粒径机制；</li>
+<li>烟流化学效应；</li>
+<li>干沉降机制；</li>
+<li>模式流程分析模块；</li>
+</ul>
+
+
+
+
+      </main>
+  </div>
+  </body>
+</html>

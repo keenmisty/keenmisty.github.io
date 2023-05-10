@@ -1,29 +1,43 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on 苟利国家生死以 岂因祸福避趋之</title>
+    <title>Python on 南村新造</title>
     <link>http://keenmisty.github.io/tags/python/</link>
-    <description>Recent content in Python on 苟利国家生死以 岂因祸福避趋之</description>
+    <description>Recent content in Python on 南村新造</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>keenmisty</copyright>
+    <language>zh-cn</language>
     <lastBuildDate>Fri, 03 Jan 2020 16:32:46 +0000</lastBuildDate><atom:link href="http://keenmisty.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>只争朝夕，不负韶华</title>
-      <link>http://keenmisty.github.io/post/20200103-saysth/</link>
+      <link>http://keenmisty.github.io/20200103-saysth/</link>
       <pubDate>Fri, 03 Jan 2020 16:32:46 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/post/20200103-saysth/</guid>
-      <description>2020年的第一个周五，捣鼓了一整个下午，终于恢复了对自己GitHub的pull/push操作能力。由此可见我的coding能力下降了多少，</description>
+      <guid>http://keenmisty.github.io/20200103-saysth/</guid>
+      <description>2020年的第一个周五，捣鼓了一整个下午，终于恢复了对自己GitHub的pull/push操作能力。由此可见我的coding能力下降了多少，每天被报告、报表、事务、跑腿所包围，在学术上和技术上感觉我自己已经废了，真是绝望的要命。
+回顾2019年，最美好的经历是在除夕前和老婆一起拥有了一个女儿，从此成为一个光荣的带娃男。然后在10月份不管不顾的搞出来两篇小文章，算是总算有那么一点点科学收获。此外，居然有空重读了一遍文明之光、在北京飞回广州的航班上看了一遍流浪地球。至于其他的，都是小事情了。
+用学生的话讲，常老师越来越佛了。。。
+嗯哼。
+2020年，没有打算去交基金申请，对下一步能够解决的科学问题一点思考都没有，就不给国家浪费钱了。做好手头上的事情，是这上半年最大的意愿。
+给自己立个Flag吧：
+想要完成的小工作：
+和小朱的合作 深圳的大任务 嘉晨的小文章 赵伟的小文章 想要尝试的新事物：
+UAVs&amp;amp;ROBOTs Lidar uEMEP 想要戒掉的坏习惯：
+吃夜宵 熬通宵 爆粗口 </description>
     </item>
     
     <item>
       <title>GIS中Python的使用&lt;1&gt;</title>
-      <link>http://keenmisty.github.io/post/20160215-gis-programming-and-automation1/</link>
+      <link>http://keenmisty.github.io/20160215-gis-programming-and-automation1/</link>
       <pubDate>Mon, 15 Feb 2016 13:02:00 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/post/20160215-gis-programming-and-automation1/</guid>
-      <description>GIS Modeling与Python介绍 ArcGIS中提供了两种写Python的方式： ModelBuilder IDLE ModelBuilder的使用很简单，可以先拿来做模型</description>
+      <guid>http://keenmisty.github.io/20160215-gis-programming-and-automation1/</guid>
+      <description>GIS Modeling与Python介绍 ArcGIS中提供了两种写Python的方式：
+ModelBuilder IDLE ModelBuilder的使用很简单，可以先拿来做模型的结构设计。 但是一些复杂的处理则需要写Python Script来实现。
+因此：
+Using Python window in ArcGIS：
+import arcpy arcpy.Buffer_analysis(&amp;#34;us_cities&amp;#34;, &amp;#34;us_cities_buffered&amp;#34;, &amp;#34;15 miles&amp;#34;, &amp;#34;&amp;#34;, &amp;#34;&amp;#34;, &amp;#34;ALL&amp;#34;) 注意：所有需要调用ArcGIS的Tools的脚本，都需要import arcpy
+比如打印feature的空间参考：
+# Opens a feature class from a geodatabase and prints the spatial reference import arcpy featureClass = &amp;#34;C:/Data/USA/USA.gdb/StateBoundaries&amp;#34; # Describe the feature class and get its spatial reference desc = arcpy.Describe(featureClass) spatialRef = desc.spatialReference # Print the spatial reference name print spatialRef.Name 参考: Python Scripting for ArcGIS by Paul A.</description>
     </item>
     
   </channel>

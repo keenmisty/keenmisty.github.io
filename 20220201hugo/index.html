@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="generator" content="Hugo 0.111.3">
+  <link rel="canonical" href="http://keenmisty.github.io/20220201hugo/">
+
+  
+    
+    <meta name="description" content="一年了登不上自己的blog，惨啊真是惨… 费尽力气先配置了VPN，又配置好Github的ssh连接，突然发现之前用的Hexo框架所需的依赖库全都不知道什么时候废掉了… 于是， 一怒之下干脆换框架好了。 搜索了一下知乎，发现Hugo相比Hexo更加简单方便，于是顺理成章的，迁移！迁移！
+安装方法还算简单，直接brew install hugo就ok了，然后就是配置theme，配置好之后从exampleSite里找到config文件一通编辑，确实方便很多。 然后把之前hexo下的markdown博文放到content下的post文件夹里，直接deploy就有模有样了。 嗯，反正我也只是要恢复一个记录经验教训的荒蛮之地，美化什么的等日后有空再说吧，那就这样啦~
+话说发现一个快速deploy的shell脚本，真是好用，分享在这里：
+#!/bin/bash echo -e &#34;\033[0;32mDeploying updates to GitHub...\033[0m&#34; # build the project hugo -t even cd public git add . msg=&#34;rebuilding site `date`&#34; if [ $# -eq 1 ] then msg=&#34;$1&#34; fi git commit -m &#34;$msg&#34; # push source to github git push upstream master # come back to blog root cd .. 最后，鉴于今天是大年初一，那么还是要祝自己一句：新春快乐，龙腾虎跃~~~">
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" type="text/css" href="/css/paper.css">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/custom.css">
+  
+  
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-123456789-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+  
+
+  
+  
+  <title>从Hexo迁移到Hugo | 南村新造</title>
+</head>
+
+  <body>
+    <div class="container paper">
+      <nav class="border split-nav">
+  <div class="nav-brand">
+    <h3><a href="/">南村新造</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+    <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+      
+        <li><a href="/">Blog</a></li>
+      
+        <li><a href="/tags/">Tags</a></li>
+      
+        <li><a href="/about/">About</a></li>
+      
+        <li><a href="/index.xml">RSS</a></li>
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+      <main>
+        
+
+<h1 class="post-title">从Hexo迁移到Hugo</h1>
+
+
+<strong>Publish date: </strong>Feb 1, 10231
+<br>
+
+
+
+  
+
+
+
+<p>一年了登不上自己的blog，惨啊真是惨&hellip;
+费尽力气先配置了VPN，又配置好Github的ssh连接，突然发现之前用的Hexo框架所需的依赖库全都不知道什么时候废掉了&hellip;
+于是，
+一怒之下干脆换框架好了。
+搜索了一下知乎，发现Hugo相比Hexo更加简单方便，于是顺理成章的，迁移！迁移！</p>
+<p>安装方法还算简单，直接<code>brew install hugo</code>就ok了，然后就是配置theme，配置好之后从exampleSite里找到config文件一通编辑，确实方便很多。
+然后把之前hexo下的markdown博文放到content下的post文件夹里，直接deploy就有模有样了。
+嗯，反正我也只是要恢复一个记录经验教训的荒蛮之地，美化什么的等日后有空再说吧，那就这样啦~</p>
+<p>话说发现一个快速deploy的shell脚本，真是好用，分享在这里：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>echo -e <span style="color:#e6db74">&#34;\033[0;32mDeploying updates to GitHub...\033[0m&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># build the project</span>
+</span></span><span style="display:flex;"><span>hugo -t even
+</span></span><span style="display:flex;"><span>cd public
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rebuilding site `date`&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $# -eq <span style="color:#ae81ff">1</span> <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">then</span> msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;</span>$msg<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># push source to github</span>
+</span></span><span style="display:flex;"><span>git push upstream master
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># come back to blog root</span>
+</span></span><span style="display:flex;"><span>cd ..
+</span></span></code></pre></div><p>最后，鉴于今天是大年初一，那么还是要祝自己一句：新春快乐，龙腾虎跃~~~</p>
+
+
+
+
+      </main>
+  </div>
+  </body>
+</html>

@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>landuse on 苟利国家生死以 岂因祸福避趋之</title>
+    <title>landuse on 南村新造</title>
     <link>http://keenmisty.github.io/tags/landuse/</link>
-    <description>Recent content in landuse on 苟利国家生死以 岂因祸福避趋之</description>
+    <description>Recent content in landuse on 南村新造</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>keenmisty</copyright>
+    <language>zh-cn</language>
     <lastBuildDate>Mon, 02 Apr 2018 09:12:18 +0000</lastBuildDate><atom:link href="http://keenmisty.github.io/tags/landuse/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GLC2015土地覆被的邪门问题</title>
-      <link>http://keenmisty.github.io/post/20180402-glc/</link>
+      <link>http://keenmisty.github.io/20180402-glc/</link>
       <pubDate>Mon, 02 Apr 2018 09:12:18 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/post/20180402-glc/</guid>
-      <description>之前更新了GLC2015的土地覆被资料到EMEP模型的输入，但是测试来测试去居然跟default的土地覆被资料模拟所得到的结果完全一致。 奇哉</description>
+      <guid>http://keenmisty.github.io/20180402-glc/</guid>
+      <description>之前更新了GLC2015的土地覆被资料到EMEP模型的输入，但是测试来测试去居然跟default的土地覆被资料模拟所得到的结果完全一致。 奇哉怪哉，难道说EMEP模型模拟时landuse不起作用吗？ 这个疑问看来要花点精力去解决了。 今日又遇到了另一个邪门问题，GLC2015的资料按USGS的24类体系重新分类之后，居然在东北华北出现了大面积的水体。 检查来检查去发现，GLC2015把自身的第11类设为了Herbaceous Cover，这尼玛什么鬼。。。 待续。。。</description>
     </item>
     
   </channel>

@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>data on 苟利国家生死以 岂因祸福避趋之</title>
+    <title>data on 南村新造</title>
     <link>http://keenmisty.github.io/tags/data/</link>
-    <description>Recent content in data on 苟利国家生死以 岂因祸福避趋之</description>
+    <description>Recent content in data on 南村新造</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>keenmisty</copyright>
+    <language>zh-cn</language>
     <lastBuildDate>Wed, 01 Jun 2016 15:30:18 +0000</lastBuildDate><atom:link href="http://keenmisty.github.io/tags/data/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>收集的一些LiDAR数据库</title>
-      <link>http://keenmisty.github.io/post/20160601/</link>
+      <link>http://keenmisty.github.io/20160601/</link>
       <pubDate>Wed, 01 Jun 2016 15:30:18 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/post/20160601/</guid>
-      <description>一些LiDAR数据： 大气重要参数高分辨率垂直分布探查数据库 http://atmosdb.aiofm.ac.cn/ Lidar Group of ABC http://lidar.abct.lmd.polytechnique.fr 六一儿童节快乐&amp;hellip;</description>
+      <guid>http://keenmisty.github.io/20160601/</guid>
+      <description>一些LiDAR数据： 大气重要参数高分辨率垂直分布探查数据库 http://atmosdb.aiofm.ac.cn/
+Lidar Group of ABC http://lidar.abct.lmd.polytechnique.fr
+六一儿童节快乐&amp;hellip; </description>
     </item>
     
   </channel>

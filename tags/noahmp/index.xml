@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>NoahMP on 苟利国家生死以 岂因祸福避趋之</title>
+    <title>NoahMP on 南村新造</title>
     <link>http://keenmisty.github.io/tags/noahmp/</link>
-    <description>Recent content in NoahMP on 苟利国家生死以 岂因祸福避趋之</description>
+    <description>Recent content in NoahMP on 南村新造</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>keenmisty</copyright>
+    <language>zh-cn</language>
     <lastBuildDate>Tue, 02 Feb 2016 18:34:15 +0000</lastBuildDate><atom:link href="http://keenmisty.github.io/tags/noahmp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Noah-MP Learning</title>
-      <link>http://keenmisty.github.io/post/20160202-sth-md/</link>
+      <link>http://keenmisty.github.io/20160202-sth-md/</link>
       <pubDate>Tue, 02 Feb 2016 18:34:15 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/post/20160202-sth-md/</guid>
-      <description>The NoahMP calling tree Init noahmp_options NOAHMP_SFLX REDPRM FRH2O Run 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 ATM PHENOLOGY ENERGY THERMOPROP CSNOW TDFCND RADIATION ALBEDO SNOW\_AGE SNOWALB\_BATS SNOWALB\_CLASS GROUNDALB TWOSTREAM SURRAD VEGE\_FLUX SFCDIF1 SFCDIF2 STOMATA CANRES ESAT RAGRB BARE\_FLUX TSNOSOI HRT HSTEP ROSR12 PHASECHANGE WATER CANWATER SNOWWATER SNOWFALL COMBINE DIVIDE COMBO COMPACT SNOWH2O SOILWATER ZWTEQ INFIL SRT WDFCND1 WDFCND2 SSTEP GROUNDWATER CARBON CO2FLUX ERROR </description>
+      <guid>http://keenmisty.github.io/20160202-sth-md/</guid>
+      <description>The NoahMP calling tree Init noahmp_options NOAHMP_SFLX REDPRM FRH2O Run ATM PHENOLOGY ENERGY THERMOPROP CSNOW TDFCND RADIATION ALBEDO SNOW\_AGE SNOWALB\_BATS SNOWALB\_CLASS GROUNDALB TWOSTREAM SURRAD VEGE\_FLUX SFCDIF1 SFCDIF2 STOMATA CANRES ESAT RAGRB BARE\_FLUX TSNOSOI HRT HSTEP ROSR12 PHASECHANGE WATER CANWATER SNOWWATER SNOWFALL COMBINE DIVIDE COMBO COMPACT SNOWH2O SOILWATER ZWTEQ INFIL SRT WDFCND1 WDFCND2 SSTEP GROUNDWATER CARBON CO2FLUX ERROR </description>
     </item>
     
   </channel>

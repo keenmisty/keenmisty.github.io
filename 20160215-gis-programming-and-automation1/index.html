@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="generator" content="Hugo 0.111.3">
+  <link rel="canonical" href="http://keenmisty.github.io/20160215-gis-programming-and-automation1/">
+
+  
+    
+    <meta name="description" content="GIS Modeling与Python介绍 ArcGIS中提供了两种写Python的方式：
+ModelBuilder IDLE ModelBuilder的使用很简单，可以先拿来做模型的结构设计。 但是一些复杂的处理则需要写Python Script来实现。
+因此：
+Using Python window in ArcGIS：
+import arcpy arcpy.Buffer_analysis(&#34;us_cities&#34;, &#34;us_cities_buffered&#34;, &#34;15 miles&#34;, &#34;&#34;, &#34;&#34;, &#34;ALL&#34;) 注意：所有需要调用ArcGIS的Tools的脚本，都需要import arcpy
+比如打印feature的空间参考：
+# Opens a feature class from a geodatabase and prints the spatial reference import arcpy featureClass = &#34;C:/Data/USA/USA.gdb/StateBoundaries&#34; # Describe the feature class and get its spatial reference desc = arcpy.Describe(featureClass) spatialRef = desc.spatialReference # Print the spatial reference name print spatialRef.Name 参考: Python Scripting for ArcGIS by Paul A.">
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" type="text/css" href="/css/paper.css">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/custom.css">
+  
+  
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-123456789-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+  
+
+  
+  
+  <title>GIS中Python的使用&lt;1&gt; | 南村新造</title>
+</head>
+
+  <body>
+    <div class="container paper">
+      <nav class="border split-nav">
+  <div class="nav-brand">
+    <h3><a href="/">南村新造</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+    <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+      
+        <li><a href="/">Blog</a></li>
+      
+        <li><a href="/tags/">Tags</a></li>
+      
+        <li><a href="/about/">About</a></li>
+      
+        <li><a href="/index.xml">RSS</a></li>
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+      <main>
+        
+
+<h1 class="post-title">GIS中Python的使用&lt;1&gt;</h1>
+
+
+<strong>Publish date: </strong>Feb 15, 15020
+<br>
+
+  <strong>Tags: </strong>
+  
+    <a href="/tags/arcgis">ArcGIS</a>
+  
+    <a href="/tags/python">Python</a>
+  
+    <a href="/tags/learning">Learning</a>
+  
+
+
+
+  
+
+
+
+<h1 id="gis-modeling与python介绍">GIS Modeling与Python介绍</h1>
+<hr>
+<p><strong>ArcGIS中提供了两种写Python的方式：</strong></p>
+<ul>
+<li>ModelBuilder</li>
+<li>IDLE</li>
+</ul>
+<p>ModelBuilder的使用很简单，可以先拿来做模型的结构设计。
+但是一些复杂的处理则需要写Python Script来实现。</p>
+<p>因此：</p>
+<p><strong>Using Python window in ArcGIS：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> arcpy
+</span></span><span style="display:flex;"><span>arcpy<span style="color:#f92672">.</span>Buffer_analysis(<span style="color:#e6db74">&#34;us_cities&#34;</span>, <span style="color:#e6db74">&#34;us_cities_buffered&#34;</span>, <span style="color:#e6db74">&#34;15 miles&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#e6db74">&#34;ALL&#34;</span>)
+</span></span></code></pre></div><p>注意：所有需要调用ArcGIS的Tools的脚本，都需要<code>import arcpy</code></p>
+<p>比如打印feature的空间参考：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Opens a feature class from a geodatabase and prints the spatial reference</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> arcpy
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>featureClass <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;C:/Data/USA/USA.gdb/StateBoundaries&#34;</span>
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Describe the feature class and get its spatial reference   </span>
+</span></span><span style="display:flex;"><span>desc <span style="color:#f92672">=</span> arcpy<span style="color:#f92672">.</span>Describe(featureClass)
+</span></span><span style="display:flex;"><span>spatialRef <span style="color:#f92672">=</span> desc<span style="color:#f92672">.</span>spatialReference
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Print the spatial reference name</span>
+</span></span><span style="display:flex;"><span>print spatialRef<span style="color:#f92672">.</span>Name
+</span></span></code></pre></div><p>参考: Python Scripting for ArcGIS by Paul A. Zandbergen</p>
+
+
+
+
+      </main>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="generator" content="Hugo 0.111.3">
+  <link rel="canonical" href="http://keenmisty.github.io/20160202-sth-md/">
+
+  
+    
+    <meta name="description" content="The NoahMP calling tree Init noahmp_options NOAHMP_SFLX REDPRM FRH2O Run ATM PHENOLOGY ENERGY THERMOPROP CSNOW TDFCND RADIATION ALBEDO SNOW\_AGE SNOWALB\_BATS SNOWALB\_CLASS GROUNDALB TWOSTREAM SURRAD VEGE\_FLUX SFCDIF1 SFCDIF2 STOMATA CANRES ESAT RAGRB BARE\_FLUX TSNOSOI HRT HSTEP ROSR12 PHASECHANGE WATER CANWATER SNOWWATER SNOWFALL COMBINE DIVIDE COMBO COMPACT SNOWH2O SOILWATER ZWTEQ INFIL SRT WDFCND1 WDFCND2 SSTEP GROUNDWATER CARBON CO2FLUX ERROR ">
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" type="text/css" href="/css/paper.css">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/custom.css">
+  
+  
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-123456789-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+  
+
+  
+  
+  <title>Noah-MP Learning | 南村新造</title>
+</head>
+
+  <body>
+    <div class="container paper">
+      <nav class="border split-nav">
+  <div class="nav-brand">
+    <h3><a href="/">南村新造</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+    <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+      
+        <li><a href="/">Blog</a></li>
+      
+        <li><a href="/tags/">Tags</a></li>
+      
+        <li><a href="/about/">About</a></li>
+      
+        <li><a href="/index.xml">RSS</a></li>
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+      <main>
+        
+
+<h1 class="post-title">Noah-MP Learning</h1>
+
+
+<strong>Publish date: </strong>Feb 2, 20215
+<br>
+
+  <strong>Tags: </strong>
+  
+    <a href="/tags/learning">Learning</a>
+  
+    <a href="/tags/fortran">Fortran</a>
+  
+    <a href="/tags/noahmp">NoahMP</a>
+  
+
+
+
+  
+
+<div class="child-borders">
+  <div class="toc border" aria-labelledby="toc-heading">
+    <h2 id="toc-heading">Table of contents</h2>
+    <ol>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#init">
+            Init
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#run">
+            Run
+          </a>
+        </li>
+      
+    </ol>
+  </div>
+</div>
+
+
+
+<h1 id="the-noahmp-calling-tree">The NoahMP calling tree</h1>
+<hr>
+<h2 id="init">Init</h2>
+<ul>
+<li>noahmp_options</li>
+<li>NOAHMP_SFLX</li>
+<li>REDPRM</li>
+<li>FRH2O</li>
+</ul>
+<h2 id="run">Run</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ATM
+</span></span><span style="display:flex;"><span>PHENOLOGY
+</span></span><span style="display:flex;"><span>ENERGY
+</span></span><span style="display:flex;"><span>      THERMOPROP
+</span></span><span style="display:flex;"><span>              CSNOW
+</span></span><span style="display:flex;"><span>              TDFCND
+</span></span><span style="display:flex;"><span>      RADIATION
+</span></span><span style="display:flex;"><span>              ALBEDO
+</span></span><span style="display:flex;"><span>                        SNOW<span style="color:#ae81ff">\_</span>AGE
+</span></span><span style="display:flex;"><span>                        SNOWALB<span style="color:#ae81ff">\_</span>BATS  
+</span></span><span style="display:flex;"><span>                        SNOWALB<span style="color:#ae81ff">\_</span>CLASS
+</span></span><span style="display:flex;"><span>                        GROUNDALB
+</span></span><span style="display:flex;"><span>                        TWOSTREAM
+</span></span><span style="display:flex;"><span>              SURRAD
+</span></span><span style="display:flex;"><span>      VEGE<span style="color:#ae81ff">\_</span>FLUX
+</span></span><span style="display:flex;"><span>              SFCDIF1                  
+</span></span><span style="display:flex;"><span>              SFCDIF2                
+</span></span><span style="display:flex;"><span>              STOMATA                  
+</span></span><span style="display:flex;"><span>              CANRES                  
+</span></span><span style="display:flex;"><span>              ESAT
+</span></span><span style="display:flex;"><span>              RAGRB
+</span></span><span style="display:flex;"><span>      BARE<span style="color:#ae81ff">\_</span>FLUX
+</span></span><span style="display:flex;"><span>      TSNOSOI
+</span></span><span style="display:flex;"><span>              HRT
+</span></span><span style="display:flex;"><span>              HSTEP   
+</span></span><span style="display:flex;"><span>                        ROSR12
+</span></span><span style="display:flex;"><span>      PHASECHANGE
+</span></span><span style="display:flex;"><span>WATER
+</span></span><span style="display:flex;"><span>      CANWATER
+</span></span><span style="display:flex;"><span>      SNOWWATER
+</span></span><span style="display:flex;"><span>              SNOWFALL
+</span></span><span style="display:flex;"><span>              COMBINE
+</span></span><span style="display:flex;"><span>              DIVIDE
+</span></span><span style="display:flex;"><span>                        COMBO
+</span></span><span style="display:flex;"><span>              COMPACT
+</span></span><span style="display:flex;"><span>              SNOWH2O
+</span></span><span style="display:flex;"><span>      SOILWATER
+</span></span><span style="display:flex;"><span>              ZWTEQ
+</span></span><span style="display:flex;"><span>              INFIL
+</span></span><span style="display:flex;"><span>              SRT
+</span></span><span style="display:flex;"><span>                        WDFCND1        
+</span></span><span style="display:flex;"><span>                        WDFCND2       
+</span></span><span style="display:flex;"><span>              SSTEP
+</span></span><span style="display:flex;"><span>      GROUNDWATER
+</span></span><span style="display:flex;"><span>CARBON
+</span></span><span style="display:flex;"><span>      CO2FLUX
+</span></span><span style="display:flex;"><span>ERROR
+</span></span></code></pre></div><hr>
+
+
+
+
+      </main>
+  </div>
+  </body>
+</html>

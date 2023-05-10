@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ArcGIS on 苟利国家生死以 岂因祸福避趋之</title>
+    <title>ArcGIS on 南村新造</title>
     <link>http://keenmisty.github.io/tags/arcgis/</link>
-    <description>Recent content in ArcGIS on 苟利国家生死以 岂因祸福避趋之</description>
+    <description>Recent content in ArcGIS on 南村新造</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>keenmisty</copyright>
+    <language>zh-cn</language>
     <lastBuildDate>Mon, 15 Feb 2016 13:02:00 +0000</lastBuildDate><atom:link href="http://keenmisty.github.io/tags/arcgis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GIS中Python的使用&lt;1&gt;</title>
-      <link>http://keenmisty.github.io/post/20160215-gis-programming-and-automation1/</link>
+      <link>http://keenmisty.github.io/20160215-gis-programming-and-automation1/</link>
       <pubDate>Mon, 15 Feb 2016 13:02:00 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/post/20160215-gis-programming-and-automation1/</guid>
-      <description>GIS Modeling与Python介绍 ArcGIS中提供了两种写Python的方式： ModelBuilder IDLE ModelBuilder的使用很简单，可以先拿来做模型</description>
+      <guid>http://keenmisty.github.io/20160215-gis-programming-and-automation1/</guid>
+      <description>GIS Modeling与Python介绍 ArcGIS中提供了两种写Python的方式：
+ModelBuilder IDLE ModelBuilder的使用很简单，可以先拿来做模型的结构设计。 但是一些复杂的处理则需要写Python Script来实现。
+因此：
+Using Python window in ArcGIS：
+import arcpy arcpy.Buffer_analysis(&amp;#34;us_cities&amp;#34;, &amp;#34;us_cities_buffered&amp;#34;, &amp;#34;15 miles&amp;#34;, &amp;#34;&amp;#34;, &amp;#34;&amp;#34;, &amp;#34;ALL&amp;#34;) 注意：所有需要调用ArcGIS的Tools的脚本，都需要import arcpy
+比如打印feature的空间参考：
+# Opens a feature class from a geodatabase and prints the spatial reference import arcpy featureClass = &amp;#34;C:/Data/USA/USA.gdb/StateBoundaries&amp;#34; # Describe the feature class and get its spatial reference desc = arcpy.Describe(featureClass) spatialRef = desc.spatialReference # Print the spatial reference name print spatialRef.Name 参考: Python Scripting for ArcGIS by Paul A.</description>
     </item>
     
   </channel>

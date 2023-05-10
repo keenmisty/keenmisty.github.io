@@ -1,29 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>lidar on 苟利国家生死以 岂因祸福避趋之</title>
+    <title>lidar on 南村新造</title>
     <link>http://keenmisty.github.io/tags/lidar/</link>
-    <description>Recent content in lidar on 苟利国家生死以 岂因祸福避趋之</description>
+    <description>Recent content in lidar on 南村新造</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>keenmisty</copyright>
+    <language>zh-cn</language>
     <lastBuildDate>Fri, 03 Jan 2020 16:32:46 +0000</lastBuildDate><atom:link href="http://keenmisty.github.io/tags/lidar/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>只争朝夕，不负韶华</title>
-      <link>http://keenmisty.github.io/post/20200103-saysth/</link>
+      <link>http://keenmisty.github.io/20200103-saysth/</link>
       <pubDate>Fri, 03 Jan 2020 16:32:46 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/post/20200103-saysth/</guid>
-      <description>2020年的第一个周五，捣鼓了一整个下午，终于恢复了对自己GitHub的pull/push操作能力。由此可见我的coding能力下降了多少，</description>
+      <guid>http://keenmisty.github.io/20200103-saysth/</guid>
+      <description>2020年的第一个周五，捣鼓了一整个下午，终于恢复了对自己GitHub的pull/push操作能力。由此可见我的coding能力下降了多少，每天被报告、报表、事务、跑腿所包围，在学术上和技术上感觉我自己已经废了，真是绝望的要命。
+回顾2019年，最美好的经历是在除夕前和老婆一起拥有了一个女儿，从此成为一个光荣的带娃男。然后在10月份不管不顾的搞出来两篇小文章，算是总算有那么一点点科学收获。此外，居然有空重读了一遍文明之光、在北京飞回广州的航班上看了一遍流浪地球。至于其他的，都是小事情了。
+用学生的话讲，常老师越来越佛了。。。
+嗯哼。
+2020年，没有打算去交基金申请，对下一步能够解决的科学问题一点思考都没有，就不给国家浪费钱了。做好手头上的事情，是这上半年最大的意愿。
+给自己立个Flag吧：
+想要完成的小工作：
+和小朱的合作 深圳的大任务 嘉晨的小文章 赵伟的小文章 想要尝试的新事物：
+UAVs&amp;amp;ROBOTs Lidar uEMEP 想要戒掉的坏习惯：
+吃夜宵 熬通宵 爆粗口 </description>
     </item>
     
     <item>
       <title>收集的一些LiDAR数据库</title>
-      <link>http://keenmisty.github.io/post/20160601/</link>
+      <link>http://keenmisty.github.io/20160601/</link>
       <pubDate>Wed, 01 Jun 2016 15:30:18 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/post/20160601/</guid>
-      <description>一些LiDAR数据： 大气重要参数高分辨率垂直分布探查数据库 http://atmosdb.aiofm.ac.cn/ Lidar Group of ABC http://lidar.abct.lmd.polytechnique.fr 六一儿童节快乐&amp;hellip;</description>
+      <guid>http://keenmisty.github.io/20160601/</guid>
+      <description>一些LiDAR数据： 大气重要参数高分辨率垂直分布探查数据库 http://atmosdb.aiofm.ac.cn/
+Lidar Group of ABC http://lidar.abct.lmd.polytechnique.fr
+六一儿童节快乐&amp;hellip; </description>
     </item>
     
   </channel>

@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>WRF-Chem on 苟利国家生死以 岂因祸福避趋之</title>
+    <title>WRF-Chem on 南村新造</title>
     <link>http://keenmisty.github.io/tags/wrf-chem/</link>
-    <description>Recent content in WRF-Chem on 苟利国家生死以 岂因祸福避趋之</description>
+    <description>Recent content in WRF-Chem on 南村新造</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>keenmisty</copyright>
+    <language>zh-cn</language>
     <lastBuildDate>Mon, 31 Oct 2016 14:10:30 +0000</lastBuildDate><atom:link href="http://keenmisty.github.io/tags/wrf-chem/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>用Doxygen&#43;Graphviz生成WRF-Chem程序结构图</title>
-      <link>http://keenmisty.github.io/post/20161031-doxygen/</link>
+      <link>http://keenmisty.github.io/20161031-doxygen/</link>
       <pubDate>Mon, 31 Oct 2016 14:10:30 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/post/20161031-doxygen/</guid>
-      <description>缘起 做毕业论文的时候要改机制代码，并且要耦合到WRF-Chem模式里面使它生效，所以就需要搞清楚WRF-Chem的结构，以便调用和输出。 虽然</description>
+      <guid>http://keenmisty.github.io/20161031-doxygen/</guid>
+      <description>缘起 做毕业论文的时候要改机制代码，并且要耦合到WRF-Chem模式里面使它生效，所以就需要搞清楚WRF-Chem的结构，以便调用和输出。
+虽然可以通过长时间的看WRF-Chem源代码、debug尝试以及IDE帮忙，但有一份calling tree还是很好的，给师弟师妹们讲起来也方便很多。
+因此，考虑尝试用程序结构自动分析工具Doxygen对它进行分析，用Graphviz生成出来。
+Doxygen简介 Doxygen是一种程序结构自动分析的工具，也是一个程序文档自动生成的工具，它的官网，具体的使用方法可以在上面找到。
+由于Doxygen支持Fortran，因此，直接拿来分析WRF-Chem就很简单了，配置好输出的目录及分析的项目，设置好调用Graphviz的路径，就可以直接运行输出了。
+它可以生成html版的网页说明，也可以生成LaTeX文件及pdf文档。
+WRF-Chem Calling Tree 物理机制-微物理过程调用： 物理机制-辐射过程调用： 物理机制-积云过程调用： 物理机制-陆面及边界层过程调用： 化学机制-化学过程调用： 后记 其实真的要改机制时还是要进去一点一点的看code的，这些图也就帮助下新手理解&amp;hellip; (说白了其实没啥用，然而做无用之事不是我辈博士生打发生命的最佳方式吗2333)</description>
     </item>
     
   </channel>

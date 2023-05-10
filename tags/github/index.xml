@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>GitHub on 苟利国家生死以 岂因祸福避趋之</title>
+    <title>GitHub on 南村新造</title>
     <link>http://keenmisty.github.io/tags/github/</link>
-    <description>Recent content in GitHub on 苟利国家生死以 岂因祸福避趋之</description>
+    <description>Recent content in GitHub on 南村新造</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>keenmisty</copyright>
+    <language>zh-cn</language>
     <lastBuildDate>Tue, 26 Jan 2016 23:16:00 +0000</lastBuildDate><atom:link href="http://keenmisty.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>建站说明</title>
-      <link>http://keenmisty.github.io/post/20160126-buildup-blog/</link>
+      <link>http://keenmisty.github.io/20160126-buildup-blog/</link>
       <pubDate>Tue, 26 Jan 2016 23:16:00 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/post/20160126-buildup-blog/</guid>
-      <description>建设这个站点，用来整理以前积攒的知识，用来学习还没有掌握的知识。 顺便用来记录生活，记录成长。 开博缘由: 在建立改造博客网站的过程中，学习和巩固</description>
+      <guid>http://keenmisty.github.io/20160126-buildup-blog/</guid>
+      <description>建设这个站点，用来整理以前积攒的知识，用来学习还没有掌握的知识。
+顺便用来记录生活，记录成长。
+开博缘由:
+在建立改造博客网站的过程中，学习和巩固基本知识； 通过写博客的方式，加深理解，显性化自己的隐性知识； 共享知识，吸引同好，交流进步。
+一些个人相关信息和经验:
+非计算机类专业，编程经验基本为零； 能流畅阅读大部分英文资料； 经常折腾各种系统、软件和手机 APP； 善用利用搜索解决各类问题； 追求“混乱”，并不喜欢变得井井有条。 欢迎交流:
+个人邮件及社交网站等信息见边栏底部； 有什么留言或问题直接在文末留下评论即可。</description>
     </item>
     
   </channel>

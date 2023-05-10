@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="generator" content="Hugo 0.111.3">
+  <link rel="canonical" href="http://keenmisty.github.io/20160612-ncl/">
+
+  
+    
+    <meta name="description" content="简介 KML(Keyhold Markup Language)是一种XML语法格式的标记语言，可以在多种应用程序中显示，包括 Google Earth、Google Map、ArcGIS(ArcMap/ArcGlobe)等，驴友们制作路书的时候也经常采用这种格式制作。
+它的优势是可以把几何、符号系统、描述、属性、影像和行为等数据封装到单个源中，非常方便数据的共享和在线展示。
+NCL对于KML的支持起自2013年，由Mohammad Abouali开发，他制作了一个名为 NCL_GETools 的NCL输出库，使得NCL可以将各种气象模型结果输出成KML格式，从而可以方便的在各类GIS软件中与其他地理信息数据一起进行处理，或是通过Google Earth/Map的API进行在线的展示。
+NCL_GETools 需要6.2.0之后版本的NCL。
+使用 首先，需要在你自己的ncl脚本中声明调用这一工具：
+load &#34;$NCARG_ROOT/lib/ncarg/nclscripts/contrib/NCL_GETools.ncl&#34; 然后即可在你个人的ncl脚本中调用以下函数或者过程，来完成相应的动作：
+函数
+get_coordinate_system_string GetAltModeNumber read_ict squeeze get_KML_IconHref ones zeros dim_dimsizes Gray2RGBA Gray2cIndex ToHex add_KML_ColorMapStyles 过程
+add_KML_Description add_KML_Address add_KML_Range add_KML_Name add_KML_Coordinates add_KML_Width add_KML_Open add_KML_FlyToView add_KML_Extrude add_KML_Visibility add_KML_Tessellate add_KML_Fill add_KML_Outline add_KML_Altitude add_KML_AltMode add_KML_Color add_KML_North add_KML_South add_KML_East add_KML_West add_KML_Rotation add_KML_StyleUrl add_KML_HideChildrenStyle hide_KML_Children add_KML_Href add_KML_Icon add_KML_Heading add_KML_TimeSpan add_KML_TimeStamp_When add_KML_LineStyle add_KML_IconStyle add_KML_PolyStyle add_KML_LineString add_KML_LatLonBox add_KML_LinearRing add_KML_OuterBoundaryIs add_KML_InnerBoundaryIs add_KML_GOverlay add_KML_Polygon add_KML_nSidedPolygon add_KML_Point Open_KML_MultiGeometry Close_KML_MultiGeometry Open_KML_Link Close_KML_Link Open_KML_NetworkLink Close_KML_NetworkLink Open_KML_Folder Close_KML_Folder Open_KML_Placemark Close_KML_Placemark Open_KML_Style Close_KML_Style Open_KML_Document Close_KML_Document OpenKML CloseKML RasterTimeSeries2KML SHP2KML Point2KML Velocity2KML Points2KML Collect_KMLs Path2KML Measurements2KML UnstructGrid2KML UnstructData2KML UnstructVelocity2KML 例子 Point2KML的使用 新增一个文件名为 1.">
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" type="text/css" href="/css/paper.css">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/custom.css">
+  
+  
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-123456789-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+  
+
+  
+  
+  <title>NCL生成kml文件 | 南村新造</title>
+</head>
+
+  <body>
+    <div class="container paper">
+      <nav class="border split-nav">
+  <div class="nav-brand">
+    <h3><a href="/">南村新造</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+    <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+      
+        <li><a href="/">Blog</a></li>
+      
+        <li><a href="/tags/">Tags</a></li>
+      
+        <li><a href="/about/">About</a></li>
+      
+        <li><a href="/index.xml">RSS</a></li>
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+      <main>
+        
+
+<h1 class="post-title">NCL生成kml文件</h1>
+
+
+<strong>Publish date: </strong>Jun 12, 120618
+<br>
+
+  <strong>Tags: </strong>
+  
+    <a href="/tags/ncl">ncl</a>
+  
+    <a href="/tags/kml">kml</a>
+  
+
+
+
+  
+
+<div class="child-borders">
+  <div class="toc border" aria-labelledby="toc-heading">
+    <h2 id="toc-heading">Table of contents</h2>
+    <ol>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#%e7%ae%80%e4%bb%8b">
+            简介
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#%e4%bd%bf%e7%94%a8">
+            使用
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#%e4%be%8b%e5%ad%90">
+            例子
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#%e5%85%b6%e4%bb%96%e5%80%bc%e5%be%97%e6%b3%a8%e6%84%8f%e7%9a%84%e4%ba%8b%e6%83%85">
+            其他值得注意的事情
+          </a>
+        </li>
+      
+    </ol>
+  </div>
+</div>
+
+
+
+<h2 id="简介">简介</h2>
+<p>KML(Keyhold Markup Language)是一种XML语法格式的标记语言，可以在多种应用程序中显示，包括 Google Earth、Google Map、ArcGIS(ArcMap/ArcGlobe)等，驴友们制作路书的时候也经常采用这种格式制作。</p>
+<p>它的优势是可以把几何、符号系统、描述、属性、影像和行为等数据封装到单个源中，非常方便数据的共享和在线展示。</p>
+<p>NCL对于KML的支持起自2013年，由Mohammad Abouali开发，他制作了一个名为 <a href="http://www.ncl.ucar.edu/Document/Manuals/GETools/NCL_GETools.html">NCL_GETools</a> 的NCL输出库，使得NCL可以将各种气象模型结果输出成KML格式，从而可以方便的在各类GIS软件中与其他地理信息数据一起进行处理，或是通过Google Earth/Map的API进行在线的展示。</p>
+<p>NCL_GETools 需要6.2.0之后版本的NCL。</p>
+<h2 id="使用">使用</h2>
+<p>首先，需要在你自己的ncl脚本中声明调用这一工具：</p>
+<pre tabindex="0"><code class="language-NCL" data-lang="NCL">    load &#34;$NCARG_ROOT/lib/ncarg/nclscripts/contrib/NCL_GETools.ncl&#34;
+</code></pre><p>然后即可在你个人的ncl脚本中调用以下函数或者过程，来完成相应的动作：</p>
+<ul>
+<li>
+<p>函数</p>
+<ul>
+<li>get_coordinate_system_string</li>
+<li>GetAltModeNumber</li>
+<li>read_ict</li>
+<li>squeeze</li>
+<li>get_KML_IconHref</li>
+<li>ones</li>
+<li>zeros</li>
+<li>dim_dimsizes</li>
+<li>Gray2RGBA</li>
+<li>Gray2cIndex</li>
+<li>ToHex</li>
+<li>add_KML_ColorMapStyles</li>
+</ul>
+</li>
+<li>
+<p>过程</p>
+<ul>
+<li>add_KML_Description</li>
+<li>add_KML_Address</li>
+<li>add_KML_Range</li>
+<li>add_KML_Name</li>
+<li>add_KML_Coordinates</li>
+<li>add_KML_Width</li>
+<li>add_KML_Open</li>
+<li>add_KML_FlyToView</li>
+<li>add_KML_Extrude</li>
+<li>add_KML_Visibility</li>
+<li>add_KML_Tessellate</li>
+<li>add_KML_Fill</li>
+<li>add_KML_Outline</li>
+<li>add_KML_Altitude</li>
+<li>add_KML_AltMode</li>
+<li>add_KML_Color</li>
+<li>add_KML_North</li>
+<li>add_KML_South</li>
+<li>add_KML_East</li>
+<li>add_KML_West</li>
+<li>add_KML_Rotation</li>
+<li>add_KML_StyleUrl</li>
+<li>add_KML_HideChildrenStyle</li>
+<li>hide_KML_Children</li>
+<li>add_KML_Href</li>
+<li>add_KML_Icon</li>
+<li>add_KML_Heading</li>
+<li>add_KML_TimeSpan</li>
+<li>add_KML_TimeStamp_When</li>
+<li>add_KML_LineStyle</li>
+<li>add_KML_IconStyle</li>
+<li>add_KML_PolyStyle</li>
+<li>add_KML_LineString</li>
+<li>add_KML_LatLonBox</li>
+<li>add_KML_LinearRing</li>
+<li>add_KML_OuterBoundaryIs</li>
+<li>add_KML_InnerBoundaryIs</li>
+<li>add_KML_GOverlay</li>
+<li>add_KML_Polygon</li>
+<li>add_KML_nSidedPolygon</li>
+<li>add_KML_Point</li>
+<li>Open_KML_MultiGeometry</li>
+<li>Close_KML_MultiGeometry</li>
+<li>Open_KML_Link</li>
+<li>Close_KML_Link</li>
+<li>Open_KML_NetworkLink</li>
+<li>Close_KML_NetworkLink</li>
+<li>Open_KML_Folder</li>
+<li>Close_KML_Folder</li>
+<li>Open_KML_Placemark</li>
+<li>Close_KML_Placemark</li>
+<li>Open_KML_Style</li>
+<li>Close_KML_Style</li>
+<li>Open_KML_Document</li>
+<li>Close_KML_Document</li>
+<li>OpenKML</li>
+<li>CloseKML</li>
+<li>RasterTimeSeries2KML</li>
+<li>SHP2KML</li>
+<li>Point2KML</li>
+<li>Velocity2KML</li>
+<li>Points2KML</li>
+<li>Collect_KMLs</li>
+<li>Path2KML</li>
+<li>Measurements2KML</li>
+<li>UnstructGrid2KML</li>
+<li>UnstructData2KML</li>
+<li>UnstructVelocity2KML</li>
+</ul>
+</li>
+</ul>
+<h2 id="例子">例子</h2>
+<ul>
+<li>Point2KML的使用</li>
+</ul>
+<p>新增一个文件名为 <code>1.ncl</code> 的脚本，内容如下：</p>
+<pre tabindex="0"><code class="language-NCL" data-lang="NCL">    load &#34;$NCARG_ROOT/lib/ncarg/nclscripts/contrib/NCL_GETools.ncl&#34;
+    begin      
+    ; 设置图层属性
+        Opt=True
+        Opt@Name=&#34;Dihuan Building&#34;
+        Opt@Lat=23.103685
+        Opt@Lon=113.294506
+        Opt@Description=&#34;School of Atmospheric Science, Sun yat-sen University&#34;
+        Opt@Verbose=True
+    ; 设置输出
+        kml_FileName=&#34;sysu_sas_building&#34;
+        Point2KML(kml_FileName, Opt)
+    end
+</code></pre><p>执行这个ncl，即可得到一个名为 <code>sysu_sas_building.kml</code> 的文件，把它放入GoogleEarth中，即可看到如下的样子(当然，首先要能加载出来GE中的地球，否则需要首先翻下墙)：</p>
+<p><img src="https://github.com/keenmisty/NCL/blob/master/images/extensions/point2kml.png" alt="point2kml"></p>
+<h2 id="其他值得注意的事情">其他值得注意的事情</h2>
+<ul>
+<li>Ryan Pavlick制作了一个更深入的ncl制作kml的库，<a href="https://github.com/rpavlick/kmlncl">link</a></li>
+<li>更推荐使用ArcGIS等地理信息系统工具处理kml文件</li>
+</ul>
+
+
+
+
+      </main>
+  </div>
+  </body>
+</html>

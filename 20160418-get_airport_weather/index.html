@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="generator" content="Hugo 0.111.3">
+  <link rel="canonical" href="http://keenmisty.github.io/20160418-get_airport_weather/">
+
+  
+    
+    <meta name="description" content="title: 获取机场实时气象报告方法 date: 2016-04-18 14:45:00 tags:
+python Learning permalink: get-airport-weather 最近坐飞机的时候总是遇到下雨，延误的很凄惨。坐在候机厅里问当班空姐吧，其实她们也不知道。 于是乎还是发挥咱半吊子的气象专业特长，找找看有没有什么办法获取机场气象站的实时报告。
+手机端app： 手机端的天气app看起来挺多的，但是提供每十五分钟电文的少之又少。 航旅纵横或是飞常准虽然有这功能吧，但要么需要业内认证，要么需要花钱搞专业版。 找来找去，发现Flight Meteo这个app是可以提供各个机场的METAR和TAF的。 电脑端： 用电脑的话那就办法多多了，各种网站一堆一堆的。 然而没有那么多流量的时候，我还是更喜欢用脚本或者命令来获取。
+这里安利两个办法，一个是weather-util，一个是python-metar。
+python-metar可以从pyhton-metar下载到。 各位如果要结合python做批量获取，就在这个基础上改改改就好啦。
+而如果像我一样只是在候机的时候查所在机场的气象报文，那么weather-util更合适。 它的安装很简单，直接sudo apt-get install weather-util就可以安装好。 而使用嘛，安装好之后一句命令即可：
+weather &lt;code&gt;
+其中，&lt;code&gt;是机场的ICAO代码，比如说广州就是ZGGG，北京就是ZBAA。
+在这里可以查询全球机场的四字码。
+weather-util查到的结果就像这样：
+admin@ubuntu:~$ weather ZGGG Searching via station... [caching result Guangzhou, China] Current conditions at Guangzhou, China (ZGGG) 23-10N 113-20E 42M Last updated Apr 18, 2016 - 07:00 AM EDT / 2016.04.18 1100 UTC Temperature: 77 F (25 C) Relative Humidity: 65% Wind: Calm Sky conditions: mostly cloudy 如果需要看METAR电文的话，可以weather -v &lt;code&gt;， 那么输出的结果会变为：">
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" type="text/css" href="/css/paper.css">
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/custom.css">
+  
+  
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-123456789-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+  
+
+  
+  
+  <title> | 南村新造</title>
+</head>
+
+  <body>
+    <div class="container paper">
+      <nav class="border split-nav">
+  <div class="nav-brand">
+    <h3><a href="/">南村新造</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+    <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+      
+        <li><a href="/">Blog</a></li>
+      
+        <li><a href="/tags/">Tags</a></li>
+      
+        <li><a href="/about/">About</a></li>
+      
+        <li><a href="/index.xml">RSS</a></li>
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+      <main>
+        
+
+<h1 class="post-title"></h1>
+
+
+<strong>Publish date: </strong>Jan 1, 1010
+<br>
+
+
+
+  
+
+
+
+<p>title: 获取机场实时气象报告方法
+date: 2016-04-18 14:45:00
+tags:</p>
+<ul>
+<li>python</li>
+<li>Learning
+permalink: get-airport-weather</li>
+</ul>
+<hr>
+<p>最近坐飞机的时候总是遇到下雨，延误的很凄惨。坐在候机厅里问当班空姐吧，其实她们也不知道。
+于是乎还是发挥咱半吊子的气象专业特长，找找看有没有什么办法获取机场气象站的实时报告。</p>
+<h1 id="手机端app">手机端app：</h1>
+<p>手机端的天气app看起来挺多的，但是提供每十五分钟电文的少之又少。
+航旅纵横或是飞常准虽然有这功能吧，但要么需要业内认证，要么需要花钱搞专业版。
+找来找去，发现Flight Meteo这个app是可以提供各个机场的METAR和TAF的。
+<img src="/img/312667456527139479.jpg" alt="FlightMeteo" title="Flight Meteo"></p>
+<h1 id="电脑端">电脑端：</h1>
+<p>用电脑的话那就办法多多了，各种网站一堆一堆的。
+然而没有那么多流量的时候，我还是更喜欢用脚本或者命令来获取。</p>
+<p>这里安利两个办法，一个是<code>weather-util</code>，一个是<code>python-metar</code>。</p>
+<p><code>python-metar</code>可以从<a href="https://github.com/timetric/python-metar">pyhton-metar</a>下载到。
+各位如果要结合python做批量获取，就在这个基础上改改改就好啦。</p>
+<p>而如果像我一样只是在候机的时候查所在机场的气象报文，那么<code>weather-util</code>更合适。
+它的安装很简单，直接<code>sudo apt-get install weather-util</code>就可以安装好。
+而使用嘛，安装好之后一句命令即可：</p>
+<p><code>weather &lt;code&gt;</code></p>
+<p>其中，<code>&lt;code&gt;</code>是机场的ICAO代码，比如说广州就是ZGGG，北京就是ZBAA。</p>
+<p>在<a href="http://www.feeyo.com/airport_code.asp">这里</a>可以查询全球机场的四字码。</p>
+<p>weather-util查到的结果就像这样：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>admin@ubuntu:~$ weather ZGGG
+</span></span><span style="display:flex;"><span>Searching via station...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>caching result Guangzhou, China<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Current conditions at Guangzhou, China <span style="color:#f92672">(</span>ZGGG<span style="color:#f92672">)</span> 23-10N 113-20E 42M
+</span></span><span style="display:flex;"><span>Last updated Apr 18, <span style="color:#ae81ff">2016</span> - 07:00 AM EDT / 2016.04.18 <span style="color:#ae81ff">1100</span> UTC
+</span></span><span style="display:flex;"><span>Temperature: <span style="color:#ae81ff">77</span> F <span style="color:#f92672">(</span><span style="color:#ae81ff">25</span> C<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Relative Humidity: 65%
+</span></span><span style="display:flex;"><span>Wind: Calm
+</span></span><span style="display:flex;"><span>Sky conditions: mostly cloudy
+</span></span></code></pre></div><p>如果需要看METAR电文的话，可以<code>weather -v &lt;code&gt;</code>，
+那么输出的结果会变为：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>admin@ubuntu:~$ weather -v ZGGG
+</span></span><span style="display:flex;"><span>Searching via station...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>caching result Guangzhou, China<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Guangzhou, China <span style="color:#f92672">(</span>ZGGG<span style="color:#f92672">)</span> 23-10N 113-20E 42M
+</span></span><span style="display:flex;"><span>Apr 18, <span style="color:#ae81ff">2016</span> - 07:00 AM EDT / 2016.04.18 <span style="color:#ae81ff">1100</span> UTC
+</span></span><span style="display:flex;"><span>Wind: Calm:0
+</span></span><span style="display:flex;"><span>Visibility: greater than <span style="color:#ae81ff">7</span> mile<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>:0
+</span></span><span style="display:flex;"><span>Sky conditions: mostly cloudy
+</span></span><span style="display:flex;"><span>Temperature: <span style="color:#ae81ff">77</span> F <span style="color:#f92672">(</span><span style="color:#ae81ff">25</span> C<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Dew Point: <span style="color:#ae81ff">64</span> F <span style="color:#f92672">(</span><span style="color:#ae81ff">18</span> C<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Relative Humidity: 65%
+</span></span><span style="display:flex;"><span>Pressure <span style="color:#f92672">(</span>altimeter<span style="color:#f92672">)</span>: 29.94 in. Hg <span style="color:#f92672">(</span><span style="color:#ae81ff">1014</span> hPa<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>ob: ZGGG 181100Z 00000MPS <span style="color:#ae81ff">9999</span> BKN060 25/18 Q1014 NOSIG
+</span></span><span style="display:flex;"><span>cycle: <span style="color:#ae81ff">11</span>
+</span></span></code></pre></div><p>其中，ob这一行就是。</p>
+<p>可以看到现在广州白云机场的能见度很好，也没有下雨。
+那飞机很快就可以起飞咯，再也不去骚扰坐台的空姐了^_^</p>
+
+
+
+
+      </main>
+  </div>
+  </body>
+</html>

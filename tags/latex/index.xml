@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>LaTeX on 苟利国家生死以 岂因祸福避趋之</title>
+    <title>LaTeX on 南村新造</title>
     <link>http://keenmisty.github.io/tags/latex/</link>
-    <description>Recent content in LaTeX on 苟利国家生死以 岂因祸福避趋之</description>
+    <description>Recent content in LaTeX on 南村新造</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>keenmisty</copyright>
+    <language>zh-cn</language>
     <lastBuildDate>Thu, 12 May 2016 00:22:18 +0000</lastBuildDate><atom:link href="http://keenmisty.github.io/tags/latex/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NotePad&#43;&#43;编辑LaTeX文档的高亮及自动编译配置</title>
-      <link>http://keenmisty.github.io/post/20160512-latex/</link>
+      <link>http://keenmisty.github.io/20160512-latex/</link>
       <pubDate>Thu, 12 May 2016 00:22:18 +0000</pubDate>
       
-      <guid>http://keenmisty.github.io/post/20160512-latex/</guid>
-      <description>NotePad++高亮显示LaTeX注释 NOTEPAD++是一个相当优秀的文本编辑器，支持多种编程、脚本和标记语言的语法高亮显示和代码折叠。</description>
+      <guid>http://keenmisty.github.io/20160512-latex/</guid>
+      <description>NotePad++高亮显示LaTeX注释 NOTEPAD++是一个相当优秀的文本编辑器，支持多种编程、脚本和标记语言的语法高亮显示和代码折叠。
+它原生支持TeX的语法高亮，只需要在工具栏中依次选中“语言-T-Tex”即可。
+然而有人发现这个高亮对于注释而言只是第一个%符号，后面仍然跟正文一样。
+我看了一下，这个其实解决起来很简单，在“设置-语言格式设置”中对它的色彩样式进行修改就好了。
+选中语言TeX，样式DEFAULT，把它的前景色改变即可。
+自动编译 首先需要安装一个插件NppExec，安装好之后，使用F6快捷键，在弹出来的命令框中输入以下命令：
+cd $(CURRENT_DIRECTORY) ~\xelatex.exe $(NAME_PART).tex $EXIT ~\bibtex.exe $(NAME_PART).tex $EXIT ~\xelatex.exe $(NAME_PART).tex $EXIT ~\xelatex.exe $(NAME_PART).tex $EXIT ~\SumatraPDF.exe $(NAME_PART).pdf 其中，~是这些exe的路径。
+可以把上述命令用 save&amp;hellip; 起一个名字保存起来，下次还可以再重复调用。
+效果棒棒哒：$\color{red}{E=mc^2}$</description>
     </item>
     
   </channel>
